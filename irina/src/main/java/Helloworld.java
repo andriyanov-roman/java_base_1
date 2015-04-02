@@ -2,10 +2,10 @@
  * Created by irina on 4/2/2015.
  */
 public class Helloworld {
-public  operations() {
+public  int operations() {
     byte firstargument;
     byte secondargument;
     byte multiple;
-    multiple = firstargument * secondargument;
+    return multiple = firstargument * secondargument;
 }
 }
