@@ -15,7 +15,7 @@ public class HT2 {
         if (z >= 30)
             System.out.println("The biggest variable is z = " + z);
 
-
+//changes
         }
 
     }
