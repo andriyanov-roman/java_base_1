@@ -10,6 +10,7 @@ public class If_else {
         int a = 15;
         int b = 20;
         int c = 10;
+        int d = 18;
         System.out.println("Заданы числа: " + a + ", " + b + ", " + c);
         int max;
         if (a>b)
