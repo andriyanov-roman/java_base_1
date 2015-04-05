@@ -1,8 +1,19 @@
-/**
- * Created by user on 3/31/2015.
- */
+import javax.xml.bind.SchemaOutputResolver;
+
+
 public class cla {
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        int a=4;
+        int b=2;
+
+        System.out.println(a*b);
+        System.out.println(a/b);
+        System.out.println(a-b);
+        System.out.println(a%b);
+
+
+
+
+
     }
 }
