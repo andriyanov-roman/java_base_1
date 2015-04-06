@@ -10,7 +10,7 @@ public class Homew1v2 {
         else
         if (b3>b1 || b3>b2) b3=b3;
 
-
+//
 
     }
 }
