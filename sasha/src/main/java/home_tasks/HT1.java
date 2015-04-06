@@ -65,7 +65,7 @@ public class HT1 {
         System.out.println("Var B change from 4 to = " + b);
         //TODO results of variables change (without another one)
 
-
+//some changes
     }
 
 }
