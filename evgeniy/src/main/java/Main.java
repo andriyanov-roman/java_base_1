@@ -12,6 +12,7 @@
 
 
 class Main {
+
     public static void main(String[] args) {
         //1
         byte a = 2+1; //byte зарезервированое задание дл€ компелтора
@@ -44,7 +45,41 @@ class Main {
         System.out.println(b5=b5+b6);
         System.out.println(b6=b5-b6);
         System.out.println(b5=b5-b6);
-    }
 
-}
+        /*ѕеременные и операции ветвлени€(if-else)
+        ќб€зательные
+        1«адано три переменных, найти переменную с максимальным значением («начение все переменных разные).
+        2Ќаписать алгоритм перевода в двоичную систему счислени€ любого числа от 1 до 127 и представить его в виде одного byte. ѕример 19 в двоичной системе 10011, в представлении byte это 0001 0011
+        3Ќаписать программу, делающую обратную операцию перевода, из двоичной в дес€теричную.
+                Ќе об€зательные
+        4«адано четыре переменных, найти вторую по величине
+*/
+
+
+
+
+        int f1 = 2, f2 = 3, f3 = 5 ;
+        String v="max";
+        if ((f1 > f2) || (f1 > f2)) System.out.println(v = "b1 max");
+            else {if ((f2 > f1) || (f2 > f3)) System.out.println(v = "b2 max");
+                else {if ((f3 > f1) || (f3 > f2)) {System.out.println(v = "b3 max");
+                    }
+        else {
+            System.out.println(v = "non max");
+        }
+        }
+        }
+                int n = 100;
+                //System.out.print("Binary n is : ");
+                StringBuilder sb = new StringBuilder();
+                do {
+                    sb.append(n % 2);
+                    n = n / 2;
+                } while (n != 0);
+
+                System.out.println(sb.reverse());
+        //sb=Byte.parseByte(sb);
+
+        }
+    }
 
