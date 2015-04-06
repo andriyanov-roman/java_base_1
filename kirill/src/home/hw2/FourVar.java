@@ -1,13 +1,13 @@
 //Задано четыре переменных, найти вторую по величине
 public class FourVar {
     public static void main(String[] args) {
-        byte    a=4,
-                b=12,
-                c=8,
-                d=14,
-                secondX,
-                otvet,
-                secondY;
+        byte a=4,
+             b=12,
+             c=8,
+             d=14,
+             secondX,
+             otvet,
+             secondY;
 
         if (a>b)
             secondX=b;
