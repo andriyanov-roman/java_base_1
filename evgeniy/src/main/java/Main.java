@@ -2,9 +2,9 @@
 class Main {
     public static void main(String[] args) {
 
-        byte a = 2+1; //byte зарезервированое задание для компелтора
-        //byte a2 = 1;
-        short c = 5-1;
+        byte a = 2+1, aa=1; //byte зарезервированое задание для компелтора
+
+        short c = 5-1, cc= 3;
         //short c2 = 3;
         int b = 6/2;
         int b2= 2;
@@ -16,7 +16,7 @@ class Main {
 
         System.out.println(a += a);
         System.out.println(a = (byte) ((c+c)/a));
-        System.out.println(b = (c/c)*(a/a));
+        System.out.println(b = (c/cc)*(a/aa));
 
         System.out.println(b4=b2);
         System.out.println(b2=b3);
