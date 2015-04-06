@@ -79,8 +79,10 @@ class Main {
 
                 System.out.println(sb.reverse());
         //sb=Byte.parseByte(sb);
-
+        //int i4= 0x64;
         System.out.println(Integer.parseInt("1000", 2));
+        System.out.println(Integer.toString(Integer.parseInt("10"), 2));
+
         }
         }
 
