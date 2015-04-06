@@ -80,6 +80,7 @@ class Main {
                 System.out.println(sb.reverse());
         //sb=Byte.parseByte(sb);
 
+        System.out.println(Integer.parseInt("1000", 2));
         }
-    }
+        }
 
