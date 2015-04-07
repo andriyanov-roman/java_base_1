@@ -5,8 +5,10 @@ package Homework;
  */
 public class Homework_1 {
     public static void main(String[] args){
-        byte a = 10 + 20, e = 5;
-        short b = 20 - 10, h = 2;
+        byte a = 2 + 5;
+        byte e = 5;
+        short b = 20 - 10;
+        short h = 2;
         int c = 20 / 10;
         long d = 2 * 10;
 
