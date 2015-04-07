@@ -58,11 +58,11 @@ class Main {
 
 
 
-        int f1 = 2, f2 = 3, f3 = 5 ;
+        int f1 = 2, f2 = 11, f3 = 5 ;
         String v="max";
-        if ((f1 > f2) || (f1 > f2)) System.out.println(v = "b1 max");
-            else {if ((f2 > f1) || (f2 > f3)) System.out.println(v = "b2 max");
-                else {if ((f3 > f1) || (f3 > f2)) {System.out.println(v = "b3 max");
+        if ((f1 > f2) && (f1 > f2)) System.out.println(v = "b1 max");
+            else {if ((f2 > f1) && (f2 > f3)) System.out.println(v = "b2 max");
+                else {if ((f3 > f1) && (f3 > f2)) {System.out.println(v = "b3 max");
                     }
         else {
             System.out.println(v = "non max");
