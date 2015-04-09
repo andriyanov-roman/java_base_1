@@ -3,7 +3,7 @@ package ex.lsone;
 /**
  * Created by user on 4/7/2015.
  */
-public class ArrayTests {
+public class LoopTests {
     public static void main(String[] args) {
         int i = 0;
         while (i <= 999) {
