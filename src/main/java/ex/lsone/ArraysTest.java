@@ -8,7 +8,7 @@ public class ArraysTest {
         int[] array = {1, 33, 2, 4, 4, 6, 6, 4, 3, 5, 6, 7, 8,};
         //Просто вывести массив
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
         }
         System.out.println();
         //Найти сумму массива
