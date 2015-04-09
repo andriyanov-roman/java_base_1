@@ -14,5 +14,31 @@ public class TenVsTwo {
         System.out.println("");
         System.out.print("Chitaem spravo nalevo =)");
     }
-
 }
+/*
+public class TenVsTwo{
+public static void main(String[] args) {
+    int value = 120;
+    int temp;
+    int o1, o2, o3, o4, o5, o6, o7, o8;
+    o1 = value % 2;
+    System.out.println(o + "" + value);
+    temp = value / 2;
+    o2 = temp % 2;
+    temp = value / 2;
+    o3 = temp % 2;
+    temp = value / 2;
+    o4 = temp % 2;
+    temp = value / 2;
+    o5 = temp % 2;
+    temp = value / 2;
+    o6 = temp % 2;
+    temp = value / 2;
+    o7 = temp % 2;
+    temp = value / 2;
+    o8 = temp % 2;
+    System.out.println(o8 + "" + o7 + "" + o6 + "" + o5 + "" + o4 + "" + o3 + "" + o2 + "" + o1);
+}
+}*/
+
+
