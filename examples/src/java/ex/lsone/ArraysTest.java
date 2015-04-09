@@ -5,7 +5,7 @@ package ex.lsone;
  */
 public class ArraysTest {
     public static void main(String[] args) {
-        int[] array = {1, 33, 2, 4, 4, 6, 6, 4, 3, 5, 6, 7, 8,};
+        int[] array = {-1, -33, -2, -4, -4, -6, -6, -4, -3, -5, -6, -7, -8};
         //Просто вывести массив
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
@@ -22,5 +22,16 @@ public class ArraysTest {
             System.out.print(array[i] + " ");
         }
         System.out.println();
+        int max = array[0];
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] < min) {
+                min = array[i];
+            } else if(array[i] > max) {
+                max = array[i];
+            }
+        }
+        System.out.println(max);
+        System.out.println(min);
     }
 }
