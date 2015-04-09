@@ -16,9 +16,9 @@ public class Homework_1 {
         byte i = (byte) ((byte)(b + h)/g);
         int k = (b / h) * (g / i);
 
-        System.out.println("Sum of 2 bytes =" + g);
-        System.out.println("Sum of 2 shorts division to g =" + i);
-        System.out.println("Division of 2 shorts multiple to division of 2 bytes =" + k);
+        System.out.println("Sum of 2 bytes = " + g);
+        System.out.println("Sum of 2 shorts division to g = " + i);
+        System.out.println("Division of 2 shorts multiple to division of 2 bytes = " + k);
 
         int x, y, z;
         x = 1;
@@ -27,8 +27,8 @@ public class Homework_1 {
         x = x + z;
         y = y - z;
 
-        System.out.println("Arg x change from 1 to y, so x =" + x);
-        System.out.println("Arg y change from 3 to x, so y =" + y);
+        System.out.println("Arg x change from 1 to y, so x = " + x);
+        System.out.println("Arg y change from 3 to x, so y = " + y);
 
         int l, v;
         l = 5;
@@ -37,8 +37,8 @@ public class Homework_1 {
         v = l - v;
         l = l - v;
 
-        System.out.println("Arg l change from 5 to v, so l =" + l);
-        System.out.println("Arg v change from 4 to l, so v =" + v);
+        System.out.println("Arg l change from 5 to v, so l = " + l);
+        System.out.println("Arg v change from 4 to l, so v = " + v);
 
 
 

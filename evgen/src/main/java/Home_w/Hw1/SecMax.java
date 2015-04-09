@@ -1,7 +1,9 @@
+package Home_w.Hw1;
+
 /**
  * Created by Евгений on 07.04.2015.
  */
-public class Hometask2_2
+public class SecMax
 {
     public static void main(String[] args)
     {

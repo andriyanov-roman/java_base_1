@@ -1,7 +1,9 @@
+package Home_w.Hw1;
+
 /**
  * Created by Евгений on 06.04.2015.
  */
-public class Hometask1 {
+public class Vars {
     /**
      * Created by Евгений on 05.04.2015.
      */
