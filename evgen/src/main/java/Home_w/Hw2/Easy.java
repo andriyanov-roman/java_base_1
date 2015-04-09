@@ -1,7 +1,9 @@
+package Home_w.Hw2;
+
 /**
  * Created by Евгений on 09.04.2015.
  */
-public class Ht3 {
+public class Easy {
     public static void main(String[] args) {
 
         // Создайте программу, выводящую на экран все четырёхзначные числа последовательности 1000 1003 1006 1009 1012 1015 ….
