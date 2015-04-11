@@ -40,6 +40,28 @@ public class HomeArr {
             System.out.print(arr[i] + " ");
         }
 
+//Вывести первую и вторую половину одномерного массива в обратном порядке
+
+        System.out.println();
+        System.out.print("Перевая часть массива в обратном порядке: ");
+        for (int i = d - 1; i >= 0; i--)
+        {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        System.out.print("Вторая часть масива в обратном порядке: ");
+
+        for (int i = k; i >= d; i--)
+        {
+            System.out.print(arr[i] + " ");
+        }
+
+        //Найти сумму все элементов в массиве
+
+
+
+
+
 
     }
 
