@@ -12,6 +12,7 @@ public class HomeArr {
             System.out.print(arr[i] + " ");
         }
 //Вывести в консоль все парные числа одномерного массива
+
         System.out.println();
         System.out.print("Парные числа одномерного массива: ");
         for (int i = 0; i < arr.length; i++) {
@@ -30,6 +31,7 @@ public class HomeArr {
         }
 
 //Вывести первую и вторую половину одномерного массива
+
         int n = arr.length;
         int d = n / 2;
         System.out.println();
@@ -91,6 +93,7 @@ public class HomeArr {
         System.out.println();
 
 //Заменить все отрицательные числа в массиве на 0
+
         int arr2[] = {104, 86, 99, 74, 61, -32, 2, 198, 4, 8, 55, 99, -3, -154};
         System.out.print("Заменены все отрицательные числа в массиве на 0: ");
         for (int i = 0; i < arr2.length; i++) {
@@ -137,6 +140,7 @@ public class HomeArr {
             System.out.print(arr[i] + " ");}
 
 //Инвертировать массив
+
         int arr3[] = {104, 86, 99, 74, 61, -32, 2, 198, 4, 8, 55, 99, -3, -154};
         System.out.println();
         System.out.print("Массив в инвертированом виде: ");
@@ -149,9 +153,5 @@ public class HomeArr {
                 System.out.print(arr3[i] + " ");
             } else System.out.print(buf2 + " ");
         }
-
-
     }
-
-
 }
