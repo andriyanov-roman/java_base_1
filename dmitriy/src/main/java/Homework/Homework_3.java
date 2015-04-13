@@ -43,12 +43,29 @@ public class Homework_3 {
         System.out.println(h);
         int e = 1;
         System.out.println(e);
-        for (int x = h + e; x <= 6765;){
+        int x = 0;
+        while (x <= 4181) {
+            x = h + e;
             h = e;
             e = x;
             System.out.println(x);
         }
-
-
+        //все положительные делители натурального числа
+        int g = 34;
+        int j;
+        for (int r = 1; r <= g; r++) {
+            j = g % r;
+            if (j == 0) System.out.println(r);
+        }
+        //общие делители двух натуральных чисел
+        int m = 40;
+        int v = 30;
+        int s;
+        int z;
+        for (int l = 1; l <= m; l++) {
+            s = m % l;
+            z = v % l;
+            if (s == 0 && z == 0) System.out.println(l);
+        }
     }
 }
