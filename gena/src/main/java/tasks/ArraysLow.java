@@ -9,6 +9,18 @@ public class ArraysLow {
     public static void main(String[] args) {
 
         int[] arr = {-2, 0, -5, 6, 3, 10, -1, -2, 20, 13};
+        //подсчет одинаковых!!!
+        int count = 0;
+        for (int i = 0; i<arr.length; i++){
+
+            for (int j = 0; j<arr.length; j++){
+                if ((j!=i)&&(arr[i]==arr[j])&&(j>i)){
+                    count++;
+                    System.out.println(arr[i]);
+                }
+            }
+        }
+
         int sum = 0; //переменная для задания с суммами
         System.out.println("Парные числа");
         for (int i = 0; i < arr.length; i++) {
@@ -70,10 +82,8 @@ public class ArraysLow {
         }
 
 
-        //подсчет одинаковых!!!
-
         max = 0;
-        min = 0;
+        min = 10000;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < min) {
                 min = arr[i];
