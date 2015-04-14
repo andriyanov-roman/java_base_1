@@ -33,7 +33,6 @@ public class VeryHard {
                 }
             }
 
-
             System.out.print("Новый массив: ");
             for (i = 0; i < 10; i++) {
                 System.out.print(arr[i] + " ");
