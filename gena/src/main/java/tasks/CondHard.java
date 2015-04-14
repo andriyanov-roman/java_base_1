@@ -3,7 +3,7 @@ package tasks;
 /**
  * Created by sigen on 4/5/2015.
  */
-public class if_else_hard {
+public class CondHard {
     public static void main(String[] args) {
         int a = 10;
         int b = 5;
@@ -12,35 +12,30 @@ public class if_else_hard {
         int max = 0;
         int second = 0;
         System.out.println("Заданы числа " + a + ", " + b + ", " + c + ", " + d);
-        if(a>b)
-        {
+        if (a > b) {
             max = a;
             second = b;
-            if (a>c) // a>b & a>c
+            if (a > c) // a>b & a>c
             {
-                if (b<c) //a>c>b ?d
+                if (b < c) //a>c>b ?d
                 {
                     second = c;
 
-                   if (c<d) //a>c c<d
-                    {
-                        second =d;
-                       if (d>a)
-                        {
-                            max = d;
-                            second = a;
-
-                        }
-                    }
-
-                }
-                else //a>b>c
-                {
-                    if (b<d)
+                    if (c < d) //a>c c<d
                     {
                         second = d;
-                        if (d>a)
-                        {
+                        if (d > a) {
+                            max = d;
+                            second = a;
+
+                        }
+                    }
+
+                } else //a>b>c
+                {
+                    if (b < d) {
+                        second = d;
+                        if (d > a) {
                             max = d;
                             second = a;
 
@@ -48,16 +43,13 @@ public class if_else_hard {
                     }
 
                 }
-            }
-            else //c>a>b
+            } else //c>a>b
             {
                 max = c;
                 second = a;
-                if (a<d)
-                {
+                if (a < d) {
                     second = d;
-                    if (d>c)
-                    {
+                    if (d > c) {
                         max = d;
                         second = c;
                     }
@@ -65,21 +57,17 @@ public class if_else_hard {
             }
 
 
-        }
-        else //b>a
+        } else //b>a
         {
             max = b;
             second = a;
-            if (b>d) //b>d>a
+            if (b > d) //b>d>a
             {
                 second = d;
-                if (b>c)
-                {
-                    if (c>d)
-                    {
+                if (b > c) {
+                    if (c > d) {
                         second = c;
-                        if (c>b)
-                        {
+                        if (c > b) {
                             max = c;
                             second = b;
                         }
@@ -87,21 +75,17 @@ public class if_else_hard {
 
                 }
 
-            }
-            else //d>b>a
+            } else //d>b>a
             {
                 max = d;
-                second =b;
-                if (c>d) //c>d>b>a
+                second = b;
+                if (c > d) //c>d>b>a
                 {
                     second = d;
                     max = c;
 
-                }
-                else
-                {
-                    if (c>b)
-                    {
+                } else {
+                    if (c > b) {
                         second = c;
                     }
 
