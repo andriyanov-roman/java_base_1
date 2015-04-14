@@ -5,7 +5,7 @@ package tasks;
  */
 public class ArraysMiddle {
     //﻿Найти индексы положительных чисел и сумму отрицательных чисел в одномерном массиве
-    static void Indexes(int[] arr) {
+    static void getIndexes(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
@@ -18,7 +18,7 @@ public class ArraysMiddle {
     }
 
     //Дан массив чисел, среди которых имеется один ноль. Вывести на печать все числа до нуля включительно.
-    static void BeforeZero(int[] arr) {
+    static void getBeforeZero(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
             if (arr[i] == 0) {
@@ -28,7 +28,7 @@ public class ArraysMiddle {
     }
 
     //Написать программу, которая выводит на экран элементы одномерного массива, которые расположены до минимального элемента всего массива
-    static void BeforeMin(int[] arr) {
+    static void getBeforeMin(int[] arr) {
         int min = 10000;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < min) {
@@ -45,7 +45,7 @@ public class ArraysMiddle {
     }
 
     //Написать программу, меняющую местами два наибольших элемента одномерного массива с первым и последним.
-    static void SwapBiggest(int[] arr) {
+    static void swapBiggest(int[] arr) {
         int max = 0;
         int second = 0;
         int maxind = 0;
@@ -74,7 +74,7 @@ public class ArraysMiddle {
     }
 
     //Вывести в консоль половину массива, среднеарифметическое которых является наибольшим
-    static void BiggestAvarage(int[] arr) {
+    static void getBiggestAvarage(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length / 2; i++) {
             sum += arr[i];
@@ -97,7 +97,7 @@ public class ArraysMiddle {
     }
 
     //Найти сумму всех чисел находящихся между минимальным и максимальным числом в массиве
-    static void SumBetween(int[] arr) {
+    static void getSumBetween(int[] arr) {
         int sum = 0;
         int max = 0;
         int min = 10000;
@@ -126,7 +126,7 @@ public class ArraysMiddle {
     }
 
     //Вывести в консоль половину массива в которой находиться наименьшее число массива
-    static void MinHalf(int[] arr) {
+    static void getMinHalf(int[] arr) {
         int min = 10000;
         int minind = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -147,11 +147,15 @@ public class ArraysMiddle {
 
     }
 
+    static void SwapHard(int[] arr) {
+
+    }
+
     public static void main(String[] args) {
         int[] arr = {-2, -5, 0, 6, 3, 10, -1, -2, 20, 13};
-        //SwapBiggest(arr);
-        //BiggestAvarage(arr);
-        //SumBetween(arr);
-        MinHalf(arr);
+        //swapBiggest(arr);
+        //getBiggestAvarage(arr);
+        //getSumBetween(arr);
+        //getMinHalf(arr);
     }
 }
