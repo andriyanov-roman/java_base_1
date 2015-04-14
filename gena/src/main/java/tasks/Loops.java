@@ -4,7 +4,7 @@ package tasks;
  * Created by sigen on 4/12/2015.
  */
 public class Loops {
-    static void ShowLoop(int start, int step, int finish, int number) {
+    static void showLoop(int start, int step, int finish, int number) {
         if (number == 0) {
 
             if (finish != 0) {
@@ -37,14 +37,14 @@ public class Loops {
 
     }
 
-    static void Task4(int start, int number) {
+    static void getPow(int start, int number) {
         for (int i = 1; i <= number; i++) {
             start *= 2;
             System.out.println(start);
         }
     }
 
-    static void Factorial(int number) {
+    static void getFactorial(int number) {
         int fact = 1;
         for (int i = 1; i <= number; i++) {
             fact*=i;
@@ -52,7 +52,7 @@ public class Loops {
         System.out.println(fact);
     }
 
-    static void Fibonacci(int number){
+    static void getFibonacci(int number){
         int fib = 1;
         int pastfib = 1;
         int sum = 0;
@@ -65,7 +65,7 @@ public class Loops {
         }
     }
 
-    static void Avarage(int array[]){
+    static void getAvarage(int array[]){
         int sum = 0;
         for (int i =0; i<=array.length;i++){
             sum+=array[i];
@@ -73,7 +73,7 @@ public class Loops {
         System.out.println(sum/array.length);
     }
 
-    static void Devider(int number){
+    static void getDevider(int number){
         for (int i =1; i<=number;i++){
             if(number%i==0){
                 System.out.println(i);
@@ -81,7 +81,7 @@ public class Loops {
         }
     }
 
-    static void Deviders(int number1, int number2){
+    static void getDeviders(int number1, int number2){
         int max = number1;
         if (number2>max){
             max = number2;
@@ -93,7 +93,7 @@ public class Loops {
         }
     }
 
-    static void Clock(){
+    static void clock(){
         int count = 0;
         for(int h =0; h<=2; h++){
             for(int hh = 0; hh<=9; hh++){
@@ -113,14 +113,14 @@ public class Loops {
 
     }
     public static void main(String[] args) {
-        ShowLoop(1000, 3, 10000, 0);  //Task 1
-        ShowLoop(1, 2, 10000, 55);    //Task 2
-        ShowLoop(90,-15,0,0);         //Task 3
-        Task4(1,20);                  //Task 4
-        Factorial(4);                 //Task 5, факториал 4, например)
-        Fibonacci(10);                //Task 6
-        Clock();                        //Задание с часами
-        Devider(12);
-        Deviders(12,24);
+        showLoop(1000, 3, 10000, 0);  //Task 1
+        showLoop(1, 2, 10000, 55);    //Task 2
+        showLoop(90,-15,0,0);         //Task 3
+        getPow(1,20);                  //Task 4
+        getFactorial(4);                 //Task 5, факториал 4, например
+        getFibonacci(10);                //Task 6
+        clock();                        //Задание с часами
+        getDevider(12);
+        getDeviders(12,24);
     }
 }
