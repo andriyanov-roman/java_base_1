@@ -10,7 +10,7 @@ package Home_w.Hw3;
 public class Hard {
     public static void main(String[] args) {
 
-        int[] arr = {-2, 20, -6, -1, -12, -16, -23, 3, 4, 5, 6};
+        int[] arr = {-2, -22, -3, -6, -32, -2, -5, 5, 5, 4, 7, -111, 7, 2, 7 };
 
         System.out.print("Заданный массив: ");
         for (int i = 0; i < arr.length; i++) {
@@ -58,22 +58,32 @@ public class Hard {
         }
 
         //Вывести в консоль половину массива в которой находиться наименьшее число массива
-        float a = minIndex;
+        float arrLen = arr.length;
+        float a = arrLen / 2;
+        int b = minIndex;
 
-        if (a < (float) arr.length / 2 && a + 0.5 != (float) arr.length / 2) {
-            System.out.print("Наименьшее число массива находиться в первой половине массива, которая имеет вид: ");
-            for (int i = 0; i < arr.length / 2; i++) {
+        if (a > b) {
+            if (a - b == 0.5) {
+                System.out.print("Наименьшее число массива равно " + arr[b] + " и находиться посередине массива");
+
+            } else {
+                System.out.print("Наименьшее число массива находиться в первой половине массива, которая имеет вид: ");
+                for (int i = 0; i < a; i++) {
+                    System.out.print(arr[i] + " ");
+                }
+            }
+        }
+        if (b > a) {
+                System.out.print("Наименьшее число массива находиться во второй половине массива, которая имеет вид: ");
+                for (int i = (int)a; i <= arr.length-1; i++) {
+                    System.out.print(arr[i] + " ");
+                }
+            }
+        if (a == b) {
+                System.out.print("Наименьшее число массива находиться во второй половине массива, которая имеет вид: ");
+            for (int i = b; i <= arr.length-1; i++) {
                 System.out.print(arr[i] + " ");
             }
         }
-        if (a > (float) arr.length / 2) {
-            System.out.print("Наименьшее число массива находиться во второй половине массива, которая имеет вид: ");
-            for (int i = arr.length / 2; i < arr.length; i++) {
-                System.out.print(arr[i] + " ");
-            }
-        } else {
-            System.out.println("Наименьшее число массива находиться посередине массива");
-        }
-
     }
 }
