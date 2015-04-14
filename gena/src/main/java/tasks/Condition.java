@@ -4,7 +4,7 @@ package tasks;
  * Created by sigen on 4/5/2015.
  */
 // ЕЩЕ НЕ ДОДЕЛАЛ
-public class If_else {
+public class Condition {
     public static void main(String[] args) {
 
         int a = 15;
@@ -13,25 +13,17 @@ public class If_else {
         int d = 18;
         System.out.println("Заданы числа: " + a + ", " + b + ", " + c);
         int max;
-        if (a>b)
-        {
-            if (a > c)
-            {
+        if (a > b) {
+            if (a > c) {
                 max = a;
-            }
-            else
-            {
+            } else {
                 max = c;
             }
-        }
-        else //т.е. b>a
+        } else //т.е. b>a
         {
-            if (b>c)
-            {
+            if (b > c) {
                 max = b;
-            }
-            else
-            {
+            } else {
                 max = c;
             }
         }
@@ -39,8 +31,6 @@ public class If_else {
 
 
     }
-
-
 
 
 }
