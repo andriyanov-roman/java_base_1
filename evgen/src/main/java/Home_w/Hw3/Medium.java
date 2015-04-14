@@ -27,12 +27,12 @@ public class Medium {
         for (int i = 0; i < arr.length/2; i++) {
             arMeanPart1 = arMeanPart1 + arr[i];
         }
-        arMeanPart1 = arMeanPart1 / arr.length/2;
+        arMeanPart1 = arMeanPart1 / (arr.length/2);
 
         for (int i = arr.length/2; i < arr.length; i++) {
             arMeanPart2 = arMeanPart2 + arr[i];
         }
-        arMeanPart2 = arMeanPart2 / arr.length/2;
+        arMeanPart2 = arMeanPart2 / (arr.length/2);
 
         if (arMeanPart1 > arMeanPart2) {
             System.out.println("Среднеарифметическое первой половины массива больше и равно: " + arMeanPart1);
