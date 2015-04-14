@@ -21,6 +21,11 @@ public class Homework_2 {
             System.out.println(temp + "");
         }
         System.out.println(1);
+        //4 числа, найти второе по величине
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = 4;
 
 
     }

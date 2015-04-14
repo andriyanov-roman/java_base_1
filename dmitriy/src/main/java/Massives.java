@@ -7,11 +7,12 @@ public class Massives {
         for (int i = road.length - 1; i >= 0; i--)
             System.out.println(road[i]);
         for (int i = 0; i <= road.length / 2; i++)
-        System.out.println("First half " + road[i]);
+            System.out.println("First half " + road[i]);
         for (int i = road.length - 1; i >= road.length / 2; i--)
             System.out.println("Second half " + road[i]);
 
-        }
 
     }
+
+}
 

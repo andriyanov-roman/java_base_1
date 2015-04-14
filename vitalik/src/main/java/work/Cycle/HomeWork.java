@@ -1,4 +1,4 @@
-package work;
+package work.Cycle;
 
 public class HomeWork {
     public static void main(String[] args) {
