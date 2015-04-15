@@ -27,14 +27,15 @@ public class Homework_5 {
         for (int i = 0; i < road.length; i++) {
             for (int j = 0; j < road.length; j++) {
                 if (road[i][j] < min) {
-                    road[i][j] = min;
+                    min = road[i][j];
                 } else if (road[i][j] > max) {
-                    road[i][j] = max;
+                    max = road[i][j];
                 }
             }
 
         }
         System.out.println(min);
         System.out.println(max);
+
     }
 }
