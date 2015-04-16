@@ -45,10 +45,12 @@ public class Homework_4 {
         int same = 0;
         for (int i = 0; i < road.length; i++) {
             for (int k = 0; k < road.length; k++) {
-                if (k != i) {
                     if (road[i] == road[k]) same++;
-                }
             }
+            if(same > 1) {
+                System.out.println(road[i] + " " + same);
+            }
+            same = 0;
         }
         System.out.println(same);
 
