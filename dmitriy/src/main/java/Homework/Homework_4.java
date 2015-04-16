@@ -5,7 +5,7 @@ package Homework;
  */
 public class Homework_4 {
     public static void main(String[] args) {
-        int[] road = {10, 20, 30, 40, 50};
+        int[] road = {10, 20, 10, 30, 40, 50};
         //все числа в обратном порядке
         for (int i = road.length - 1; i >= 0; i--)
             System.out.println(road[i]);
@@ -34,9 +34,9 @@ public class Homework_4 {
         int max = road[0];
         for (int i = 0; i < road.length; i++) {
             if (road[i] < min) {
-                road[i] = min;
+                min = road[i];
             } else if (road[i] > max) {
-                road[i] = max;
+                max = road[i];
             }
         }
         System.out.println(min);
@@ -45,12 +45,9 @@ public class Homework_4 {
         int same = 0;
         for (int i = 0; i < road.length; i++) {
             for (int k = 0; k < road.length; k++) {
-                    if (road[i] == road[k]) same++;
+                if (road[i] == road[k]) same++;
+                if (i == k) same--;
             }
-            if(same > 1) {
-                System.out.println(road[i] + " " + same);
-            }
-            same = 0;
         }
         System.out.println(same);
 
