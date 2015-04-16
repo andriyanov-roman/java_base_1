@@ -18,7 +18,7 @@ public class Massiv {
 
         for(int o=ms.length-1; o>=0; o--){                                               //Вывести все числа одномерного массива в обратном порядке
             System.out.print(ms[o]+",");}
-        System.out.println("-massiv v obratnom poradke ");
+        System.out.println("-massiv v obratnom poradke ");//шифт ф6
 
         for(int p=(ms.length-1)/2; p>=0; p--){                                           //Вывести первую половину одномерного массива в обратном порядке
             System.out.print(ms[p]+",");}
