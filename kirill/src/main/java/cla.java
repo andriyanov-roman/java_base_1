@@ -15,7 +15,7 @@ public class cla {
         int b=2;
         int c=3;
         int[] g={a,b,c}; //массив любого типа данных
-        int[] d={1,3,7}; //первый способ*/
+        int[] d={1,3,7}; //первый способ
 
         int[] array = new int[5];//второй способ задать
         array[0] = -12;
@@ -24,7 +24,7 @@ public class cla {
         array[3] = 244;
         array[4] = 11;
 
-      /*for(int i=0;i<array.length;i++){            //pravilniy poryadok
+      for(int i=0;i<array.length;i++){            //pravilniy poryadok
 
         System.out.println(array[i]);}
 
@@ -38,7 +38,7 @@ public class cla {
 
         for(int i=0;i<array.length/2;i++){          //pravilniy poryadok polovina
 
-        System.out.println(array[i]);}*/
+        System.out.println(array[i]);}
         for (int i = 0; i < array.length; i++) {
 
             System.out.print(array[i] + ", ");
@@ -67,7 +67,10 @@ public class cla {
         }
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ", ");
-        }
+        }*/
+
+
+
     }
 }
         /*psvm -  main ;  sout
