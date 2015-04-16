@@ -98,10 +98,51 @@ public class DoubleArr {
             }
         }
         System.out.println();
-        System.out.println("Максимальная строка: " + maxLineIndex);
-        System.out.println("Минимальная строка: " + minLineIndex);
+        System.out.println("Индекс максимальной строки: " + maxLineIndex);
+        System.out.println("Индекс минимальной строки: " + minLineIndex);
+
+        int[] tempArr = new int[5];
+
+        for (int j = 0, i = maxLineIndex; j < tempArr.length; j++) {
+            tempArr[j] = twoArray[i][j];
+        }
+
+        System.out.println();
+        System.out.print("Меняем минимальную и максимальную строки: ");
+        for (int i = 0; i < twoArray.length; i++) {
+            twoArray[maxLineIndex][i] = twoArray[minLineIndex][i];
+        }
+
+        for (int i = 0; i < twoArray.length; i++) {
+            twoArray[minLineIndex][i] = tempArr[i];
+        }
+
+        showArray(twoArray);
+
+        int[][] threeArray = {
+                {2, 5, 7, 2, 17},
+                {11, 3, 6, 5, 3},
+                {5, 3, 3, 13, 1}
+        };
+
+        System.out.println();
+        System.out.print("Умножаем предыдущий массив на этот: ");
+        showArray(threeArray);
+
+        int[][] fourArray = new int[3][5];
+
+        for (int i = 0; i < fourArray.length; i++) {
+            for (int j = 0; j < fourArray[i].length; j++) {
+                fourArray[i][j] = twoArray[i][j] * threeArray[i][j];
+            }
+        }
+        System.out.println();
+        System.out.print("Результат: ");
+        showArray(fourArray);
+
 
     }
+
 
 
 
@@ -122,5 +163,7 @@ public class DoubleArr {
         }
         System.out.println();
     }
+
+
 }
 
