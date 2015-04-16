@@ -125,5 +125,6 @@ public class Medium {
         for (int i = 0; i < minIndex; i++) {
             System.out.print(arr[i] + " ");
         }
+
     }
 }
