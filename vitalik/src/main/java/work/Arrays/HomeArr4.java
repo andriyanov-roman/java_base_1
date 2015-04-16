@@ -30,6 +30,7 @@ public class HomeArr4 {
         int a = 2;
         int b = 4;
         int buf;
+        int t = arr.length-1;
 
         for (int i1 = b; i1 < arr.length - 1; i1++) {
             buf = arr[b];
@@ -37,6 +38,7 @@ public class HomeArr4 {
             arr[b + 1] = buf;
             b--;
         }
+
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
