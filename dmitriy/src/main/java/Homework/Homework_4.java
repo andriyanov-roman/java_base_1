@@ -4,8 +4,14 @@ package Homework;
  * Created by Дима on 13.04.2015.
  */
 public class Homework_4 {
+    public static void show(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] road = {10, 20, 30, 40, 50};
+        int[] road = {10, 20, 30, 30, 40, 50};
         //все числа в обратном порядке
         for (int i = road.length - 1; i >= 0; i--)
             System.out.println(road[i]);
@@ -34,9 +40,9 @@ public class Homework_4 {
         int max = road[0];
         for (int i = 0; i < road.length; i++) {
             if (road[i] < min) {
-                road[i] = min;
+                min = road[i];
             } else if (road[i] > max) {
-                road[i] = max;
+                max = road[i];
             }
         }
         System.out.println(min);
@@ -45,14 +51,30 @@ public class Homework_4 {
         int same = 0;
         for (int i = 0; i < road.length; i++) {
             for (int k = 0; k < road.length; k++) {
-                    if (road[i] == road[k]) same++;
+                if (road[i] == road[k]) same++;
+                if (i == k) same--;
             }
-            if(same > 1) {
-                System.out.println(road[i] + " " + same);
-            }
-            same = 0;
         }
         System.out.println(same);
+        //поменять минимальное и максимальное местами
+        int swapmax = road[0];
+        int swapmin = road[0];
+        int maxI = 0;
+        int minI = 0;
+        for (int i = 0; i < road.length; i++) {
+            if (road[i] > swapmax) {
+                swapmax = road[i];
+                maxI = i;
+            } else if (road[i] < swapmin) {
+                swapmin = road[i];
+                minI = i;
+            }
+        }
+        int temp = road[maxI];
+        road[maxI] = road[minI];
+        road[minI] = temp;
+        show(road);
+
 
     }
 }
