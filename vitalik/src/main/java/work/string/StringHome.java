@@ -5,6 +5,7 @@ package work.string;
  */
 public class StringHome {
     public static void main(String[] args) {
+        System.out.println();
 
     }
 }
