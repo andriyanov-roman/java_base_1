@@ -43,6 +43,7 @@ public class ArrDouble {
         invert(arr);
 
 // Перемножить два многомерных массива
+
         System.out.println();
         System.out.println("Результат произведения двух массивов: ");
         multArr(arr, arr2);
@@ -82,6 +83,7 @@ public class ArrDouble {
         }
     }
 
+    // Найти максимальное и минимальное число в многомерном массиве
 
     public static int maxCell(int[][] array) {
         int max = array[0][0];
@@ -109,6 +111,7 @@ public class ArrDouble {
         return min;
     }
 
+    // Поменять максимальное и минимальное число местами
 
     public static void chengeElement(int[][] arrays) {
         int maxi = 1;
@@ -133,6 +136,7 @@ public class ArrDouble {
         arrays[mini][minj] = buf;
     }
 
+    // Инвертировать многомерный массив
 
     public static void invert(int[][] arrays) {
         for (int i = 0; i < arrays.length; i++) {
@@ -148,6 +152,8 @@ public class ArrDouble {
         }
     }
 
+    // Перемножить два многомерных массива
+
     private static void multArr(int[][] arrays, int[][] arrays2) {
         for (int i = 0; i < arrays.length; i++) {
             for (int j = 0; j < arrays[i].length; j++) {
@@ -157,6 +163,7 @@ public class ArrDouble {
         printArr(arrays);
     }
 
+    //Найти строку с наибольшей суммой элементов и с наименьшей
 
     public static int stringMax(int[][] array) {
         int bufMax = 0;
@@ -207,6 +214,7 @@ public class ArrDouble {
         return minSum;
     }
 
+    //Поменять местами строку с наибольшей суммой элементов и с наименьшей
 
     public static void chengeString(int[][] arrays) {
         int buf;
@@ -217,6 +225,8 @@ public class ArrDouble {
 //                minSum = buf;
 
     }
+
+    //Отсортировать многомерный массив
 
     public static void arrSort(int[][] array) {
         for (int i = 0; i < array.length; i++) {
