@@ -20,6 +20,7 @@ public class HTask6v1 {
         String maxT = strings[0];
         String minT = strings[0];
         String nonI = strings[0];
+
         int maxN=0;
         int minN=0;
         for (int i = 0; i < strings.length; i++)  {
