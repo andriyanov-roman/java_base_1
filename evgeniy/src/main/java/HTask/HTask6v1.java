@@ -23,7 +23,9 @@ public class HTask6v1 {
 
         int maxN=0;
         int minN=0;
+
         for (int i = 0; i < strings.length; i++)  {
+
             if(strings[i].length() > max) {
                 max = strings[i].length();
                 maxT = strings[i];
@@ -36,8 +38,13 @@ public class HTask6v1 {
                 minT = strings[i];
                 minN = i;
             }
-           maxT=strings[minN];
-            minT=strings[maxN];
+           //maxT=strings[minN];
+           // minT=strings[maxN];
+            if(strings[i] == minT) {nonI=nonI+" "+maxT;
+
+            } else nonI=nonI+ strings[i];
+            if(strings[i]==maxT) {nonI=nonI+" "+minT;}
+            else  nonI=nonI+ strings[i];
 
         }
 
@@ -45,6 +52,7 @@ public class HTask6v1 {
         System.out.println(maxT);
         System.out.println(min);
         System.out.println(minT);
+        System.out.println(nonI);
 
     }
 }
