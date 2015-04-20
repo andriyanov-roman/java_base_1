@@ -8,8 +8,8 @@ public class ArrDouble {
 
         int arr[][] = {
                 {25, 45, 8, 74, 9},
-                {17, 55, 9, 2, 20},
-                {8, 98, 7, 412, 3},};
+                {17, 55, 92, 2, 20},
+                {8, 98, 7, 41, 3},};
         int arr2[][] = {
                 {75, 5, 18, 7, 29},
                 {1, 5, 8, 12, 2},
@@ -29,10 +29,11 @@ public class ArrDouble {
 
 // Поменять максимальное и минимальное число местами
 
-
+        System.out.println();
         System.out.println("Mинимальное и максимальное числа массива поменяны: ");
         chengeElement(arr);
         printArr(arr);
+        System.out.println();
 
 
 // Инвертировать многомерный массив
@@ -42,10 +43,32 @@ public class ArrDouble {
         invert(arr);
 
 // Перемножить два многомерных массива
+
         System.out.println();
         System.out.println("Результат произведения двух массивов: ");
         multArr(arr, arr2);
+        System.out.println();
 
+//Найти строку с наибольшей суммой элементов и с наименьшей
+
+        System.out.print("Строка с наибольшей суммой элементов: ");
+        stringMax(arr);
+        System.out.println();
+
+        System.out.print("Строка с наименьшей суммой элементов: ");
+
+        stringMin(arr);
+        System.out.println();
+
+//Поменять местами строку с наибольшей суммой элементов и с наименьшей
+
+//        System.out.println("Результат измененного масива: ");
+//        chengeString(arr);
+
+//Отсортировать многомерный массив
+        System.out.println();
+        System.out.println("Массив в отсортированим виде : ");
+        arrSort(arr);
     }
 
 
@@ -58,9 +81,9 @@ public class ArrDouble {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
+    // Найти максимальное и минимальное число в многомерном массиве
 
     public static int maxCell(int[][] array) {
         int max = array[0][0];
@@ -88,6 +111,7 @@ public class ArrDouble {
         return min;
     }
 
+    // Поменять максимальное и минимальное число местами
 
     public static void chengeElement(int[][] arrays) {
         int maxi = 1;
@@ -112,22 +136,15 @@ public class ArrDouble {
         arrays[mini][minj] = buf;
     }
 
+    // Инвертировать многомерный массив
 
     public static void invert(int[][] arrays) {
         for (int i = 0; i < arrays.length; i++) {
             for (int j = 0; j < arrays[i].length; j++) {
-//                int buf = Arrays[i][j];
-//                Arrays[i][j] = Arrays[i][Arrays[i].length-j-1];
-//                Arrays[i][Arrays[i].length-j-1] = buf;
-//                if (j < Arrays[i].length/2 )
-//                {
-//                    System.out.print(Arrays[i][j] + " ");
-//                }else System.out.print(buf  + " ");
                 int buf = arrays[i][j];
-                arrays[i][j] = arrays[arrays.length - i - 1][arrays[i].length - j - 1];
-                arrays[arrays.length - i - 1][arrays[i].length - j - 1] = buf;
-
-                if (j < arrays[i].length && i <= arrays.length / 2) {
+                arrays[i][j] = arrays[i][arrays[i].length - j - 1];
+                arrays[i][arrays[i].length - j - 1] = buf;
+                if (j < arrays[i].length / 2) {
                     System.out.print(arrays[i][j] + " ");
                 } else System.out.print(buf + " ");
             }
@@ -135,14 +152,94 @@ public class ArrDouble {
         }
     }
 
-    private static void multArr(int[][] arrays, int [][] arrays2) {
+    // Перемножить два многомерных массива
+
+    private static void multArr(int[][] arrays, int[][] arrays2) {
         for (int i = 0; i < arrays.length; i++) {
             for (int j = 0; j < arrays[i].length; j++) {
                 arrays[i][j] = arrays[i][j] * arrays2[i][j];
             }
         }
         printArr(arrays);
-   }
+    }
+
+    //Найти строку с наибольшей суммой элементов и с наименьшей
+
+    public static int stringMax(int[][] array) {
+        int bufMax = 0;
+        int maxSum = 0;
+        for (int i = 0; i < array.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[i][j];
+            }
+            if (sum > bufMax) {
+                bufMax = sum;
+                maxSum = i;
+            }
+        }
+
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[maxSum][j] + " ");
+            }
+        }
+        return maxSum;
+    }
 
 
+    public static int stringMin(int[][] array) {
+        int bufMin = 0;
+        int minSum = 0;
+        int bufMax = 0;
+        int sum;
+        for (int i = 0; i < array.length; i++) {
+            sum = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[i][j];
+            }
+            if (sum > bufMax) {
+                bufMax = sum;
+                bufMin = bufMax;
+            } else if (sum < bufMin) {
+                bufMin = sum;
+                minSum = i;
+            }
+        }
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[minSum][j] + " ");
+            }
+        }
+        return minSum;
+    }
+
+    //Поменять местами строку с наибольшей суммой элементов и с наименьшей
+
+    public static void chengeString(int[][] arrays) {
+        int buf;
+        int maxSum = stringMax(arrays);
+        int minSum = stringMin(arrays);
+//                buf = maxSum;
+//                maxSum = minSum;
+//                minSum = buf;
+
+    }
+
+    //Отсортировать многомерный массив
+
+    public static void arrSort(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                for (int k = j + 1; k < array[i].length; k++) {
+                    if (array[i][j] > array[i][k]) {
+                        int buf = array[i][j];
+                        array[i][j] = array[i][k];
+                        array[i][k] = buf;
+                    }
+                }
+            }
+        }
+        printArr(array);
+    }
 }
