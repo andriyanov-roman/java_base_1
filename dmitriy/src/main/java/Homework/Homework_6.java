@@ -15,9 +15,7 @@ public class Homework_6 {
         String pentatonic = "A pentatonic scale is a musical scale or mode with five notes per octave in contrast to a heptatonic " +
                 "(seven note) scale such as the major scale and minor scale.";
         String[] words = pentatonic.split("\\s");
-        for (int i = 0; i < words.length; i++) {
-            System.out.print(words[i] + " ");
-        }
+        show(words);
         //макс и мин поменять местами
         String max = words[0];
         String min = words[0];
