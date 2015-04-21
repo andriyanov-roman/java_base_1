@@ -5,7 +5,7 @@ package work.Arrays;
  */
 public class ArrDouble {
     public static void main(String[] args) {
-
+        System.out.println("Массив: ");
         int arr[][] = {
                 {25, 45, 8, 74, 9},
                 {17, 55, 92, 2, 20},
@@ -16,7 +16,11 @@ public class ArrDouble {
                 {81, 9, 3, 41, 31},};
 
         printArr(arr);
-
+//Поменять местами строку с наибольшей суммой элементов и с наименьшей
+        System.out.println();
+        System.out.println("Строки с маибольшей суммой элементов поменяны с наименьшей: ");
+        chengeString(arr);
+        System.out.println();
 
 // Найти максимальное и минимальное число в многомерном массиве
 
@@ -51,19 +55,15 @@ public class ArrDouble {
 
 //Найти строку с наибольшей суммой элементов и с наименьшей
 
-        System.out.print("Строка с наибольшей суммой элементов: ");
-        stringMax(arr);
-        System.out.println();
+//        System.out.print("Строка с наибольшей суммой элементов: ");
+//        stringMax(arr);
+//        System.out.println();
+//
+//        System.out.print("Строка с наименьшей суммой элементов: ");
+//
+//        stringMin(arr);
+//        System.out.println();
 
-        System.out.print("Строка с наименьшей суммой элементов: ");
-
-        stringMin(arr);
-        System.out.println();
-
-//Поменять местами строку с наибольшей суммой элементов и с наименьшей
-
-//        System.out.println("Результат измененного масива: ");
-//        chengeString(arr);
 
 //Отсортировать многомерный массив
         System.out.println();
@@ -178,11 +178,11 @@ public class ArrDouble {
                 maxSum = i;
             }
         }
-
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[maxSum][j] + " ");
             }
+            System.out.println();
         }
         return maxSum;
     }
@@ -210,6 +210,7 @@ public class ArrDouble {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[minSum][j] + " ");
             }
+            System.out.println();
         }
         return minSum;
     }
@@ -220,10 +221,18 @@ public class ArrDouble {
         int buf;
         int maxSum = stringMax(arrays);
         int minSum = stringMin(arrays);
-//                buf = maxSum;
-//                maxSum = minSum;
-//                minSum = buf;
-
+        for (int i = 0; i < arrays.length ; i++) {
+            for (int j = 0; j <arrays[i].length; j++) {
+            buf = arrays[maxSum][j];
+            arrays[maxSum][j] = arrays[minSum][j];
+            arrays[minSum][j] = buf;
+        }
+            }
+        for (int i = 0; i < arrays.length ; i++) {
+            for (int j = 0; j <arrays[i].length; j++) {
+                System.out.print(arrays[i][j] + " ");
+            }
+            System.out.println();}
     }
 
     //Отсортировать многомерный массив
