@@ -11,7 +11,8 @@ public class Main {
 
     public static void showHumans(Human[] humans) {
         for (int i = 0; i < humans.length; i++) {
-            System.out.println(humans[i].name + " " + humans[i].secondName);
+            System.out.println(humans[i].name + " " + humans[i].secondName
+                    + " " + humans[i].age + " " + humans[i].weight);
         }
     }
 
