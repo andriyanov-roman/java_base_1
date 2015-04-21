@@ -1,26 +1,24 @@
+import oop.Human;
+
 /**
  * Created by user on 3/31/2015.
  */
 public class Main {
     public static void main(String[] args) {
-        int value = 120;
-        int temp;
-        int one, two, three, four, five, six, seven, eight;
-        one = value % 2;
-        temp = value / 2;
-        two = temp % 2;
-        temp = temp / 2;
-        three = temp % 2;
-        temp = temp / 2;
-        four = temp % 2;
-        temp = temp / 2;
-        five = temp % 2;
-        temp = temp / 2;
-        six = temp % 2;
-        temp = temp / 2;
-        seven = temp % 2;
-        temp = temp / 2;
-        eight = temp % 2;
-        System.out.println(eight + "" + seven + "" + six + "" + five + "" + four);
+        Human h1 = new Human();
+        h1.name = "Dima";
+        Human h2 = new Human();
+        Human h3 = new Human();
+        Human h4 = new Human();
+        Human h5 = new Human();
+        Human h6 = new Human();
+        Human[] humans = new Human[10];
+        humans[0] = h1;
+        humans[1] = h2;
+        humans[0] = h1;
+        Human[] array = {h1, h2, h3, h4, h5, h6};
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i].name + " " + array[i].secondName + " ");
+        }
     }
 }

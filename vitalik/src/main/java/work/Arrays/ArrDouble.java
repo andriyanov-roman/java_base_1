@@ -178,11 +178,12 @@ public class ArrDouble {
                 maxSum = i;
             }
         }
-//        for (int i = 0; i < 1; i++) {
-//            for (int j = 0; j < array[i].length; j++) {
-//                System.out.print(array[maxSum][j] + " ");
-//            }
-//        }
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[maxSum][j] + " ");
+            }
+            System.out.println();
+        }
         return maxSum;
     }
 
@@ -205,11 +206,12 @@ public class ArrDouble {
                 minSum = i;
             }
         }
-//        for (int i = 0; i < 1; i++) {
-//            for (int j = 0; j < array[i].length; j++) {
-//                System.out.print(array[minSum][j] + " ");
-//            }
-//        }
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[minSum][j] + " ");
+            }
+            System.out.println();
+        }
         return minSum;
     }
 
