@@ -5,7 +5,7 @@ package Home_w.Hw6;
  */
 public class String {
         public static void main(java.lang.String[] args) {
-            java.lang.String string = "Lorem ipsum dolor sit amet tempor consectetur adipisicing elit sit do eiusmod tempor incididunt ut " +
+            java.lang.String string = "Lorem ipsum dolor sit amet tempor consectetur adipisicing elit sit do eiusmod tempor incididunt utu " +
                     "labore et dolore tempor aliqua.";
 
             java.lang.String[] strings = string.split("\\s");
@@ -74,6 +74,16 @@ public class String {
                 }
             }
 
+            java.lang.String reverse = new StringBuffer(string).reverse().toString();
+            java.lang.String[] stringsTwo = string.split("\\s");
+            java.lang.String[] reverseArr = reverse.split("\\s");
+
+            System.out.println("Полиндромы: ");
+            for (int i = 0, j = reverseArr.length - 1; i < reverseArr.length; i++, j--) {
+                if (stringsTwo[i].equals(reverseArr[j])) {
+                    System.out.println(stringsTwo[i]);
+                }
+            }
 
         }
 
