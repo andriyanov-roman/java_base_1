@@ -9,4 +9,13 @@ public class Human {
     public int age;
     public double weight;
     public double height;
+
+    public String walk(double height, double weight) {
+        if (this.weight < weight && this.height > height) {
+            return "fast";
+        } else if (this.weight > weight && this.height < height) {
+            return "slow";
+        }
+        return "unknown";
+    }
 }

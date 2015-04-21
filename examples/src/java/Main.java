@@ -6,7 +6,8 @@ import oop.Human;
 public class Main {
     public static void main(String[] args) {
         Human[] h = getHumans();
-        showHumans(h);
+        System.out.println(h[0].walk(2.00, 60));
+        //showHumans(h);
     }
 
     public static void showHumans(Human[] humans) {
