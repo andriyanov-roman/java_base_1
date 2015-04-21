@@ -7,7 +7,7 @@ public class MassDead {
             {0,13,22,38,42}
         };
 
-      /*  for (int i = 0; i < ms.length; i++) {              //вывести
+        for (int i = 0; i < ms.length; i++) {              //вывести
             for (int j = 0; j < ms[i].length; j++) {
                 System.out.print(ms[i][j] + " ");
             }
@@ -17,12 +17,8 @@ public class MassDead {
             for (int b = ms[o].length-1; b >= 0; b--) {
                     System.out.print(ms[o][b] + " ");
                 }
-                System.out.println();}*/
+                System.out.println();}
 
-        for(int o =ms.length; o >= 0; o--){
-            for (int b = ms[o].length-1; b >= 0; b--) {
-                System.out.print(ms[o][b] + " ");
-            }
-            System.out.println();}
+
     }
 }
