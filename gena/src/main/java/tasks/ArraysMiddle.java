@@ -4,8 +4,48 @@ package tasks;
  * Created by sigen on 4/14/2015.
  */
 public class ArraysMiddle {
+    public static void showArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+
+        }
+    }
+
+    public static void showHalf(int[] arr, int half) {
+        if (half == 1) {
+            for (int i = 0; i < arr.length / 2; i++) {
+                System.out.println(arr[i]);
+            }
+        } else if (half == 2) {
+            for (int i = arr.length / 2; i < arr.length - 1; i++) {
+                System.out.println(arr[i]);
+            }
+        }
+
+    }
+
+    public static int getMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    public static int getMin(int[] arr) {
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
     //﻿Найти индексы положительных чисел и сумму отрицательных чисел в одномерном массиве
-    static void getIndexes(int[] arr) {
+    public static int getIndexes(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
@@ -14,8 +54,9 @@ public class ArraysMiddle {
                 sum += arr[i];
             }
         }
-        System.out.println(sum);
+        return sum;
     }
+
 
     //Дан массив чисел, среди которых имеется один ноль. Вывести на печать все числа до нуля включительно.
     static void getBeforeZero(int[] arr) {
@@ -29,13 +70,7 @@ public class ArraysMiddle {
 
     //Написать программу, которая выводит на экран элементы одномерного массива, которые расположены до минимального элемента всего массива
     static void getBeforeMin(int[] arr) {
-        int min = 10000;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
-
-            }
-        }
+        int min = getMin(arr);
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
             if (arr[i] == min) {
@@ -68,9 +103,7 @@ public class ArraysMiddle {
         temp = arr[arr.length - 1];
         arr[arr.length - 1] = second;
         arr[secind] = temp;
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
+        showArray(arr);
     }
 
     //Вывести в консоль половину массива, среднеарифметическое которых является наибольшим
@@ -86,18 +119,15 @@ public class ArraysMiddle {
         }
         int avar2 = sum / (arr.length / 2);
         if (avar1 > avar2) {
-            for (int i = 0; i < arr.length / 2; i++) {
-                System.out.println(arr[i]);
-            }
+            showHalf(arr, 1);
+
         } else {
-            for (int i = arr.length / 2; i < arr.length; i++) {
-                System.out.println(arr[i]);
-            }
+            showHalf(arr, 2);
         }
     }
 
     //Найти сумму всех чисел находящихся между минимальным и максимальным числом в массиве
-    static void getSumBetween(int[] arr) {
+    public static int getSumBetween(int[] arr) {
         int sum = 0;
         int max = 0;
         int min = 10000;
@@ -116,13 +146,14 @@ public class ArraysMiddle {
             for (int i = maxind = 1; i < minind; i++) {
                 sum += arr[i];
             }
-            System.out.println(sum);
+
         } else if (maxind > minind) {
             for (int i = minind + 1; i < maxind; i++) {
                 sum += arr[i];
             }
-            System.out.println(sum);
+
         }
+        return sum;
     }
 
     //Вывести в консоль половину массива в которой находиться наименьшее число массива
@@ -136,20 +167,34 @@ public class ArraysMiddle {
             }
         }
         if (minind < arr.length / 2) {
-            for (int i = 0; i < arr.length / 2; i++) {
-                System.out.println(arr[i]);
-            }
+            showHalf(arr, 1);
         } else {
-            for (int i = arr.length / 2; i < arr.length; i++) {
-                System.out.println(arr[i]);
-            }
+            showHalf(arr, 2);
         }
 
     }
 
-    static void SwapHard(int[] arr) {
+    /*static void swapHard(int[] arr, int a,int b) {
+        int [] arrtemp = new int[10];
+        int j = arrtemp.length;
+        for (int i = 0; i<arr.length; i++){
 
-    }
+            while(j>=0){
+                if((arr[i]>a)&&(arr[i]<b)){
+                    arrtemp[j]=arr[i];
+                    j--;
+                    break;
+                }
+                else {arrtemp[i]=0;
+                    j--;
+
+                }
+            }
+            System.out.println(arrtemp[i]);
+
+        }
+
+    }*/
 
     public static void main(String[] args) {
         int[] arr = {-2, -5, 0, 6, 3, 10, -1, -2, 20, 13};
@@ -157,5 +202,6 @@ public class ArraysMiddle {
         //getBiggestAvarage(arr);
         //getSumBetween(arr);
         //getMinHalf(arr);
+        //swapHard(arr,3,7);
     }
 }
