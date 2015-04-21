@@ -13,6 +13,7 @@ public class StringSplit {
         System.out.println(getMin(string));
         swapMinMax(string);
         sort(string);
+        notDistinct(string);
 
 
     }
@@ -93,6 +94,20 @@ public class StringSplit {
 
         }
         showStrings(string);
+    }
+
+    public static void notDistinct(String[] string){
+        for (int i = 0; i < string.length; i++) {
+            int counter = 1;
+            for (int j = 0; j < string.length; j++) {
+                if (string[i].equals(string[j])&&(i!=j)){
+                    counter++;
+                }
+            }
+            if (counter>1){
+                System.out.println(string[i] + " количество повторений: " + counter);
+            }
+        }
     }
 
 
