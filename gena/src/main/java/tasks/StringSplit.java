@@ -5,7 +5,7 @@ package tasks;
  */
 public class StringSplit {
     public static void main(String[] args) {
-        String str = "A paper encyclopedia stays the same until the next edition, whereas editors can update Wikipedia at any instant, around the clock, keeping articles abreast of the most recent events and scholarship.";
+        String str = "A paper encyclopedia stays the same until a the next edition, whereas a editors can update Wikipedia at any instant, around the clock, keeping articles abreast of the most recent events and scholarship.";
         String[] string = str.split("\\s");
         cleanShit(string);
         showStrings(string);
@@ -86,8 +86,8 @@ public class StringSplit {
             for (int j = 0; j < string.length - 1 - i; j++) {
                 if (string[j].length() > string[j + 1].length()) {
                     String t = string[j];
-                    string[j] = string[j+1];
-                    string[j+1] = t;
+                    string[j] = string[j + 1];
+                    string[j + 1] = t;
 
                 }
             }
@@ -96,18 +96,29 @@ public class StringSplit {
         showStrings(string);
     }
 
-    public static void notDistinct(String[] string){
+    public static void notDistinct(String[] string) {
+        String output = "";
+
         for (int i = 0; i < string.length; i++) {
             int counter = 1;
             for (int j = 0; j < string.length; j++) {
-                if (string[i].equals(string[j])&&(i!=j)){
+                if (string[i].equals(string[j]) && (i != j)) {
                     counter++;
                 }
             }
-            if (counter>1){
-                System.out.println(string[i] + " количество повторений: " + counter);
+
+            if (counter > 1) {
+                if (output.contains(string[i])) {
+
+                } else {
+                    output = output + " " + string[i] + " количество повторений: " + counter + "\n";
+                }
             }
+
+
+
         }
+        System.out.println(output);
     }
 
 
