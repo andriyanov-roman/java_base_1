@@ -93,12 +93,14 @@ public class StringHome {
 
         String[] arrWord = text.split("[\\s,.!?]+");
         int iter = 0;
+
         for (int i = 0; i < arrWord.length; i++) {
             iter = 0;
-            for (int j = i + 1; j <= arrWord.length - 1; j++) {
+            for (int j = 0; j <= arrWord.length - 1; j++) {
                 if (arrWord[i].equals(arrWord[j])) {
                     iter++;
                     System.out.println("Слово: (" + arrWord[i] + ") колличество повторений: " + iter);
+
                 }
             }
         }
