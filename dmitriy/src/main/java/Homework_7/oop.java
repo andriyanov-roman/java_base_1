@@ -6,6 +6,88 @@ package Homework_7;
 public class oop {
     public static void main(String[] args) {
         Human[] person = getHumans();
+        //поменять минимальное и максимальное значение местами
+        int min = person[0].surname.length();
+        int max = person[0].surname.length();
+        int maxI = 0;
+        int minI = 0;
+        for (int i = 0; i < person.length; i++) {
+            if (person[i].surname.length() > max) {
+                max = person[i].surname.length();
+                maxI = i;
+            } else if (person[i].surname.length() < min) {
+                min = person[i].surname.length();
+                minI = i;
+            }
+        }
+        String temp = person[maxI].surname;
+        person[maxI].surname = person[minI].surname;
+        person[minI].surname = temp;
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].surname);
+        }
+        //отсортировать по всем состояниям
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - i - 1; ) {
+                if (person[j].name.length() > person[j + 1].name.length()) {
+                    String t = person[j + 1].name;
+                    person[j + 1].name = person[j].name;
+                    person[j].name = t;
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - i - 1; ) {
+                if (person[j].surname.length() > person[j + 1].surname.length()) {
+                    String t = person[j + 1].surname;
+                    person[j + 1].surname = person[j].surname;
+                    person[j].surname = t;
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - i - 1; ) {
+                if (person[j].age > person[j + 1].age) {
+                    int t = person[j + 1].age;
+                    person[j + 1].age = person[j].age;
+                    person[j].age = t;
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - i - 1; ) {
+                if (person[j].height > person[j + 1].height) {
+                    double t = person[j + 1].height;
+                    person[j + 1].height = person[j].height;
+                    person[j].height = t;
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - i - 1; ) {
+                if (person[j].weight > person[j + 1].weight) {
+                    double t = person[j + 1].weight;
+                    person[j + 1].weight = person[j].weight;
+                    person[j].weight = t;
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].name);
+        }
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].surname);
+        }
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].age);
+        }
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].height);
+        }
+        for (int i = 0; i < person.length; i++) {
+            System.out.println(person[i].weight);
+        }
+
 
     }
 
@@ -73,5 +155,6 @@ public class oop {
         return new Human[]{h1, h2, h3, h4, h5, h6, h7, h8, h9, h10};
 
     }
+
 
 }
