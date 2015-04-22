@@ -1,4 +1,4 @@
-package LessonTask;
+package Homework_7;
 
 /**
  * Created by Дима on 21.04.2015.
