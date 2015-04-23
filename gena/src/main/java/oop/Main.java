@@ -17,7 +17,8 @@ public class Main extends  Application {
         //tellWalkingType(h);
         //showHumans(h);
         //sortHumanByNumeric(h, "age");
-        sortHumanByString(h, "secondName");
+        //sortHumanByString(h, "secondName");
+        swap(h);
     }
     @Override
     public void start(Stage stage) throws Exception{
@@ -52,7 +53,7 @@ public class Main extends  Application {
                 }
             }
         }
-        System.out.println("Sorting human by " + parameter);
+        System.out.println("\nSorting human by " + parameter);
         showHumans(human);
     }
 
@@ -66,8 +67,29 @@ public class Main extends  Application {
                 }
             }
         }
-        System.out.println("Sorting human by " + parameter);
+        System.out.println("\nSorting human by " + parameter);
         showHumans(human);
+    }
+
+    public static void swap(Human[] h){
+        int mini = 0;
+        int maxi = 0;
+        Human max = h[0];
+        Human min = h[0];
+        for (int i = 0; i < h.length; i++) {
+            if(h[i].secondName.length()>max.secondName.length()){
+                max = h[i];
+                maxi = i;
+            }
+            if(h[i].secondName.length()<min.secondName.length()){
+                min = h[i];
+                mini = i;
+            }
+        }
+        Human t = max;
+        h[maxi] = min;
+        h[mini] = t;
+        showHumans(h);
     }
 
 
