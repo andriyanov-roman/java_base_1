@@ -24,6 +24,6 @@ public class Budy {
     }
 
     public void setName(String name) {
-
+        this.name = name;
     }
 }
