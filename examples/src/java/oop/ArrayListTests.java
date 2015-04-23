@@ -1,12 +1,11 @@
-import oop.Human;
+package oop;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
- * Created by user on 3/31/2015.
+ * Created by user on 4/23/2015.
  */
-public class Main {
+public class ArrayListTests {
     public static void main(String[] args) {
         Human[] humans = getHumans();
         System.out.println(humans[0]);
@@ -40,13 +39,6 @@ public class Main {
         System.out.println(list);
         ArrayList listTwo = new ArrayList();
         listTwo.add(humans[0]);
-    }
-
-    public static void showHumans(Human[] humans) {
-        for (int i = 0; i < humans.length; i++) {
-            System.out.println(humans[i].getName() + " " + humans[i].secondName
-                    + " " + humans[i].age + " " + humans[i].weight);
-        }
     }
 
     public static Human[] getHumans() {

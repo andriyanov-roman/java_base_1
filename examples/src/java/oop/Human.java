@@ -4,7 +4,7 @@ package oop;
  * Created by user on 4/21/2015.
  */
 public class Human {
-    public String name;
+    private String name;
     public String secondName;
     public int age;
     public double weight;
@@ -17,5 +17,13 @@ public class Human {
             return "slow";
         }
         return "unknown";
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

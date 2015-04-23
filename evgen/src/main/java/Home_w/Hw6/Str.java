@@ -3,12 +3,12 @@ package Home_w.Hw6;
 /**
  * Created by Евгений on 21.04.2015.
  */
-public class String {
+public class Str {
         public static void main(java.lang.String[] args) {
-            java.lang.String string = "Lorem ipsum dolor sit amet tempor consectetur adipisicing elit sit do eiusmod tempor incididunt utu " +
+            String string = "Lorem ipsum dolor sit amet tempor consectetur adipisicing elit sit do eiusmod tempor incididunt utu " +
                     "labore et dolore tempor aliqua.";
 
-            java.lang.String[] strings = string.split("\\s");
+            String[] strings = string.split("\\s");
 
             int max = strings[0].length();
             int min = strings[0].length();
@@ -19,8 +19,8 @@ public class String {
             int maxI = 0;
             int minI = 0;
 
-            java.lang.String[] moreMin = new java.lang.String[3];
-            java.lang.String[] moreMax = new java.lang.String[2];
+            String[] moreMin = new String[3];
+            String[] moreMax = new String[2];
 
             for (int i = 0; i < strings.length; i++) {
                 if (strings[i].length() > max) {
@@ -74,9 +74,9 @@ public class String {
                 }
             }
 
-            java.lang.String reverse = new StringBuffer(string).reverse().toString();
-            java.lang.String[] stringsTwo = string.split("\\s");
-            java.lang.String[] reverseArr = reverse.split("\\s");
+            String reverse = new StringBuffer(string).reverse().toString();
+            String[] stringsTwo = string.split("\\s");
+            String[] reverseArr = reverse.split("\\s");
 
             System.out.println("Полиндромы: ");
             for (int i = 0, j = reverseArr.length - 1; i < reverseArr.length; i++, j--) {
