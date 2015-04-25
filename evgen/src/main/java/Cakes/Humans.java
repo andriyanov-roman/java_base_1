@@ -4,11 +4,11 @@ package Cakes;
  * Created by ������� on 21.04.2015.
  */
 public class Humans {
-    public String name;
-    public String secondName;
-    public int age;
-    public double weight;
-    public double height;
+    private String name;
+    private String secondName;
+    private int age;
+    private double weight;
+    private double height;
 
 
 
@@ -30,4 +30,27 @@ public class Humans {
         return "unknown";
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 }

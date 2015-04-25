@@ -1,7 +1,7 @@
 package Cakes;
 
 /**
- * Created by ������� on 21.04.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 21.04.2015.
  */
 public class Earth {
     public static void main(String[] args) {
@@ -9,13 +9,13 @@ public class Earth {
 
         System.out.println(h[8].walk());
 
-        System.out.println("Имена людей: ");
+        System.out.println("Р?РјРµРЅР° Р»СЋРґРµР№: ");
         showArrayNames(h);
 
-        System.out.println("Отсортируем имена по возрастанию: ");
+        System.out.println("РћС‚СЃРѕСЂС‚РёСЂСѓРµРј РёРјРµРЅР° РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ: ");
         sortNames(h);
 
-        System.out.println("Найдем human с самой длинной фамилией и поменяем местами в массиве с самой короткой: ");
+        System.out.println("РќР°Р№РґРµРј human СЃ СЃР°РјРѕР№ РґР»РёРЅРЅРѕР№ С„Р°РјРёР»РёРµР№ Рё РїРѕРјРµРЅСЏРµРј РјРµСЃС‚Р°РјРё РІ РјР°СЃСЃРёРІРµ СЃ СЃР°РјРѕР№ РєРѕСЂРѕС‚РєРѕР№: ");
         changeMaxAndMinNames(h);
 
 
@@ -25,74 +25,74 @@ public class Earth {
         public static Humans[] getHuman(){
 
         Humans h1 = new Humans();
-        h1.name = "David";
-        h1.secondName = "De Gea";
-        h1.age = 22;
-        h1.height = 1.84;
-        h1.weight = 79;
+        h1.setName("David");
+        h1.setSecondName("De Gea");
+        h1.setAge(22);
+        h1.setHeight(1.84);
+        h1.setWeight(79);
 
         Humans h2 = new Humans();
-        h2.name = "Luke";
-        h2.secondName = "Show";
-        h2.age = 24;
-        h2.height = 1.86;
-        h2.weight = 90;
+        h2.setName("Luke");
+        h2.setSecondName("Show");
+        h2.setAge(24);
+        h2.setHeight(1.86);
+        h2.setWeight(90);
 
         Humans h3 = new Humans();
-        h3.name = "Marcus";
-        h3.secondName = "Roho";
-        h3.age = 22;
-        h3.height = 1.88;
-        h3.weight = 85;
+        h3.setName("Marcus");
+        h3.setSecondName("Roho");
+        h3.setAge(22);
+        h3.setHeight(1.88);
+        h3.setWeight(85);
 
         Humans h4 = new Humans();
-        h4.name = "Cris";
-        h4.secondName = "Smolling";
-        h4.age = 26;
-        h4.height = 1.92;
-        h4.weight = 90;
+        h4.setName("Chris");
+        h4.setSecondName("Smolling");
+        h4.setAge(26);
+        h4.setHeight(1.92);
+        h4.setWeight(90);
 
         Humans h5 = new Humans();
-        h5.name = "Ashlie";
-        h5.secondName = "Young";
-        h5.age = 25;
-        h5.height = 1.84;
-        h5.weight = 77;
+        h5.setName("Ashlie");
+        h5.setSecondName("Young");
+        h5.setAge(25);
+        h5.setHeight(1.84);
+        h5.setWeight(77);
 
         Humans h6 = new Humans();
-        h6.name = "Anhel";
-        h6.secondName = "Di Maria";
-        h6.age = 25;
-        h6.height = 1.82;
-        h6.weight = 75;
+        h6.setName("Anhel");
+        h6.setSecondName("Di Maria");
+        h6.setAge(25);
+        h6.setHeight(1.82);
+        h6.setWeight(75);
 
         Humans h7 = new Humans();
-        h7.name = "Huan";
-        h7.secondName = "Mata";
-        h7.age = 28;
-        h7.height = 1.85;
-        h7.weight = 74;
+        h7.setName("Huan");
+        h7.setSecondName("Mata");
+        h7.setAge(28);
+        h7.setHeight(1.85);
+        h7.setWeight(74);
 
         Humans h8 = new Humans();
-        h8.name = "Antonio";
-        h8.secondName = "Valencia";
-        h8.age = 29;
-        h8.height = 1.85;
-        h8.weight = 81;
+        h8.setName("Antonio");
+        h8.setSecondName("Valencia");
+        h8.setAge(29);
+        h8.setHeight(1.85);
+        h8.setWeight(81);
 
         Humans h9 = new Humans();
-        h9.name = "Wayne";
-        h9.secondName = "Rooney";
-        h9.age = 29;
-        h9.height = 1.86;
-        h9.weight = 85;
+        h9.setName("Wayne");
+        h9.setSecondName("Rooney");
+        h9.setAge(29);
+        h9.setHeight(1.86);
+        h9.setWeight(85);
 
         Humans h10 = new Humans();
-        h10.name = "Robin";
-        h10.secondName = "Van Persie";
-        h10.age = 30;
-        h10.height = 1.86;
-        h10.weight = 87;
+        h10.setName("Robin");
+        h10.setSecondName("Van Persie");
+        h10.setAge(30);
+        h10.setHeight(1.86);
+        h10.setWeight(87);
 
         return new Humans[]{h1, h2, h3, h4, h5, h6, h7, h8, h9, h10};
     }
@@ -100,10 +100,10 @@ public class Earth {
     public static void sortNames (Humans[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - 1 - i ; j++) {
-                if (arr[j].name.length() > arr[j + 1].name.length()) {
-                    String t = arr[j + 1].name;
-                    arr[j + 1].name = arr[j].name;
-                    arr[j].name = t;
+                if (arr[j].getName().length() > arr[j + 1].getName().length()) {
+                    String t = arr[j + 1].getName();
+                    arr[j + 1].setName(arr[j].getName());
+                    arr[j].setName(t);
                 }
             }
         }
@@ -112,32 +112,32 @@ public class Earth {
 
     public static void showArrayNames (Humans[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i].name + " ");
+            System.out.print(arr[i].getName() + " ");
         }
         System.out.println();
     }
 
     public static void changeMaxAndMinNames (Humans[] arr) {
-        String max = arr[0].name;
-        String min = arr[0].name;
+        String max = arr[0].getName();
+        String min = arr[0].getName();
         int minI = 0;
         int maxI = 0;
         String buf = null;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].name.length() > max.length()){
-                max = arr[i].name;
+            if (arr[i].getName().length() > max.length()){
+                max = arr[i].getName();
                 maxI = i;
-            } else if (arr[i].name.length() < min.length()){
-                min = arr[i].name;
+            } else if (arr[i].getName().length() < min.length()){
+                min = arr[i].getName();
                 minI = i;
             }
         }
-        System.out.println("Самая длинная фамилия: " + max);
-        System.out.println("Самая короткая фамилия: " + min);
-        buf = arr[maxI].name;
-        arr[maxI].name = arr[minI].name;
-        arr[minI].name = buf;
-        System.out.println("Меняем местами: ");
+        System.out.println("РЎР°РјР°СЏ РґР»РёРЅРЅР°СЏ С„Р°РјРёР»РёСЏ: " + max);
+        System.out.println("РЎР°РјР°СЏ РєРѕСЂРѕС‚РєР°СЏ С„Р°РјРёР»РёСЏ: " + min);
+        buf = arr[maxI].getName();
+        arr[maxI].setName(arr[minI].getName());
+        arr[minI].setName(buf);
+        System.out.println("РњРµРЅСЏРµРј РјРµСЃС‚Р°РјРё: ");
         showArrayNames(arr);
     }
 }
