@@ -1,4 +1,4 @@
-package Cakes;
+package Hw7withGetSet;
 
 /**
  * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 21.04.2015.
@@ -9,13 +9,13 @@ public class Earth {
 
         System.out.println(h[8].walk());
 
-        System.out.println("Р?РјРµРЅР° Р»СЋРґРµР№: ");
+        System.out.println("Заданный массив: ");
         showArrayNames(h);
 
-        System.out.println("РћС‚СЃРѕСЂС‚РёСЂСѓРµРј РёРјРµРЅР° РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ: ");
+        System.out.println("Сортируем заданный массив по именам: ");
         sortNames(h);
 
-        System.out.println("РќР°Р№РґРµРј human СЃ СЃР°РјРѕР№ РґР»РёРЅРЅРѕР№ С„Р°РјРёР»РёРµР№ Рё РїРѕРјРµРЅСЏРµРј РјРµСЃС‚Р°РјРё РІ РјР°СЃСЃРёРІРµ СЃ СЃР°РјРѕР№ РєРѕСЂРѕС‚РєРѕР№: ");
+        System.out.println("Меняем максимальное и минимальное слово местами ");
         changeMaxAndMinNames(h);
 
 
@@ -132,12 +132,12 @@ public class Earth {
                 minI = i;
             }
         }
-        System.out.println("РЎР°РјР°СЏ РґР»РёРЅРЅР°СЏ С„Р°РјРёР»РёСЏ: " + max);
-        System.out.println("РЎР°РјР°СЏ РєРѕСЂРѕС‚РєР°СЏ С„Р°РјРёР»РёСЏ: " + min);
+        System.out.println("Максимальное имя в массиве: " + max);
+        System.out.println("Минимальное имя в массиве: " + min);
         buf = arr[maxI].getName();
         arr[maxI].setName(arr[minI].getName());
         arr[minI].setName(buf);
-        System.out.println("РњРµРЅСЏРµРј РјРµСЃС‚Р°РјРё: ");
+        System.out.println("После замены: ");
         showArrayNames(arr);
     }
 }

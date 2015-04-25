@@ -1,4 +1,4 @@
-package Cakes;
+package Hw7withGetSet;
 
 /**
  * Created by ������� on 21.04.2015.

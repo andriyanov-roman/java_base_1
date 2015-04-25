@@ -1,13 +1,16 @@
 package OOP;
 
+import Hw7withGetSet.Humans;
+
 /**
- * Created by Евгений on 25.04.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 25.04.2015.
  */
 public class Workers {
     private String name;
     private String secondName;
     private String gender;
     private int age;
+    private int salary;
 
 
     public String getName() {
@@ -33,4 +36,12 @@ public class Workers {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public void setSalary(int salary){
+        this.salary = salary;
+    }
+
+
+
+
 }
