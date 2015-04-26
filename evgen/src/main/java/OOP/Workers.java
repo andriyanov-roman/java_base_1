@@ -2,6 +2,8 @@ package OOP;
 
 import Hw7withGetSet.Humans;
 
+import java.util.ArrayList;
+
 /**
  * Created by ������� on 25.04.2015.
  */
@@ -18,7 +20,7 @@ public class Workers {
     }
 
     public String getSecondName() {
-        return name;
+        return secondName;
     }
 
     public void setName(String name) {

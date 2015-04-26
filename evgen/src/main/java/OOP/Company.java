@@ -1,5 +1,7 @@
 package OOP;
 
+import java.util.ArrayList;
+
 /**
  * Created by ������� on 25.04.2015.
  */
@@ -10,7 +12,9 @@ public class Company {
     }
 
 
-public static Workers[] getWorkers() {
+public static ArrayList getWorkers() {
+
+    ArrayList<Workers> workersList = new ArrayList<Workers>();
 
     Workers genDirector = new Workers();
     genDirector.setName("Stev");
@@ -18,6 +22,7 @@ public static Workers[] getWorkers() {
     genDirector.setAge(57);
     genDirector.setGender("Male");
     genDirector.setSalary(10000);
+    workersList.add(genDirector);
 
     Workers mainProgrammer = new Workers();
     mainProgrammer.setName("Eugene");
@@ -25,13 +30,15 @@ public static Workers[] getWorkers() {
     mainProgrammer.setAge(22);
     mainProgrammer.setGender("Male");
     mainProgrammer.setSalary(3000);
+    workersList.add(mainProgrammer);
 
     Workers secretary = new Workers();
     secretary.setName("Alina");
-    secretary.setSecondName("Melnik");
+    secretary.setSecondName("Orlova");
     secretary.setAge(23);
     secretary.setGender("Female");
     secretary.setSalary(400);
+    workersList.add(secretary);
 
     Workers qaTester = new Workers();
     qaTester.setName("Anna");
@@ -39,13 +46,15 @@ public static Workers[] getWorkers() {
     qaTester.setAge(22);
     qaTester.setGender("Female");
     qaTester.setSalary(1500);
+    workersList.add(qaTester);
 
     Workers seoSpecialist = new Workers();
-    seoSpecialist.setName("Anna");
-    seoSpecialist.setSecondName("Zayka");
+    seoSpecialist.setName("Egor");
+    seoSpecialist.setSecondName("Sahnenko");
     seoSpecialist.setAge(22);
-    seoSpecialist.setGender("Female");
+    seoSpecialist.setGender("Male");
     seoSpecialist.setSalary(1500);
+    workersList.add(seoSpecialist);
 
     Workers webDesigner = new Workers();
     webDesigner.setName("Andrey");
@@ -53,27 +62,17 @@ public static Workers[] getWorkers() {
     webDesigner.setAge(22);
     webDesigner.setGender("Female");
     webDesigner.setSalary(1500);
+    workersList.add(webDesigner);
 
-    return new Workers[]{genDirector, mainProgrammer, secretary, qaTester, seoSpecialist, webDesigner};
+    return new ArrayList (workersList);
     }
 
-    public static void showArrayNames (Workers[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i].getName() + " ");
+    public static void showArrayNames (ArrayList arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i) + " ");
         }
         System.out.println();
     }
 
-    public static void sortNames (Workers[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - 1 - i ; j++) {
-                if (arr[j].getName().length() > arr[j + 1].getName().length()) {
-                    String t = arr[j + 1].getName();
-                    arr[j + 1].setName(arr[j].getName());
-                    arr[j].setName(t);
-                }
-            }
-        }
-        showArrayNames(arr);
-    }
+
 }
