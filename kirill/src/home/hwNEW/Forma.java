@@ -2,11 +2,46 @@
  * Created by Pipin on 21.04.2015.
  */
 public class Forma {
-    public String name;
-    public String secondName;
-    public int age;
-    public double weight;
-    public double height;
+    private String name;
+    private String secondName;
+    private int age;
+    private double weight;
+    private double height;
+
+    public void setWeight(double weight){
+        this.weight = weight;
+    }
+    public double getWeight(){
+        return weight;
+    }
+
+    public void setHeight(double height){
+        this.height=height;
+    }
+    public double getHeight(){
+        return height;
+    }
+
+    public void setAge(int age){
+        this.age=age;
+    }
+    public int getAge(){
+        return age;
+    }
+
+    public void setName(String name){
+        this.name=name;
+    }
+    public String getName(){
+        return name;
+    }
+
+    public void setSecondName(String secondName){
+        this.secondName=secondName;
+    }
+    public String getSecondName(){
+        return secondName;
+    }
 
     public String walk(double height, double weight) {               //povedenie
         if (this.weight < weight && this.height > height) {
@@ -20,7 +55,6 @@ public class Forma {
         System.out.println("unkcnown");
         return "unkcnown";
     }
-
     public String howwalk(int age){
         if (age > 0 && age < 2) {
             System.out.println("polzaet");
