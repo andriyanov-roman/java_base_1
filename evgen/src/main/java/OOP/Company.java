@@ -16,6 +16,9 @@ public class Company {
 
         System.out.print("Сортируем сотрудников по возрасту: ");
         sortAges(getWorkers());
+
+        System.out.println("Увольняем мужчин и поднимаем зарплату женщинам на 500$: ");
+        dismissMaleWorkers(getWorkers());
     }
 
 
@@ -67,30 +70,30 @@ public static ArrayList getWorkers() {
     webDesigner.setName("Andrey");
     webDesigner.setSecondName("Kicha");
     webDesigner.setAge(22);
-    webDesigner.setGender("Female");
+    webDesigner.setGender("Male");
     webDesigner.setSalary(1500);
     workersList.add(webDesigner);
 
     return new ArrayList (workersList);
     }
 
-    public static void showArrayNames (ArrayList<Workers> arr) {
+    public static void showSecondNames(ArrayList<Workers> arr) {
         for (int i = 0; i < arr.size(); i++) {
-            System.out.print(arr.get(i).getSecondName() + " < ");
+            System.out.print(arr.get(i).getSecondName() + " ");
         }
         System.out.println();
     }
 
     public static void showSalaries (ArrayList<Workers> arr) {
         for (int i = 0; i < arr.size(); i++) {
-            System.out.print(arr.get(i).getSalary() + "$" + "(" + arr.get(i).getSecondName() + ")" + " < ");
+            System.out.print(arr.get(i).getSalary() + "$" + "(" + arr.get(i).getSecondName() + ")" + " ");
         }
         System.out.println();
     }
 
     public static void showAges (ArrayList<Workers> arr) {
         for (int i = 0; i < arr.size(); i++) {
-            System.out.print(arr.get(i).getSecondName() + "(" + arr.get(i).getAge() + " years old" + ")" + " < ");
+            System.out.print(arr.get(i).getSecondName() + "(" + arr.get(i).getAge() + " years old" + ")" + " ");
         }
         System.out.println();
     }
@@ -105,7 +108,7 @@ public static ArrayList getWorkers() {
                 }
             }
         }
-        showArrayNames(arr);
+        showSecondNames(arr);
     }
 
     public static void sortSalaries(ArrayList<Workers> arr) {
@@ -138,5 +141,17 @@ public static ArrayList getWorkers() {
             }
         }
         showAges(arr);
+    }
+
+    public static void dismissMaleWorkers(ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i).getGender().equals("Male")) {
+                arr.remove(i);
+                i--;
+            } else {
+                arr.get(i).setSalary(arr.get(i).getSalary() + 500);
+            }
+        }
+        showSalaries(arr);
     }
 }

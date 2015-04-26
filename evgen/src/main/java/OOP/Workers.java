@@ -31,6 +31,10 @@ public class Workers {
         return age;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
