@@ -23,6 +23,14 @@ public class Workers {
         return secondName;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

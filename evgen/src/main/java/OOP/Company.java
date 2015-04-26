@@ -8,7 +8,14 @@ import java.util.ArrayList;
 public class Company {
     public static void main(String[] args) {
 
-    showArrayNames(getWorkers());
+        System.out.print("Сортировка по длине фамилии сотрудников: ");
+        sortSecondNames(getWorkers());
+
+        System.out.print("Сортируем зарплаты сотрудников: ");
+        sortSalaries(getWorkers());
+
+        System.out.print("Сортируем сотрудников по возрасту: ");
+        sortAges(getWorkers());
     }
 
 
@@ -43,17 +50,17 @@ public static ArrayList getWorkers() {
     Workers qaTester = new Workers();
     qaTester.setName("Anna");
     qaTester.setSecondName("Zayka");
-    qaTester.setAge(22);
+    qaTester.setAge(24);
     qaTester.setGender("Female");
-    qaTester.setSalary(1500);
+    qaTester.setSalary(1700);
     workersList.add(qaTester);
 
     Workers seoSpecialist = new Workers();
     seoSpecialist.setName("Egor");
     seoSpecialist.setSecondName("Sahnenko");
-    seoSpecialist.setAge(22);
+    seoSpecialist.setAge(21);
     seoSpecialist.setGender("Male");
-    seoSpecialist.setSalary(1500);
+    seoSpecialist.setSalary(1200);
     workersList.add(seoSpecialist);
 
     Workers webDesigner = new Workers();
@@ -67,12 +74,69 @@ public static ArrayList getWorkers() {
     return new ArrayList (workersList);
     }
 
-    public static void showArrayNames (ArrayList arr) {
+    public static void showArrayNames (ArrayList<Workers> arr) {
         for (int i = 0; i < arr.size(); i++) {
-            System.out.print(arr.get(i) + " ");
+            System.out.print(arr.get(i).getSecondName() + " < ");
         }
         System.out.println();
     }
 
+    public static void showSalaries (ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i).getSalary() + "$" + "(" + arr.get(i).getSecondName() + ")" + " < ");
+        }
+        System.out.println();
+    }
 
+    public static void showAges (ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i).getSecondName() + "(" + arr.get(i).getAge() + " years old" + ")" + " < ");
+        }
+        System.out.println();
+    }
+
+    public static void sortSecondNames (ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size() - 1 - i ; j++) {
+                if (arr.get(j).getSecondName().length() > arr.get(j + 1).getSecondName().length()) {
+                    String t = arr.get(j + 1).getSecondName();
+                    arr.get(j + 1).setSecondName(arr.get(j).getSecondName());
+                    arr.get(j).setSecondName(t);
+                }
+            }
+        }
+        showArrayNames(arr);
+    }
+
+    public static void sortSalaries(ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size() - 1 - i ; j++) {
+                if (arr.get(j).getSalary() > arr.get(j + 1).getSalary()) {
+                    int t = arr.get(j + 1).getSalary();
+                    arr.get(j + 1).setSalary(arr.get(j).getSalary());
+                    arr.get(j).setSalary(t);
+                    String t2 = arr.get(j + 1).getSecondName();
+                    arr.get(j + 1).setSecondName(arr.get(j).getSecondName());
+                    arr.get(j).setSecondName(t2);
+                }
+            }
+        }
+        showSalaries(arr);
+    }
+
+    public static void sortAges(ArrayList<Workers> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size() - 1 - i ; j++) {
+                if (arr.get(j).getAge() > arr.get(j + 1).getAge()) {
+                    int t = arr.get(j + 1).getAge();
+                    arr.get(j + 1).setAge(arr.get(j).getAge());
+                    arr.get(j).setAge(t);
+                    String t2 = arr.get(j + 1).getSecondName();
+                    arr.get(j + 1).setSecondName(arr.get(j).getSecondName());
+                    arr.get(j).setSecondName(t2);
+                }
+            }
+        }
+        showAges(arr);
+    }
 }
