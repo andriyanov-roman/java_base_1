@@ -7,7 +7,7 @@ public class Reader {
     public void Scan() {
         System.out.println("Введите информацию: ");
         Scanner scn = new Scanner(System.in);
-        temp = scn.next();
+        temp = scn.nextLine();
 
     }
 }
