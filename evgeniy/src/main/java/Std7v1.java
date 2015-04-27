@@ -38,21 +38,24 @@ public class Std7v1 {
         h1.ads = 22;
         h1.height = 180;
         h1.weight = 100;
+
         h2.name = "Gitler";
         h2.secondName = "Gitlerivich";
         h2.ads = 23;
         h2.height = 130;
         h2.weight = 55;
+
         h3.name = "Rotor";
         h3.secondName = "Rihtar";
         h3.ads = 18;
         h3.height = 130;
         h3.weight = 155;
-        h3.name = "Lasky";
-        h3.secondName = "Hikolas";
-        h3.ads = 44;
-        h3.height = 170;
-        h3.weight = 155;
-        return new Budy[] {h1,h2,h3};
+
+        h4.name = "Lasky";
+        h4.secondName = "Hikolas";
+        h4.ads = 44;
+        h4.height = 170;
+        h4.weight = 155;
+        return new Budy[] {h1,h2,h3,h4};
     }
 }
