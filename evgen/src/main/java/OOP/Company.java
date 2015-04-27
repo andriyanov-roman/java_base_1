@@ -20,8 +20,8 @@ public class Company {
         System.out.println("Увольняем мужчин и поднимаем зарплату женщинам на 500$: ");
         dismissMaleWorkers(getWorkers());
 
-        Reader r = new Reader();
-        ConsoleWritter w = new ConsoleWritter();
+        ConsoleReader r = new ConsoleReader();
+        FileWritter w = new FileWritter();
         r.Scan();
         String path = "./newFile";
         String text = r.temp;

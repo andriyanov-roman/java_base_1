@@ -2,7 +2,7 @@ package OOP;
 
 import java.util.Scanner;
 
-public class Reader {
+public class ConsoleReader {
     String temp;
     public void Scan() {
         System.out.println("Введите информацию: ");
