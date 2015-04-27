@@ -1,12 +1,14 @@
 package OOP;
 
+import javax.xml.bind.SchemaOutputResolver;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
  * Created by ������� on 25.04.2015.
  */
 public class Company {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         System.out.print("Сортировка по длине фамилии сотрудников: ");
         sortSecondNames(getWorkers());
@@ -24,10 +26,14 @@ public class Company {
         FileWritter w = new FileWritter();
         r.Scan();
         String path = "./newFile";
-        String text = r.temp;
+        String text = r.name + r.surName;
         w.write(path, text);
 
         System.out.println("Информация записана в " + path);
+
+        System.out.println("Возвращаем пользователю информацию с файла: ");
+        FileReader fileReader = new FileReader();
+        fileReader.readFromFile();
     }
 
 
