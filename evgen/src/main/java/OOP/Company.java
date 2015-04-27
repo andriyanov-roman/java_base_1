@@ -1,6 +1,12 @@
 package OOP;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by ������� on 25.04.2015.
@@ -19,6 +25,31 @@ public class Company {
 
         System.out.println("Увольняем мужчин и поднимаем зарплату женщинам на 500$: ");
         dismissMaleWorkers(getWorkers());
+
+        System.out.println("Переносим данные о сотрудникам в файл file.txt в текущую директорию: ");
+        List<Workers> str = new ArrayList<Workers>();
+
+        str.addAll(getWorkers());
+
+        Writer writer = null;
+        try {
+            writer = new FileWriter("file.txt");
+            for (Workers line : str) {
+                writer.write(String.valueOf(line.getName() + "\t" + line.getSecondName() + "\t" + line.getAge() + "\t" +
+                        line.getGender() + "\t" + line.getSalary()) + "\t");
+                writer.write(System.getProperty("line.separator"));
+            }
+            writer.flush();
+        } catch (Exception e) {
+            Logger.getLogger(FileTest.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException ex) {
+                }
+            }
+        }
     }
 
 
