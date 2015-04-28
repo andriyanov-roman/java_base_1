@@ -1,8 +1,24 @@
 import javax.xml.bind.SchemaOutputResolver;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 
 public class cla {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        ArrayList<String> strings =new ArrayList <String>();
+        strings.add("blala");
+
+        File f = new File("examples\\test.txt");
+        FileWriter writer = new FileWriter(f, true); //dopisivaet v konec esli tru
+        writer.write("Privet"+'\n');
+        writer.flush();
+        writer.close();
+
+        PrintWriter printWriter = new PrintWriter(f);
+
        /* int a=4;
         int b=2;
 
