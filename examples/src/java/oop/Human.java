@@ -4,7 +4,7 @@ package oop;
  * Created by user on 4/21/2015.
  */
 public class Human {
-    private String name;
+    public String name;
     public String secondName;
     public int age;
     public double weight;

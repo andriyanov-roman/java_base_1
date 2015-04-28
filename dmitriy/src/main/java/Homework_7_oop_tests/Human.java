@@ -1,4 +1,4 @@
-package Homework_7;
+package Homework_7_oop_tests;
 
 /**
  * Created by Дима on 21.04.2015.
