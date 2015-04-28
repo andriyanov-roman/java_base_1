@@ -6,6 +6,7 @@ package Homework_7;
 public class Human {
     private String name;
     private String surname;
+    private String state;
     private int age;
     private double weight;
     private double height;
@@ -14,6 +15,8 @@ public class Human {
     public void setName(String name){this.name = name;}
     public String getSurname(){return surname;}
     public void setSurname(String surname){this.surname = surname;}
+    public String getState(){return state;}
+    public void setState(String state){this.state = state;}
     public int getAge(){return age;}
     public void setAge(int age){this.age = age;}
     public double getWeight(){return weight;}
