@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sun.org.mozilla.javascript.internal.ast.ArrayLiteral;
+
+import java.util.*;
 
 
 /**
@@ -18,7 +21,12 @@ public class Main extends  Application {
         //showHumans(h);
         //sortHumanByNumeric(h, "age");
         //sortHumanByString(h, "secondName");
-        swap(h);
+        //swap(h);
+        ArrayList<Human> human = new ArrayList<Human>(Arrays.asList(h));
+        ArrayList<Human> human1 = human;
+        showListOfHuman(human1);
+        deleteFromList(3, 5, human1);
+        showListOfHuman(human1);
     }
     @Override
     public void start(Stage stage) throws Exception{
@@ -32,13 +40,13 @@ public class Main extends  Application {
 
     public static void showHumans(Human[] humans) {
         for (int i = 0; i < humans.length; i++) {
-            System.out.println(humans[i].secondName + " " + humans[i].name
-                    + " " + humans[i].age + " " + humans[i].weight);
+            System.out.println(humans[i].getSecondName() + " " + humans[i].getName()
+                    + " " + humans[i].getAge() + " " + humans[i].getWeight());
         }
     }
     public static void tellWalkingType(Human[] humans){
         for (int i = 0; i < humans.length; i++) {
-            System.out.print(humans[i].name + " "+ humans[i].secondName);
+            System.out.print(humans[i].getName() + " "+ humans[i].getSecondName());
             humans[i].walking();
         }
     }
@@ -71,17 +79,24 @@ public class Main extends  Application {
         showHumans(human);
     }
 
+    public static void showListOfHuman(List<Human> list){
+        for(Human elem : list){
+            System.out.printf(elem.getName()+" "+ elem.getSecondName()+", ");
+        }
+        System.out.println();
+    }
+
     public static void swap(Human[] h){
         int mini = 0;
         int maxi = 0;
         Human max = h[0];
         Human min = h[0];
         for (int i = 0; i < h.length; i++) {
-            if(h[i].secondName.length()>max.secondName.length()){
+            if(h[i].getSecondName().length()>max.getSecondName().length()){
                 max = h[i];
                 maxi = i;
             }
-            if(h[i].secondName.length()<min.secondName.length()){
+            if(h[i].getSecondName().length()<min.getSecondName().length()){
                 min = h[i];
                 mini = i;
             }
@@ -93,77 +108,87 @@ public class Main extends  Application {
     }
 
 
+    public static void deleteFromList(int beginInd, int endInd, ArrayList<Human> list){
+        ListIterator<Human> it = list.listIterator(beginInd);
+        for (int i = 0; i <endInd-beginInd+1 ; i++) {
+            Human tmp = it.next();
+            it.remove();
+
+
+        }
+
+    }
 
     public static Human [] getHumans(){
         Human human1 = new Human();
-        human1.secondName = "Sipakov";
-        human1.name = "Gennadiy";
-        human1.age = 20;
-        human1.weight = 97;
-        human1.height = 1.84;
+        human1.setSecondName("Sipakov");
+        human1.setName("Gennadiy");
+        human1.setAge(20);
+        human1.setWeight(97);
+        human1.setHeight(1.84);
 
         Human human2 = new Human();
-        human2.secondName = "Shevchuk";
-        human2.name = "Dmitriy";
-        human2.age = 20;
-        human2.weight = 92;
-        human2.height = 1.92;
+        human2.setSecondName("Shevchuk");
+        human2.setName("Dmitriy");
+        human2.setAge(20);
+        human2.setWeight(92);
+        human2.setHeight(1.92);
 
         Human human3 = new Human();
-        human3.secondName = "Koval";
-        human3.name = "Dmitriy";
-        human3.age = 20;
-        human3.weight = 75;
-        human3.height = 1.76;
+        human3.setSecondName("Koval");
+        human3.setName("Dmitriy");
+        human3.setAge(20);
+        human3.setWeight(75);
+        human3.setHeight(1.76);
 
         Human human4 = new Human();
-        human4.secondName = "Starodub";
-        human4.name = "Aleksandr";
-        human4.age = 2;
-        human4.weight = 68;
-        human4.height = 1.69;
+        human4.setSecondName("Starodub");
+        human4.setName("Aleksandr");
+        human4.setAge(2);
+        human4.setWeight(68);
+        human4.setHeight(1.69);
 
         Human human5 = new Human();
-        human5.secondName = "Sipakova";
-        human5.name = "Ekaterina";
-        human5.age = 17;
-        human5.weight = 63;
-        human5.height = 1.72;
+        human5.setSecondName("Sipakova");
+        human5.setName("Ekaterina");
+        human5.setAge(17);
+        human5.setWeight(63);
+        human5.setHeight(1.72);
 
         Human human6 = new Human();
-        human6.secondName = "Sipakov";
-        human6.name = "Aleksandr";
-        human6.age = 49;
-        human6.weight = 95;
-        human6.height = 1.80;
+        human6.setSecondName("Sipakov");
+        human6.setName("Aleksandr");
+        human6.setAge(49);
+        human6.setWeight(95);
+        human6.setHeight(1.80);
 
         Human human7 = new Human();
-        human7.secondName = "Sus";
-        human7.name = "Konstantin";
-        human7.age = 20;
-        human7.weight = 76;
-        human7.height = 1.78;
+        human7.setSecondName("Sus");
+        human7.setName("Konstantin");
+        human7.setAge(20);
+        human7.setWeight(76);
+        human7.setHeight(1.78);
 
         Human human8 = new Human();
-        human8.secondName = "Vishnivsky";
-        human8.name = "Roman";
-        human8.age = 21;
-        human8.weight = 86;
-        human8.height = 1.8;
+        human8.setSecondName("Vishnivsky");
+        human8.setName("Roman");
+        human8.setAge(21);
+        human8.setWeight(86);
+        human8.setHeight(1.86);
 
         Human human9 = new Human();
-        human9.secondName = "Lenin";
-        human9.name = "Vladimir";
-        human9.age = 145;
-        human9.weight = 40;
-        human9.height = 1.65;
+        human9.setSecondName("Lenin");
+        human9.setName("Vladimir");
+        human9.setAge(145);
+        human9.setWeight(40);
+        human9.setHeight(1.65);
 
         Human human10 = new Human();
-        human10.secondName = "King";
-        human10.name = "Stephen";
-        human10.age = 67;
-        human10.weight = 92;
-        human10.height = 1.93;
+        human10.setSecondName("King");
+        human10.setName("Stephen");
+        human10.setAge(67);
+        human10.setWeight(92);
+        human10.setHeight(1.93);
         return new Human[]{human1, human2, human3, human4,
                 human5, human6, human7, human8, human9, human10};
     }

@@ -4,11 +4,11 @@ package oop;
  * Created by sigen on 4/21/2015.
  */
 public class Human {
-    public int age;
-    public String secondName;
-    public String name;
-    public double weight;
-    public double height;
+    private int age;
+    private String secondName;
+    private String name;
+    private double weight;
+    private double height;
 
 
     public void walking() {
@@ -33,6 +33,35 @@ public class Human {
 
 
     }
+    public int getAge(){ return age;}
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public String getName(){return  name;   }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getSecondName(){ return secondName;}
+
+
+    public void  setSecondName(String secondName){
+        this.secondName = secondName;
+    }
+
+    public double getHeight(){return height;    }
+    public void setHeight(double height){
+        this.height = height;
+    }
+
+    public double getWeight(){ return weight;   }
+    public void setWeight(double weight){
+        this.weight = weight;
+    }
+
+
+
 
     public double getArgNum(String parametr){
         double box = 0;
