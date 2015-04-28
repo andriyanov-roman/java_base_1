@@ -28,10 +28,13 @@ public class Staff {
         maxSalary(getEmployee());
         System.out.println();
 
+//Найти из каждого типа сотрудников самого высокооплачиваемого
+        maxSalaryGroup(getEmployee());
+        System.out.println();
 
 //Уволить всех мужчин и женщинам поднять з.п
-        dismissal(getEmployee());
-        System.out.println();
+//        dismissal(getEmployee());
+//        System.out.println();
 
     }
 /*++++++++++++++++++++++++++++++ Методы ++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -105,7 +108,6 @@ public class Staff {
     //Найти сотрудника у которого самая высокая зарплата
     public static void maxSalary(ArrayList<Employee> employee) {
         System.out.print("\nСамая высокая зарплата: ");
-        System.out.println();
         int max = 0;
         int rich = 0;
         for (int i = 0; i < employee.size(); i++) {
@@ -113,13 +115,30 @@ public class Staff {
                 if (employee.get(i).getSalary() > max) {
                     max = employee.get(i).getSalary();
                     rich = i;
-
                 }
             }
         }
-        System.out.println(employee.get(rich));
+        System.out.println(employee.get(rich).getName() + " " + employee.get(rich).getSecondName()
+                + " зарплата: " + employee.get(rich).getSalary());
     }
 
+    //Найти из каждого типа сотрудников самого высокооплачиваемого
+    public static void maxSalaryGroup(ArrayList<Employee> employee) {
+        System.out.print("\nСамая высокая зарплата: ");
+        int max = 0;
+        int rich = 0;
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getGroup().equals("Manager")){
+                if (employee.get(i).getSalary() > max) {
+                    max = employee.get(i).getSalary();
+                    rich = i;
+                }}
+            }
+        }
+        System.out.println(employee.get(rich).getName() + " " + employee.get(rich).getSecondName()
+                + " зарплата: " + employee.get(rich).getSalary());
+    }
 
     //Вывод списка
     public static void printEmployee(ArrayList<Employee> employee) {
