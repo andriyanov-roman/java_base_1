@@ -1,118 +1,195 @@
 package work.oop.object;
+
+import java.util.ArrayList;
+
 /**
  * Домашняя ArrayList
  */
 public class Staff {
     public static void main(String[] args) {
 
-        Human[] human = getHuman();
         System.out.println("\nМассив сотрудников: ");
         System.out.println();
-        printHumans(human);
+        printEmployee(getEmployee());
 
+////сортировка Компания 1 - по зп
+//        companuOne(getEmployee());
+//        System.out.println();
+//
+////сортировка Компания 2 - по возрасту
+//        companuTwo(getEmployee());
+//        System.out.println();
+//
+////сортировка Компания 3 - по длинне фамилии
+//        companuThree(getEmployee());
+//        System.out.println();
 
+//Уволить всех мужчин и женщинам поднять з.п
+        dismissal(getEmployee());
+        System.out.println();
 
     }
+/*++++++++++++++++++++++++++++++ Методы ++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-    //Вывод
-    public static void printHumans(Human[] humans) {
-        for (int i = 0; i < humans.length; i++) {
-            System.out.println(humans[i].getName() + "    " + humans[i].getSecondName()
-                    + "    " + humans[i].getAge() + "    " + humans[i].getWeight() + "    " + humans[i].getHeight()+ "    "
-                    + humans[i].getSalary() + "    " + humans[i].getMg());
+    //сортировка Компания 1 - по зп
+    public static void companuOne(ArrayList<Employee> employee) {
+        System.out.println("\nСортировка компания 1 - по зп: ");
+        System.out.println();
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getSalary() < employee.get(j).getSalary()) {
+                    Employee buf = employee.get(j);
+                    employee.set(j, employee.get(i));
+                    employee.set(i, buf);
+                }
+            }
+        }
+        printEmployee(employee);
+    }
+
+    //сортировка Компания 2 - возраст
+    public static void companuTwo(ArrayList<Employee> employee) {
+        System.out.println("\nСортировка компания 2 - возраст: ");
+        System.out.println();
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getAge() < employee.get(j).getAge()) {
+                    Employee buf = employee.get(j);
+                    employee.set(j, employee.get(i));
+                    employee.set(i, buf);
+                }
+            }
+        }
+        printEmployee(employee);
+    }
+
+    //сортировка Компания 3 длинна фамилии
+    public static void companuThree(ArrayList<Employee> employee) {
+        System.out.println("\nСортировка компания 3 - фамилии: ");
+        System.out.println();
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getSecondName().length() < employee.get(j).getSecondName().length()) {
+                    Employee buf = employee.get(j);
+                    employee.set(j, employee.get(i));
+                    employee.set(i, buf);
+                }
+            }
+        }
+        printEmployee(employee);
+    }
+
+    //Уволить всех мужчин и женщинам поднять з.п
+    public static void dismissal(ArrayList<Employee> employee) {
+        System.out.println("\nМужчины уволенны, женщины с новой зарплатой: ");
+        System.out.println();
+        int z = 300;
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getMg().equals("m")) {
+                    employee.remove(i);
+                }
+                if (employee.get(i).getMg().equals("g")) {
+                    employee.get(i).setSalary(employee.get(i).getSalary() + z);
+                }
+            }
+        }
+        printEmployee(employee);
+    }
+
+
+    //Вывод списка
+    public static void printEmployee(ArrayList<Employee> employee) {
+        for (int i = 0; i < employee.size(); i++) {
+            System.out.println(employee.get(i).getName() + "    " + employee.get(i).getSecondName()
+                    + "    " + employee.get(i).getAge() + "    "
+                    + employee.get(i).getSalary() + "    " + employee.get(i).getMg());
         }
     }
-    //новые 10 человек
-    public static Human[] getHuman() {
-        Human h1 = new Human();
-        h1.setName("Vitalij");
-        h1.setSecondName("Gorbunov");
-        h1.setAge(28);
-        h1.setHeight(1.83);
-        h1.setWeight(80.5);
-        h1.setSalary(2500);
-        h1.setMg('m');
 
-        Human h2 = new Human();
-        h2.setName("Ivan");
-        h2.setSecondName("Ivanichenko");
-        h2.setAge(18);
-        h2.setHeight(1.7);
-        h2.setWeight(71.5);
-        h2.setSalary(2210);
-        h2.setMg('m');
+    public static ArrayList getEmployee() {
+        ArrayList<Employee> employeesCompany = new ArrayList<Employee>();
 
-        Human h3 = new Human();
-        h3.setName("Petya");
-        h3.setSecondName("Petrov");
-        h3.setAge(22);
-        h3.setHeight(1.64);
-        h3.setWeight(42.5);
-        h3.setSalary(4100);
-        h3.setMg('m');
+        Employee e1 = new Employee();
+        e1.setName("Vitalij");
+        e1.setSecondName("Gorbunov");
+        e1.setAge(28);
+        e1.setSalary(2500);
+        e1.setMg("m");
+        employeesCompany.add(e1);
 
-        Human h4 = new Human();
-        h4.setName("Stepan");
-        h4.setSecondName("Sidorov");
-        h4.setAge(68);
-        h4.setHeight(1.62);
-        h4.setWeight(64.5);
-        h4.setSalary(2860);
-        h4.setMg('m');
+        Employee e2 = new Employee();
+        e2.setName("Ivan");
+        e2.setSecondName("Ivanichenko");
+        e2.setAge(18);
+        e2.setSalary(2210);
+        e2.setMg("m");
+        employeesCompany.add(e2);
 
-        Human h5 = new Human();
-        h5.setName("Arem");
-        h5.setSecondName("Mihailov");
-        h5.setAge(26);
-        h5.setHeight(1.63);
-        h5.setWeight(57.5);
-        h5.setSalary(6500);
-        h5.setMg('m');
+        Employee e3 = new Employee();
+        e3.setName("Petya");
+        e3.setSecondName("Petrov");
+        e3.setAge(22);
+        e3.setSalary(4100);
+        e3.setMg("m");
+        employeesCompany.add(e3);
 
-        Human h6 = new Human();
-        h6.setName("Irina");
-        h6.setSecondName("Dudnik");
-        h6.setAge(19);
-        h6.setHeight(1.63);
-        h6.setWeight(48.5);
-        h6.setSalary(1900);
-        h6.setMg('g');
+        Employee e4 = new Employee();
+        e4.setName("Stepan");
+        e4.setSecondName("Sidorov");
+        e4.setAge(68);
+        e4.setSalary(2860);
+        e4.setMg("m");
+        employeesCompany.add(e4);
 
-        Human h7 = new Human();
-        h7.setName("Viktoria");
-        h7.setSecondName("Anch");
-        h7.setAge(38);
-        h7.setHeight(1.93);
-        h7.setWeight(101.5);
-        h7.setSalary(4200);
-        h7.setMg('g');
+        Employee e5 = new Employee();
+        e5.setName("Arem");
+        e5.setSecondName("Mihailov");
+        e5.setAge(26);
+        e5.setSalary(6500);
+        e5.setMg("m");
+        employeesCompany.add(e5);
 
-        Human h8 = new Human();
-        h8.setName("Rima");
-        h8.setSecondName("Adardasova");
-        h8.setAge(44);
-        h8.setHeight(2.03);
-        h8.setWeight(106.5);
-        h8.setSalary(2860);
-        h8.setMg('g');
+        Employee e6 = new Employee();
+        e6.setName("Irina");
+        e6.setSecondName("Dudnik");
+        e6.setAge(19);
+        e6.setSalary(1900);
+        e6.setMg("g");
+        employeesCompany.add(e6);
 
-        Human h9 = new Human();
-        h9.setName("Faina");
-        h9.setSecondName("Fedorova");
-        h9.setAge(42);
-        h9.setHeight(1.68);
-        h9.setWeight(59.5);
-        h9.setSalary(6300);
-        h9.setMg('g');
+        Employee e7 = new Employee();
+        e7.setName("Viktoria");
+        e7.setSecondName("Anch");
+        e7.setAge(38);
+        e7.setSalary(4200);
+        e7.setMg("g");
+        employeesCompany.add(e7);
 
-        Human h10 = new Human();
-        h10.setName("Evgenija");
-        h10.setSecondName("Avdeeva");
-        h10.setAge(38);
-        h10.setHeight(1.83);
-        h10.setWeight(67.5);
-        h10.setSalary(4730);
-        h10.setMg('g');
-        return new Human[]{h1, h2, h3, h4, h5, h6, h7, h8, h9, h10};
+        Employee e8 = new Employee();
+        e8.setName("Rima");
+        e8.setSecondName("Adardasova");
+        e8.setAge(44);
+        e8.setSalary(2860);
+        e8.setMg("g");
+        employeesCompany.add(e8);
+
+        Employee e9 = new Employee();
+        e9.setName("Faina");
+        e9.setSecondName("Fedorova");
+        e9.setAge(42);
+        e9.setSalary(6300);
+        e9.setMg("g");
+        employeesCompany.add(e9);
+
+        Employee e10 = new Employee();
+        e10.setName("Evgenija");
+        e10.setSecondName("Avdeeva");
+        e10.setAge(38);
+        e10.setSalary(4730);
+        e10.setMg("g");
+        employeesCompany.add(e10);
+
+        return new ArrayList(employeesCompany);
     }
 }
