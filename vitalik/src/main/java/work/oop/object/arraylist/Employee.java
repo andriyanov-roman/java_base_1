@@ -1,15 +1,15 @@
-package work.oop.object;
+package work.oop.object.arraylist;
 
 /**
  * Класс сотрудники
  */
 public class Employee {
-
     private String name;
     private String secondName;
     private int age;
     private int salary;
     private String mg;
+    private String group;
 
 
     public String getName() {
@@ -27,6 +27,10 @@ public class Employee {
     public String getMg() {
         return mg;
     }
+    public String getGroup(){
+        return group;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -45,10 +49,9 @@ public class Employee {
     }
 
     public void setMg(String mg) {
-
         this.mg = mg;
-
     }
-
-
+    public void setGroup (String group){
+        this.group = group;
+    }
 }

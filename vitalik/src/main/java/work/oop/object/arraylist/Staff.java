@@ -1,4 +1,4 @@
-package work.oop.object;
+package work.oop.object.arraylist;
 
 import java.util.ArrayList;
 
@@ -23,6 +23,11 @@ public class Staff {
 ////сортировка Компания 3 - по длинне фамилии
 //        companuThree(getEmployee());
 //        System.out.println();
+
+//Найти сотрудника у которого самая высокая зарплата
+        maxSalary(getEmployee());
+        System.out.println();
+
 
 //Уволить всех мужчин и женщинам поднять з.п
         dismissal(getEmployee());
@@ -97,13 +102,31 @@ public class Staff {
         printEmployee(employee);
     }
 
+    //Найти сотрудника у которого самая высокая зарплата
+    public static void maxSalary(ArrayList<Employee> employee) {
+        System.out.print("\nСамая высокая зарплата: ");
+        System.out.println();
+        int max = 0;
+        int rich = 0;
+        for (int i = 0; i < employee.size(); i++) {
+            for (int j = 0; j < employee.size(); j++) {
+                if (employee.get(i).getSalary() > max) {
+                    max = employee.get(i).getSalary();
+                    rich = i;
+
+                }
+            }
+        }
+        System.out.println(employee.get(rich));
+    }
+
 
     //Вывод списка
     public static void printEmployee(ArrayList<Employee> employee) {
         for (int i = 0; i < employee.size(); i++) {
             System.out.println(employee.get(i).getName() + "    " + employee.get(i).getSecondName()
                     + "    " + employee.get(i).getAge() + "    "
-                    + employee.get(i).getSalary() + "    " + employee.get(i).getMg());
+                    + employee.get(i).getSalary() + "    " + employee.get(i).getMg() + "    " + employee.get(i).getGroup());
         }
     }
 
@@ -116,6 +139,7 @@ public class Staff {
         e1.setAge(28);
         e1.setSalary(2500);
         e1.setMg("m");
+        e1.setGroup("Manager");
         employeesCompany.add(e1);
 
         Employee e2 = new Employee();
@@ -124,6 +148,7 @@ public class Staff {
         e2.setAge(18);
         e2.setSalary(2210);
         e2.setMg("m");
+        e2.setGroup("Manager");
         employeesCompany.add(e2);
 
         Employee e3 = new Employee();
@@ -132,6 +157,7 @@ public class Staff {
         e3.setAge(22);
         e3.setSalary(4100);
         e3.setMg("m");
+        e3.setGroup("Manager");
         employeesCompany.add(e3);
 
         Employee e4 = new Employee();
@@ -140,6 +166,7 @@ public class Staff {
         e4.setAge(68);
         e4.setSalary(2860);
         e4.setMg("m");
+        e4.setGroup("Admin");
         employeesCompany.add(e4);
 
         Employee e5 = new Employee();
@@ -148,6 +175,7 @@ public class Staff {
         e5.setAge(26);
         e5.setSalary(6500);
         e5.setMg("m");
+        e5.setGroup("Admin");
         employeesCompany.add(e5);
 
         Employee e6 = new Employee();
@@ -156,6 +184,7 @@ public class Staff {
         e6.setAge(19);
         e6.setSalary(1900);
         e6.setMg("g");
+        e6.setGroup("Admin");
         employeesCompany.add(e6);
 
         Employee e7 = new Employee();
@@ -164,6 +193,7 @@ public class Staff {
         e7.setAge(38);
         e7.setSalary(4200);
         e7.setMg("g");
+        e7.setGroup("Programmer");
         employeesCompany.add(e7);
 
         Employee e8 = new Employee();
@@ -172,6 +202,7 @@ public class Staff {
         e8.setAge(44);
         e8.setSalary(2860);
         e8.setMg("g");
+        e8.setGroup("Programmer");
         employeesCompany.add(e8);
 
         Employee e9 = new Employee();
@@ -180,6 +211,7 @@ public class Staff {
         e9.setAge(42);
         e9.setSalary(6300);
         e9.setMg("g");
+        e9.setGroup("Programmer");
         employeesCompany.add(e9);
 
         Employee e10 = new Employee();
@@ -188,6 +220,7 @@ public class Staff {
         e10.setAge(38);
         e10.setSalary(4730);
         e10.setMg("g");
+        e10.setGroup("Programmer");
         employeesCompany.add(e10);
 
         return new ArrayList(employeesCompany);
