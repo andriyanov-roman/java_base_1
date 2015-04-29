@@ -1,4 +1,4 @@
-package work.oop.object.arraylist;
+package work.oop.arraylist;
 
 import java.util.ArrayList;
 
