@@ -1,4 +1,4 @@
-package hwc.hw4;
+package hwc.hw1.hw4;
 
 /**
  * Created by ������� on 14.04.2015.

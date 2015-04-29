@@ -1,4 +1,4 @@
-package hwc.hw6;
+package hwc.hw1.hw6;
 
 /**
  * Created by Евгений on 21.04.2015.
