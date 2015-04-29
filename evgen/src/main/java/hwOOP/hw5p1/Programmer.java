@@ -1,6 +1,6 @@
 package hwOOP.hw5p1;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 /**
  * Created by Евгений on 29.04.2015.
@@ -51,4 +51,4 @@ public class Programmer {
     public void setName(String name) {
         this.name = name;
     }
-    }
+}
