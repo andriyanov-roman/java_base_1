@@ -11,6 +11,7 @@ public class Company {
     private ArrayList<Admin> admins;
 
     public ArrayList<Manager> getManagers() {
+
         return managers;
     }
 
@@ -37,7 +38,7 @@ public class Company {
     public void getMaxSalary() {
         Manager managerMax = managers.get(0);
         for (int i = 0; i < managers.size(); i++) {
-            if(managers.get(i).getSalary() > managerMax.getSalary()) {
+            if (managers.get(i).getSalary() > managerMax.getSalary()) {
                 managerMax = managers.get(i);
             }
         }

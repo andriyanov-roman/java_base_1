@@ -42,4 +42,19 @@ public class Company {
         this.programmer = programmer;
     }
 
+    public static void main(String[] args) {
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
 }
