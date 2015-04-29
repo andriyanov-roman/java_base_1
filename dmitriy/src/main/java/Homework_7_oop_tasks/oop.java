@@ -1,4 +1,6 @@
-package Homework_7_oop_tests;
+package Homework_7_oop_tasks;
+
+import java.util.ArrayList;
 
 /**
  * Created by Дима on 21.04.2015.
@@ -87,6 +89,47 @@ public class oop {
         for (int i = 0; i < person.length; i++) {
             System.out.println(person[i].getWeight());
         }
+        //отсортировать по зп, возрасту, длине фамилии
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - 1 - i; j++) {
+                if (person[j].getScale() < person[j + 1].getScale()) {
+                    Human clone = new Human();
+                    clone = person[j + 1];
+                    person[j + 1] = person[j];
+                    person[j] = person[j + 1];
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - 1 - i; j++) {
+                if (person[j].getAge() < person[j + 1].getAge()) {
+                    Human clone = new Human();
+                    clone = person[j + 1];
+                    person[j + 1] = person[j];
+                    person[j] = person[j + 1];
+                }
+            }
+        }
+        for (int i = 0; i < person.length; i++) {
+            for (int j = 0; j < person.length - 1 - i; j++) {
+                if (person[j].getSurname().length() < person[j + 1].getSurname().length()) {
+                    Human clone = new Human();
+                    clone = person[j + 1];
+                    person[j + 1] = person[j];
+                    person[j] = person[j + 1];
+                }
+            }
+        }
+        //переделать под Arraylist и уволить всех мужчин, женщинам поднять зп
+        ArrayList changes = new ArrayList();
+        changes.add(getHumans());
+        for (int i = 0; i < changes.size(); i++) {
+            if (person[i].getState() == "male") {
+                changes.remove(i);
+            } else person[i].setScale(person[i].getScale() + 200);
+
+        }
+
 
     }
 
@@ -95,6 +138,7 @@ public class oop {
         h1.setName("Dima");
         h1.setSurname("Andry");
         h1.setState("male");
+        h1.setScale(100);
         h1.setAge(16);
         h1.setHeight(1.74);
         h1.setWeight(65.0);
@@ -102,6 +146,7 @@ public class oop {
         h2.setName("Dima");
         h2.setSurname("Sid");
         h2.setState("male");
+        h2.setScale(200);
         h2.setAge(16);
         h2.setHeight(1.65);
         h2.setWeight(50.0);
@@ -109,6 +154,7 @@ public class oop {
         h3.setName("Vova");
         h3.setSurname("Logvinenko");
         h3.setState("male");
+        h3.setScale(300);
         h3.setAge(15);
         h3.setHeight(1.62);
         h3.setWeight(55.0);
@@ -116,6 +162,7 @@ public class oop {
         h4.setName("Danil");
         h4.setSurname("Pisarenko");
         h4.setState("male");
+        h4.setScale(400);
         h4.setAge(17);
         h4.setHeight(1.80);
         h4.setWeight(75.0);
@@ -123,6 +170,7 @@ public class oop {
         h5.setName("Pavel");
         h5.setSurname("Karpenko");
         h5.setState("male");
+        h5.setScale(500);
         h5.setAge(16);
         h5.setHeight(1.79);
         h5.setWeight(80.0);
@@ -130,6 +178,7 @@ public class oop {
         h6.setName("Valera");
         h6.setSurname("Bass");
         h6.setState("male");
+        h6.setScale(600);
         h6.setAge(16);
         h6.setHeight(1.76);
         h6.setWeight(65.0);
@@ -137,6 +186,7 @@ public class oop {
         h7.setName("Marina");
         h7.setSurname("Tykhonenko");
         h7.setState("female");
+        h7.setScale(700);
         h7.setAge(15);
         h7.setHeight(1.69);
         h7.setWeight(40.0);
@@ -144,6 +194,7 @@ public class oop {
         h8.setName("Nastya");
         h8.setSurname("Artemenko");
         h8.setState("female");
+        h8.setScale(800);
         h8.setAge(15);
         h8.setHeight(1.58);
         h8.setWeight(40.0);
@@ -151,6 +202,7 @@ public class oop {
         h9.setName("Katya");
         h9.setSurname("Kiblitskaya");
         h9.setState("female");
+        h9.setScale(900);
         h9.setAge(15);
         h9.setHeight(1.74);
         h9.setWeight(40.0);
@@ -158,6 +210,7 @@ public class oop {
         h10.setName("Liza");
         h10.setSurname("Gansevich");
         h10.setState("female");
+        h10.setScale(1000);
         h10.setAge(16);
         h10.setHeight(1.71);
         h10.setWeight(50);

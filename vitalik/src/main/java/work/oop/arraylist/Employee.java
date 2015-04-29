@@ -1,16 +1,15 @@
-package work.oop.object;
+package work.oop.arraylist;
 
 /**
- * СЂР°Р±РѕС‚Р° СЃ РѕР±СЊРµРєС‚Р°РјРё
+ * Класс сотрудники
  */
-public class Human {
+public class Employee {
     private String name;
     private String secondName;
     private int age;
-    private double weight;
-    private double height;
     private int salary;
-    private char mg;
+    private String mg;
+    private String group;
 
 
     public String getName() {
@@ -22,18 +21,16 @@ public class Human {
     public int getAge() {
         return age;
     }
-    public double getWeight() {
-        return weight;
-    }
-    public double getHeight() {
-        return height;
-    }
     public int getSalary() {
         return salary;
     }
-    public char getMg() {
+    public String getMg() {
         return mg;
     }
+    public String getGroup(){
+        return group;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -47,21 +44,14 @@ public class Human {
         this.age = age;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void setMg(char mg) {
-
-            this.mg = mg;
-
+    public void setMg(String mg) {
+        this.mg = mg;
+    }
+    public void setGroup (String group){
+        this.group = group;
     }
 }
