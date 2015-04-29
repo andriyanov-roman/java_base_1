@@ -1,6 +1,7 @@
 package work.oop.company;
 
 import java.util.ArrayList;
+
 /**
  * Класс компания
  */
@@ -46,15 +47,6 @@ public class Company {
 
 
 
-
-
-
-
-
-
-
-
     }
-
 
 }
