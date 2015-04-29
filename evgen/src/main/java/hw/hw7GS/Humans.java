@@ -1,4 +1,4 @@
-package hwc.hw1.hw7GS;
+package hw.hw7GS;
 
 /**
  * Created by ������� on 21.04.2015.
