@@ -1,4 +1,4 @@
-package OOP;
+package hwOOP;
 
 import java.io.File;
 import java.io.FileNotFoundException;

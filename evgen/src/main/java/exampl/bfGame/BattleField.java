@@ -1,14 +1,15 @@
-package Training;
+package exampl.bfGame;
 
 /**
- * Created by Евгений on 28.04.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 28.04.2015.
  */
 public class BattleField {
 
     public static void main(String[] args) {
-        Tank t1 = new Tank();
         Engine engine = new Engine();
         Cannon cannon = new Cannon();
+
+        Tank t1 = new Tank();
         engine.setPower(500);
         engine.setVolume(0.5);
         engine.setType("Disel");

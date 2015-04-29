@@ -1,8 +1,4 @@
-package OOP;
-
-import Hw7withGetSet.Humans;
-
-import java.util.ArrayList;
+package hwOOP;
 
 /**
  * Created by ������� on 25.04.2015.

@@ -1,7 +1,7 @@
-package Training;
+package exampl.bfGame;
 
 /**
- * Created by Евгений on 28.04.2015.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 28.04.2015.
  */
 public class Tank {
    private Engine engine;
