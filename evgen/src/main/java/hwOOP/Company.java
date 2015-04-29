@@ -1,5 +1,10 @@
 package hwOOP;
 
+import hwOOP.ConsoleReader;
+import hwOOP.FileReader;
+import hwOOP.FileWritter;
+import hwOOP.Workers;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
