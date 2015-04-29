@@ -1,4 +1,4 @@
-package hwOOP;
+package hwOOP.hw234;
 
 import java.util.Scanner;
 
