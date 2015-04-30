@@ -35,6 +35,7 @@ public class Main {
         comp.showMaxAdminSalary(comp);
         comp.showMaxProgrammerSalary(comp);
         comp.showMaxManagerSalary(comp);
+        System.out.println();
         comp.showMaxEmployeeSalary(comp);
 
 
