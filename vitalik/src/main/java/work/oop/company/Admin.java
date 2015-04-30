@@ -1,7 +1,6 @@
 package work.oop.company;
 
 import java.util.ArrayList;
-
 /**
  * Класс для админа
  */
