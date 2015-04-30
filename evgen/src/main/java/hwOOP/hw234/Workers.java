@@ -1,4 +1,4 @@
-package hwOOP;
+package hwOOP.hw234;
 
 /**
  * Created by ������� on 25.04.2015.

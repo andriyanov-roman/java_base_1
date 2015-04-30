@@ -1,9 +1,4 @@
-package hwOOP;
-
-import hwOOP.ConsoleReader;
-import hwOOP.FileReader;
-import hwOOP.FileWritter;
-import hwOOP.Workers;
+package hwOOP.hw234;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
