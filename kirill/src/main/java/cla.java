@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -18,6 +19,10 @@ public class cla {
         writer.close();
 
         PrintWriter printWriter = new PrintWriter(f);
+
+
+        LocalDate date = LocalDate.of(1985,10,14);  //.now();
+        date.getDayOfMonth(); //plusdays
 
        /* int a=4;
         int b=2;

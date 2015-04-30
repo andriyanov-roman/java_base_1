@@ -1,18 +1,47 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Office {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         zp(getPlankton()); //Найти сотрудника у которого самая высокая зарплата.
         zp(getProgrammers());zp(getAdmins());zp(getManagers()); //Найти из каждого типа сотрудников самого высокооплачиваемого.
         Sort(getPlankton());	//Написать методы по сортировке
+        write(getPlankton());   //Все данные по компания и сотрудникам перенести в файлы
         Uvolit(getPlankton()); //Уволить всех мужчин и женщинам поднять з.п
         AddEmployeeAndShow();	//Введенные данные с консоли записываются в файл+Пользователь может получить все данные из файла
-
+        print();                //Пользователь может получить все данные из файла
     }
 
+    public static void print() throws IOException {
+
+        BufferedReader br = new BufferedReader(new FileReader("F:\\a.txt"));
+        String sCurrentLine;
+        while ((sCurrentLine = br.readLine()) != null) {
+            System.out.println(sCurrentLine);
+        }
+    }
+
+    public static void write(ArrayList<Plankton> v) throws IOException {
+
+        File f = new File("F:\\a.txt");
+
+        FileWriter writer = new FileWriter(f);
+        for (int i = 0; i < v.size(); i++) {
+            writer.write(v.get(i).getName() + ", ");
+            writer.write(v.get(i).getSecondname() + ", ");
+            writer.write(v.get(i).getAge() + ", ");
+            writer.write(v.get(i).getGender() + ", "+'\n');
+        }
+        writer.flush();
+        writer.close();
+    }
     public static void AddEmployeeAndShow(){
         Scanner input= new Scanner(System.in);
 

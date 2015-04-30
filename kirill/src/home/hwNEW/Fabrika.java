@@ -1,26 +1,67 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
-//import java.util.Date;
-//import java.text.SimpleDateFormat;
+
 public class Fabrika {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         ArrayList <Machine> NewCar = new ArrayList<Machine>();
 
-        NewCar.add(Stroy());   //строит машины по требованию заказчика,как только машина построена, её параметры автоматически сохраняются в файл.
-        NewCar.addAll(getPark());
-        show(NewCar);         //Загрузить из файла(в который машини сохранялись)
+        NewCar.add(Stroy());   //строит машины по требованию заказчика
+        NewCar.addAll(getPark());  //gotoviy avtopark
+        write(NewCar);         //параметры автоматически сохраняются в файл.
+        show();               //Загрузить из файла(в который машини сохранялись)
         MaxPrice(NewCar);     //Найти самую дорогую машину
         SameColor(NewCar);    //Найти машины одного цвета
+        dateQty(NewCar);      //Вернуть количество произведенных машин за интервал времени(Например за месяц)
 
     }
 
-    public static void show(ArrayList <Machine> t){
-        for (int i = 0; i < t.size(); i++) {
-            System.out.print(t.get(i).getName() + " ");
+    public static void dateQty(ArrayList<Machine> v){
+        int count=0;
+        Calendar pered = Calendar.getInstance(); pered.set(2015, 7, 1);
+        Calendar posle = Calendar.getInstance(); posle.set(2015, 6, 1);
+        for (int i=0; i<v.size(); i++){
+            if (v.get(i).getProdDate().before(pered.getTime()) == true &&
+                    v.get(i).getProdDate().after(posle.getTime()) == true){
+                count++;
+            }
+        }System.out.println(count+ " - kol-vo machine  za mesac");
+
+    }
+
+    public static void write(ArrayList<Machine> v) throws IOException {
+
+        File f = new File("F:\\a.txt");
+
+        FileWriter writer = new FileWriter(f, true);
+        for (int i = 0; i < v.size(); i++) {
+            writer.write(v.get(i).getName() + ", ");
+            writer.write(v.get(i).getColor() + ", ");
+            writer.write(v.get(i).getDesc() + ", ");
+            writer.write(v.get(i).getFactoryname() + ", ");
+            writer.write(v.get(i).getOwner() + ", ");
+            writer.write(v.get(i).getNomber() + ", ");
+            writer.write(v.get(i).getStatus() + ", ");
+            writer.write(v.get(i).getType() + ", ");
+            writer.write(v.get(i).getProdDate() +" "+ '\n');
         }
-        System.out.println();
+        writer.flush();
+        writer.close();
+    }
+
+    public static void show() throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader("F:\\a.txt"));
+        String sCurrentLine;
+        while ((sCurrentLine = br.readLine()) != null) {
+            System.out.println(sCurrentLine);
+        }
     }
 
     public static void MaxPrice(ArrayList <Machine> t){           // Найти самую дорогую машину
@@ -36,22 +77,17 @@ public class Fabrika {
     }
 
     public static void  SameColor(ArrayList <Machine> t){          //Найти машины одного цвета
-        String col = t.get(0).getColor();
-        String name = t.get(0).getName();
-        for (int i = 1; i <t.size(); i++) {
-            if(t.get(i).getColor().equals(col)) {
-                System.out.println(name+" "+col);
-                System.out.println(t.get(i).getName()+" "+t.get(i).getColor());
+        for(int i=0; i<t.size();i++){
+            for(int j=0; j<t.size(); j++){
+                if (t.get(i).getColor().equals(t.get(j).getColor()) && !t.get(i).getName().equals(t.get(j).getName())){
+                    System.out.println(t.get(j).getName()+" "+t.get(j).getColor());
+                }
             }
-            else {
-                col=t.get(i).getColor();
-                name=t.get(0).getName();
-            }
-
         }
     }
 
-    public static ArrayList<Machine> getPark(){          //Park gotovih mashin
+    public static ArrayList<Machine> getPark() throws IOException{          //Park gotovih mashin
+
         ArrayList <Machine> Park = new ArrayList<Machine>();
         Machine car1 = new Machine();
         car1.setName("AudiTT");
@@ -63,7 +99,7 @@ public class Fabrika {
         car1.setStatus("Ready");
         car1.setDesc("goodCar");
         car1.setPrice(180500);
-        car1.setProdDate("16.06.15");
+        car1.setProdDate(2015,06,19);
         Park.add(car1);
 
         Machine car2 = new Machine();
@@ -76,7 +112,7 @@ public class Fabrika {
         car2.setStatus("Ready");
         car2.setDesc("Notbed");
         car2.setPrice(350660);
-        car2.setProdDate("19.07.15");
+        car2.setProdDate(2015,07,19);
         Park.add(car2);
 
         Machine car3 = new Machine();
@@ -89,7 +125,7 @@ public class Fabrika {
         car3.setStatus("Ready");
         car3.setDesc("NiceCar");
         car3.setPrice(500100);
-        car3.setProdDate("11.05.15");
+        car3.setProdDate(2015,05,11);
         Park.add(car3);
 
         return Park;
@@ -98,7 +134,6 @@ public class Fabrika {
     public static Machine Stroy(){
 
         Scanner input= new Scanner(System.in);
-
 
         Machine car = new Machine();
 
@@ -113,12 +148,11 @@ public class Fabrika {
         System.out.print("VVedite nomber: ");
         car.setNomber(input.nextInt());
 
-        car.setFactoryname("Mitsubishi");
+        car.setFactoryname(car.getName()+" Ink.");
         car.setStatus("Ready");
         car.setDesc("NewGen");
         car.setPrice(235000);
-        car.setProdDate("12.06.15");
-
+        car.setProdDate(2015,06,15);
 
         return car;
     }

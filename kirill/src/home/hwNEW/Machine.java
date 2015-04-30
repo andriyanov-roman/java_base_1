@@ -1,7 +1,8 @@
-/**
- * Created by Pipin on 28.04.2015.
- */
+import java.util.Calendar;
+import java.util.Date;
+
 public class Machine {
+
     private String name;
     private String type;
     private String owner;
@@ -11,7 +12,7 @@ public class Machine {
     private String status;
     private String desc;
     private double price;
-    private String prodDate;
+    private Calendar prodDate = Calendar.getInstance();
 
     public String getName(){
         return name;
@@ -40,8 +41,8 @@ public class Machine {
     public double getPrice(){
         return price;
     }
-    public String getProdDate(){
-        return prodDate;
+    public Date getProdDate(){
+        return prodDate.getTime();
     }
 
     public void setName(String name){
@@ -71,9 +72,8 @@ public class Machine {
     public void setPrice(double price){
         this.price=price;
     }
-    public void setProdDate(String prodDate){
-        this.prodDate=prodDate;
+    public void setProdDate(int year, int month, int date){
+        this.prodDate.set(year, month, date);
     }
 
 }
-

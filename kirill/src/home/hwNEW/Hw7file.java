@@ -1,27 +1,23 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Hw7file {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Start();
 
-
     }
 
-    public static void Start(){
+    public static void Start() throws IOException{
 
         Scanner input = new Scanner(System.in);
         ArrayList<String> List = new ArrayList<String>();
         String t;
-        String fileName = "E://a.txt";
-
 
         do{
             System.out.print("VVedite slovo: ");
@@ -29,11 +25,9 @@ public class Hw7file {
 
             if (t.equals("SAVE") || t.equals("LOAD")){
                 if (t.equals("SAVE")){
-                    write(fileName, List);
+                    write(List);
                 }
-                else    for (int i = 0; i < List.size(); i++) {
-                    System.out.print(List.get(i) + " ");
-                }
+                else   {print();}
                 System.out.println();
             }
 
@@ -41,58 +35,23 @@ public class Hw7file {
         } while(t.equals("SAVE") || !t.equals("LOAD"));
     }
 
-    public static void write(String fileName, ArrayList<String> t ) {
-        //Определяем файл
-        File file = new File(fileName);
+    public static void write(ArrayList<String> v) throws IOException {
 
-        try {
-            //проверяем, что если файл не существует то создаем его
-            if(!file.exists()){
-                file.createNewFile();
-            }
+        File f = new File("F:\\a.txt");
 
-            //PrintWriter обеспечит возможности записи в файл
-            PrintWriter out = new PrintWriter(file.getAbsoluteFile());
+        FileWriter writer = new FileWriter(f);
+        for (int i = 0; i < v.size(); i++) {
+            writer.write(v.get(i) + ", ");}
+        writer.flush();
+        writer.close();                            }
 
-            try {
-                //Записываем текст у файл
-                out.print(t);
-            } finally {
-                //После чего мы должны закрыть файл
-                //Иначе файл не запишется
-                out.close();
-            }
-        } catch(IOException e) {
-            throw new RuntimeException(e);
+    public static void print() throws IOException {
+
+        BufferedReader br = new BufferedReader(new FileReader("F:\\a.txt"));
+        String sCurrentLine;
+        while ((sCurrentLine = br.readLine()) != null) {
+            System.out.println(sCurrentLine);
         }
     }
-
-	/*public static String read(String fileName) throws FileNotFoundException {
-	    //Этот спец. объект для построения строки
-	    StringBuilder sb = new StringBuilder();
-
-	    exists(fileName);
-
-	    try {
-	        //Объект для чтения файла в буфер
-	        BufferedReader in = new BufferedReader(new FileReader( file.getAbsoluteFile()));
-	        try {
-	            //В цикле построчно считываем файл
-	            String s;
-	            while ((s = in.readLine()) != null) {
-	                sb.append(s);
-	                sb.append("\n");
-	            }
-	        } finally {
-	            //Также не забываем закрыть файл
-	            in.close();
-	        }
-	    } catch(IOException e) {
-	        throw new RuntimeException(e);
-	    }
-
-	    //Возвращаем полученный текст с файла
-	    return sb.toString();
-	}*/
-
 }
+
