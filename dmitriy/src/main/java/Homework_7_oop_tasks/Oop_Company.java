@@ -1,5 +1,10 @@
 package Homework_7_oop_tasks;
 
+import figures.Container;
+import figures.Figure;
+import figures.Treangle;
+
+import javax.xml.parsers.SAXParser;
 import java.util.ArrayList;
 
 /**
@@ -9,10 +14,7 @@ public class Oop_Company {
     public static void main(String[] args) {
         Company company = new Company();
         company.setName("Valve");
-        company.setManagers(new ArrayList<Manager>());
-        company.setAdmins(new ArrayList<Admin>());
-        company.setProgrammers(new ArrayList<Programmer>());
-
+        company.setEmployees(new ArrayList<Employee>());
         Manager Fmanager = new Manager();
         Fmanager.setName("Vlad");
         Fmanager.setSurname("Bachinskiy");
@@ -54,6 +56,7 @@ public class Oop_Company {
         Sprogrammer.setAge(25);
         Sprogrammer.setLanguage("Java 1.8");
         Sprogrammer.setScale(300);
+
 
     }
 
