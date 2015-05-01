@@ -1,11 +1,14 @@
+/*
 package hwOOP.hw5p1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+*/
 /**
  * Created by Евгений on 29.04.2015.
- */
+ *//*
+
 public class MainComoany {
     public static void main(String[] args) {
 
@@ -115,5 +118,22 @@ public class MainComoany {
 
         ArrayList allDepartments = new ArrayList();
         allDepartments.addAll(Arrays.asList(myCompany.getAdmins(), myCompany.getManagers(), myCompany.getProgrammers()));
+
+        */
+/*Manager maxM = null;
+        Admin maxI - null;
+        Programmer maxP = null;
+
+
+        for (int i = 0; i < allDepartments.size(); i++) {
+            if (allDepartments.get(i) instanceof Manager) {
+                Manager temp = (Manager)allDepartments.get(i);
+                    if (temp.)
+        }
+
+
+        }*//*
+
     }
 }
+*/
