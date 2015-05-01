@@ -4,18 +4,18 @@ package work.oop.figura;
  * Created by Виталий on 30.04.15.
  */
 public class Circle extends Figura {
-    private int radius;
+    private double radius;
 
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public void setRadius(int radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 
     public double getSquare() {
-        return Math.pow(Math.PI, 2);
+        return Math.PI*(radius*radius);
     }
 
     public double getPerimeter() {
