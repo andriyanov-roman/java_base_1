@@ -11,6 +11,16 @@ public class Company {
     private ArrayList<Programmer> programmer;
     private ArrayList<Admin> admin;
 
+    public ArrayList<Empleey> getEmpleeys() {
+        return empleeys;
+    }
+
+    public void setEmpleeys(ArrayList<Empleey> empleeys) {
+        this.empleeys = empleeys;
+    }
+
+    private ArrayList<Empleey> empleeys;
+
     public ArrayList<Admin> getAdmin() {
         return admin;
     }
@@ -53,8 +63,8 @@ public class Company {
                 max = i;
             }
         }
-        System.out.println("\nМенеджер с наивысшей зарплатой: " + manager.get(max).getName() + " " + manager.get(max).getSecondName()
-                + " зарплата: "  + manager.get(max).getSalary());
+        System.out.println("Менеджер с наивысшей зарплатой: " + manager.get(max).getName() + " " + manager.get(max).getSecondName()
+                + " зарплата: " + manager.get(max).getSalary());
     }
 
     public void getMaxSalaryA() {
@@ -67,7 +77,7 @@ public class Company {
             }
         }
         System.out.println("\nАдминистратор с наивысшей зарплатой: " + admin.get(max).getName() + " " + admin.get(max).getSecondName()
-                + " зарплата: "  + admin.get(max).getSalary());
+                + " зарплата: " + admin.get(max).getSalary());
     }
 
     public void getMaxSalaryP() {
@@ -79,10 +89,8 @@ public class Company {
                 max = i;
             }
         }
-            System.out.println("\nПрограммист с наивысшей зарплатой: " + programmer.get(max).getName() + " " + programmer.get(max).getSecondName()
-                    + " зарплата: "  + programmer.get(max).getSalary());
+        System.out.println("Программист с наивысшей зарплатой: " + programmer.get(max).getName() + " " + programmer.get(max).getSecondName()
+                + " зарплата: " + programmer.get(max).getSalary());
 
     }
-
-
 }
