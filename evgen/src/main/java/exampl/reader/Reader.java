@@ -1,4 +1,4 @@
-package exampl.RdWr;
+package exampl.reader;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package exampl.figure;
+package exampl.figures;
 
 /**
  * Created by Евгений on 30.04.2015.
