@@ -15,7 +15,7 @@ public class CompanyMetods {
         company.setManager(new ArrayList<Manager>());
         company.setProgrammer(new ArrayList<Programmer>());
 
-
+ArrayList <Empleey> empleeys = new ArrayList<Empleey>();
         Admin a1 = new Admin();
         a1.setName("Stepan");
         a1.setSecondName("Sidorov");
@@ -95,6 +95,20 @@ public class CompanyMetods {
         company.getMaxSalaryA();
         company.getMaxSalaryM();
         company.getMaxSalaryP();
+
+//        ArrayList employe = new ArrayList();
+//        employe.add(m1);
+//        employe.add(m2);
+//        employe.add(m3);
+//        for (int i = 0; i < employe.size(); i++) {
+//            if (employe.get(i)instanceof  Manager){
+//                Manager buf = (Manager)((Manager) employe.get(i)).getSalary();
+//
+//                System.out.println(buf);
+//            }
+
+ //       }
+
     }
 
     public static void printCompany(Company company) {
