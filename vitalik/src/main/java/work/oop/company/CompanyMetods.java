@@ -8,7 +8,7 @@ import java.util.Arrays;
  * Реализация класса компания
  */
 public class CompanyMetods extends Empleey {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
 
         Company company = new Company();
         company.setName("Google");
@@ -150,19 +150,29 @@ public class CompanyMetods extends Empleey {
         }
         writer.write("\nОтдел менеджеров:" + '\n');
         for (int i = 0; i < company.getManager().size(); i++) {
-           writer.write(company.getManager().get(i).getName() + " " + company.getManager().get(i).getSecondName() + " " + company.getManager().get(i).getAge()
-                   + " " + company.getManager().get(i).getSalary() + " " + company.getManager().get(i).getProjectName() + '\n');
+            writer.write(company.getManager().get(i).getName() + " " + company.getManager().get(i).getSecondName() + " " + company.getManager().get(i).getAge()
+                    + " " + company.getManager().get(i).getSalary() + " " + company.getManager().get(i).getProjectName() + '\n');
         }
         writer.write("\nОтдел программистов:" + '\n');
         for (int i = 0; i < company.getProgrammer().size(); i++) {
             writer.write(company.getProgrammer().get(i).getName() + " " + company.getProgrammer().get(i).getSecondName() + " " + company.getProgrammer().get(i).getAge()
-                    + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine()+ '\n');
+                    + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine() + '\n');
         }
 
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        System.out.println("Введите текст: \nдля записи текста в файл введите - save");
+        for (; ; ) {
+            str = br.readLine();
+            if (str.equals("save"))
+                break;
+            writer.write(str + '\n');
+        }
         writer.flush();
         writer.close();
 
-        System.out.println("\n+++++++++++++++ Вывод содержания файла +++++++++++++++++++++");
+        System.out.println("\n++++++++ Вывод содержания файла ++++++++");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String fileLine;
         while ((fileLine = bufferedReader.readLine()) != null) {
@@ -170,8 +180,7 @@ public class CompanyMetods extends Empleey {
         }
 
 
-
-}
+    }
 
 
     public static void printCompany(Company company) {

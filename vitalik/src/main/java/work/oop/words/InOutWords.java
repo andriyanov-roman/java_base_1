@@ -15,7 +15,7 @@ public class InOutWords {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
         System.out.println("Введите текст: \nдля записи текста в файл введите - save\nдля вывода текста в консоль введите - load");
-        for (int i = 1; i > 0; i++) {
+        for (;;) {
             str = br.readLine();
             if (str.equals("save"))
                 break;
