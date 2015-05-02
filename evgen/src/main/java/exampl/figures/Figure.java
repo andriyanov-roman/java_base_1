@@ -1,8 +1,6 @@
 package exampl.figures;
 
-/**
- * Created by Евгений on 30.04.2015.
- */
+
 public class Figure {
     private String name;
 
@@ -14,7 +12,7 @@ public class Figure {
         this.name = name;
     }
 
-    public int getPerimeter(){
+    public double getPerimeter(){
         return 0 ;
     }
 
@@ -26,4 +24,7 @@ public class Figure {
         return  0;
     }
 
+    public int setSquare(){
+        return  0;
+    }
 }

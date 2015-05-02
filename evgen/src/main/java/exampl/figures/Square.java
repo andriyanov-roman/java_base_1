@@ -1,12 +1,7 @@
-/*
-package exampl.figure;
+package exampl.figures;
 
-*/
-/**
- * Created by Евгений on 30.04.2015.
- *//*
 
-public class Square extends Figure{
+public class Square extends Figure {
     private int side;
 
     public int getSide() {
@@ -17,14 +12,15 @@ public class Square extends Figure{
         this.side = side;
     }
 
-    public void getPerimeter() {
+    public double getPerimeter() {
         double perimeter = 0;
         perimeter = side * 4;
+        return perimeter;
     }
 
-    public void getSquare() {
+    public double getSquare() {
         double square = 0;
         square = side * side;
+        return square;
     }
 }
-*/

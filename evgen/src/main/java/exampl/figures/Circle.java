@@ -1,12 +1,6 @@
-/*
-package exampl.figure;
+package exampl.figures;
 
-*/
-/**
- * Created by Евгений on 30.04.2015.
- *//*
-
-public class Circle extends Figure{
+public class Circle extends Figure {
 
     private int radius;
 
@@ -18,14 +12,15 @@ public class Circle extends Figure{
         this.radius = radius;
     }
 
-    public void getPerimeter() {
+    public double getPerimeter() {
         double perimeter = 0;
         perimeter = 2 * Math.PI * radius;
+        return perimeter;
     }
 
-    public void getSquare() {
+    public double getSquare() {
         double square = 0;
         square = 2 * Math.PI * radius * radius;
+        return square;
     }
 }
-*/
