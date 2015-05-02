@@ -49,9 +49,8 @@ public class Machine {
 
     }
 
-    public void writeOrder() throws IOException {
-        File f = new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt");
-        FileWriter writer = new FileWriter(f, true);
+    public void writeOrder(File file) throws IOException {
+        FileWriter writer = new FileWriter(file, true);
         writer.write("Имя заказчика: " + customerName + '\n');
         writer.write("Желаемый цвет машины: " + color + '\n');
         writer.write("Желаемый тип машины: " + type + '\n');
@@ -71,21 +70,5 @@ public class Machine {
             char c = (char)r;
             System.out.print(c);
         }
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getNumber() {
-        return number;
     }
 }
