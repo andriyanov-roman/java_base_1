@@ -1,12 +1,7 @@
-/*
-package exampl.figure;
+package exampl.figures;
 
-*/
-/**
- * Created by Евгений on 30.04.2015.
- *//*
 
-public class Triangle extends  Figure{
+public class Triangle extends Figure {
     private int side;
     private int height;
 
@@ -26,14 +21,15 @@ public class Triangle extends  Figure{
         this.height = height;
     }
 
-    public void getPerimeter() {
+    public double getPerimeter() {
         double perimeter = 0;
         perimeter = side + side + side;
+        return perimeter;
     }
 
-    public void getSquare() {
+    public double getSquare() {
         double square = 0;
         square = 0.5 * side * height;
+        return square;
     }
 }
-*/

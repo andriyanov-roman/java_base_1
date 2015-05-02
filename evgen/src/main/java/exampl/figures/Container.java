@@ -1,24 +1,39 @@
-/*
-package exampl.figure;
+package exampl.figures;
 
-import java.util.ArrayList;
+import java.util.List;
 
-*/
-/**
- * Created by Евгений on 30.04.2015.
- *//*
 
 public class Container {
-    ArrayList<Figure> figures;
+    private List<Figure> figures;
+
+
+    public void setFigures(List<Figure> figures) {
+        this.figures = figures;
+    }
 
     public void getMaxPerimeter(){
-        Figure maxPt = figures.get(0);
+        double maxPt = figures.get(0).getPerimeter();
+        int figInd = 0;
         for (int i = 0; i < figures.size(); i++) {
-            if(maxPt.getPerimeter() < figures.get(i).getPerimeter() ) {
+            if(maxPt < figures.get(i).getPerimeter() ) {
                 maxPt = figures.get(i).getPerimeter();
+                figInd = i;
             }
         }
-        System.out.println("Max perimeter have " + figures);
+        System.out.println("Max perimeter have a " + figures.get(figInd).getName() );
+        System.out.println("Perimeter value: " + maxPt);
+    }
+
+    public void getMaxSquare(){
+        double maxSq = figures.get(0).getSquare();
+        int figInd = 0;
+        for (int i = 0; i < figures.size(); i++) {
+            if(maxSq < figures.get(i).getSquare() ) {
+                maxSq = figures.get(i).getSquare();
+                figInd = i;
+            }
+        }
+        System.out.println("Max square have a " + figures.get(figInd).getName() );
+        System.out.println("Square value: " + maxSq);
     }
 }
-*/
