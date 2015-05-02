@@ -3,9 +3,27 @@ package hwOOP.hw234;
 import java.util.Scanner;
 
 public class ConsoleReader {
-    String name;
-    String surName;
+    private String name;
+    private String surName;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
     public void Scan() {
+
         System.out.println("Введите имя сотрудника: ");
         Scanner scnName = new Scanner(System.in);
         name = scnName.nextLine();

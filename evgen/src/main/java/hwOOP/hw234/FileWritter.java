@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileWritter {
-public static void write(String fileName, String text) {
 
-    File file = new File(fileName);
+public static void write(String text) {
+
+    File file = new File("./a.txt");
 
     try {
         if(!file.exists()){
@@ -24,11 +25,12 @@ public static void write(String fileName, String text) {
         throw new RuntimeException(e);
     }
 }
+
 private static String text;
-private static String fileName = "./a.txt";
+
 public static void main(String[] args) throws FileNotFoundException {
 
-    FileWritter.write(fileName, text);
+    FileWritter.write(text);
 
 }
 }
