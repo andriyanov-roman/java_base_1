@@ -65,6 +65,7 @@ public class Company {
         }
         System.out.println("Менеджер с наивысшей зарплатой: " + manager.get(max).getName() + " " + manager.get(max).getSecondName()
                 + " зарплата: " + manager.get(max).getSalary());
+
     }
 
     public void getMaxSalaryA() {

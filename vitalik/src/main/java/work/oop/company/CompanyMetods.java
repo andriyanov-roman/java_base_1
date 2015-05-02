@@ -1,5 +1,6 @@
 package work.oop.company;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -7,7 +8,7 @@ import java.util.Arrays;
  * Реализация класса компания
  */
 public class CompanyMetods extends Empleey {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Company company = new Company();
         company.setName("Google");
@@ -136,6 +137,42 @@ public class CompanyMetods extends Empleey {
         }
         System.out.println("\nСотрудник компании " + company.getName() + " с наивысшей зарплатой: " + empleeys.get(max).getName() + " " + empleeys.get(max).getSecondName()
                 + " зарплата: " + empleeys.get(max).getSalary());
+
+//++++++++++++++++++++++++++++++++ File ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        File file = new File("D:\\InformationCompany.txt");
+        FileWriter writer = new FileWriter(file, true);
+
+        writer.write("\nВ компании " + company.getName() + " работают сотрудники: " + '\n');
+        writer.write("\nОтдел администраторов:" + '\n');
+        for (int i = 0; i < company.getAdmin().size(); i++) {
+            writer.write(company.getAdmin().get(i).getName() + " " + company.getAdmin().get(i).getSecondName() + " " + company.getAdmin().get(i).getAge()
+                    + " " + company.getAdmin().get(i).getSalary() + " " + company.getAdmin().get(i).getOsName() + '\n');
+        }
+        writer.write("\nОтдел менеджеров:" + '\n');
+        for (int i = 0; i < company.getManager().size(); i++) {
+           writer.write(company.getManager().get(i).getName() + " " + company.getManager().get(i).getSecondName() + " " + company.getManager().get(i).getAge()
+                   + " " + company.getManager().get(i).getSalary() + " " + company.getManager().get(i).getProjectName() + '\n');
+        }
+        writer.write("\nОтдел программистов:" + '\n');
+        for (int i = 0; i < company.getProgrammer().size(); i++) {
+            writer.write(company.getProgrammer().get(i).getName() + " " + company.getProgrammer().get(i).getSecondName() + " " + company.getProgrammer().get(i).getAge()
+                    + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine()+ '\n');
+        }
+           writer.write("\nСотрудник компании " + company.getName() + " с наивысшей зарплатой: " + empleeys.get(max).getName() + " " + empleeys.get(max).getSecondName()
+                + " зарплата: " + empleeys.get(max).getSalary() + '\n');
+
+        writer.flush();
+        writer.close();
+
+        System.out.println("\nВывод содержания файла");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String fileLine;
+        while ((fileLine = bufferedReader.readLine()) != null) {
+            System.out.println(fileLine);
+        }
+
+
     }
 
 
