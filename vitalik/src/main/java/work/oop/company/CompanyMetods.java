@@ -162,10 +162,10 @@ public class CompanyMetods extends Empleey {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
-        System.out.println("Введите текст: \nдля записи текста в файл введите - save");
+        System.out.println("Введите текст: \nдля записи текста в файл введите - 1");
         for (; ; ) {
             str = br.readLine();
-            if (str.equals("save"))
+            if (str.equals("1"))
                 break;
             writer.write(str + '\n');
         }
