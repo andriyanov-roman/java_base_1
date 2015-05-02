@@ -1,7 +1,10 @@
-package work.oop.factory;
+package work.oop.company.factory;
+
+import work.oop.company.Empleey;
 
 import java.io.InputStreamReader;
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by Александра on 02.05.2015.

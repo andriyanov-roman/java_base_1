@@ -142,7 +142,6 @@ public class CompanyMetods extends Empleey {
 
         File file = new File("D:\\InformationCompany.txt");
         FileWriter writer = new FileWriter(file, true);
-
         writer.write("\nВ компании " + company.getName() + " работают сотрудники: " + '\n');
         writer.write("\nОтдел администраторов:" + '\n');
         for (int i = 0; i < company.getAdmin().size(); i++) {
@@ -159,13 +158,11 @@ public class CompanyMetods extends Empleey {
             writer.write(company.getProgrammer().get(i).getName() + " " + company.getProgrammer().get(i).getSecondName() + " " + company.getProgrammer().get(i).getAge()
                     + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine()+ '\n');
         }
-           writer.write("\nСотрудник компании " + company.getName() + " с наивысшей зарплатой: " + empleeys.get(max).getName() + " " + empleeys.get(max).getSecondName()
-                + " зарплата: " + empleeys.get(max).getSalary() + '\n');
 
         writer.flush();
         writer.close();
 
-        System.out.println("\nВывод содержания файла");
+        System.out.println("\n+++++++++++++++ Вывод содержания файла +++++++++++++++++++++");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String fileLine;
         while ((fileLine = bufferedReader.readLine()) != null) {
@@ -173,7 +170,8 @@ public class CompanyMetods extends Empleey {
         }
 
 
-    }
+
+}
 
 
     public static void printCompany(Company company) {
