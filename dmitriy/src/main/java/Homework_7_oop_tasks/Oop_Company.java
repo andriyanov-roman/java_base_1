@@ -54,7 +54,7 @@ public class Oop_Company {
         Sprogrammer.setName("Den");
         Sprogrammer.setSurname("Nicki");
         Sprogrammer.setAge(25);
-        Sprogrammer.setLanguage("Java 1.8");
+        Sprogrammer.setLanguage("C++");
         Sprogrammer.setScale(300);
 
 
