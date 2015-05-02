@@ -7,9 +7,7 @@ import java.util.ArrayList;
  */
 public class Company {
     private String name;
-    private ArrayList<Manager> managers;
-    private ArrayList<Admin> admins;
-    private ArrayList<Programmer> programmers;
+    private ArrayList<Employee> employees;
 
     public String getName() {
         return name;
@@ -19,27 +17,20 @@ public class Company {
         this.name = name;
     }
 
-    public ArrayList<Manager> getManagers() {
-        return managers;
+    public ArrayList<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setManagers(ArrayList<Manager> managers) {
-        this.managers = managers;
+    public void setEmployees(ArrayList<Employee> employees) {
+        this.employees = employees;
     }
 
-    public ArrayList<Admin> getAdmins() {
-        return admins;
-    }
-
-    public void setAdmins(ArrayList<Admin> admins) {
-        this.admins = admins;
-    }
-
-    public ArrayList<Programmer> getProgrammers() {
-        return programmers;
-    }
-
-    public void setProgrammers(ArrayList<Programmer> programmers) {
-        this.programmers = programmers;
+    public void getMaxSalary(){
+        Employee max = employees.get(0);
+        for (int i = 0; i < employees.size(); i++) {
+            if(employees.get(i).getScale() > max.getScale()) {
+                max = employees.get(i);
+            }
+        }
     }
 }
