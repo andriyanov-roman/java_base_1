@@ -1,7 +1,7 @@
 package hw.hw7GS;
 
 /**
- * Created by ������� on 21.04.2015.
+ * Created by Евгений on 02.05.2015.
  */
 public class Humans {
     private String name;
@@ -9,9 +9,6 @@ public class Humans {
     private int age;
     private double weight;
     private double height;
-
-
-
 
     public String walk() {
         if (this.age > 0 && this.age < 6 && this.weight > 0 && this.weight < 21 && this.height > 0 && this.height < 1.01) {

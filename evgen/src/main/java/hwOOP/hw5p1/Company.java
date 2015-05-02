@@ -1,16 +1,19 @@
+/*
 package hwOOP.hw5p1;
 
 import java.util.ArrayList;
 
+*/
 /**
  * Created by Евгений on 29.04.2015.
- */
+ *//*
+
 public class Company {
 
     private String name;
-    private ArrayList<Manager> managers;
-    private ArrayList<Admin> admins;
-    private ArrayList<Programmer> programmers;
+    private ArrayList<Worker> workers;
+
+
 
     public String getName() {
         return name;
@@ -20,7 +23,8 @@ public class Company {
         this.name = name;
     }
 
-    public ArrayList<Manager> getManagers() {
+   */
+/* public ArrayList<Manager> getManagers() {
         return managers;
     }
 
@@ -42,7 +46,11 @@ public class Company {
 
     public void setProgrammers(ArrayList<Programmer> programmers) {
         this.programmers = programmers;
-    }
+
+        Есть три фигуры: квадрат, треугольник и круг. У всех фигур есть названия. У ввс фигур есть состояния названия. У треугольника в
+        качестве состояния есть сторона и высота, как и у квадрата. а у круга есть радиус. Нам нужно найти площадь и перимет кажой фигуры.
+    }*//*
+
 
     public void getMaxManagerSalary() {
         Manager managerMax = managers.get(0);
@@ -86,3 +94,4 @@ public class Company {
         System.out.println();
     }
 }
+*/

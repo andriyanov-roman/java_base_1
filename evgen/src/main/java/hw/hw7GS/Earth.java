@@ -1,7 +1,7 @@
 package hw.hw7GS;
 
 /**
- * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 21.04.2015.
+ * Created by Евгений on 02.05.2015.
  */
 public class Earth {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Earth {
 
     }
 
-        public static Humans[] getHuman(){
+    public static Humans[] getHuman(){
 
         Humans h1 = new Humans();
         h1.setName("David");
@@ -141,3 +141,4 @@ public class Earth {
         showArrayNames(arr);
     }
 }
+
