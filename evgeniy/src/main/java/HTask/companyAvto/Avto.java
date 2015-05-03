@@ -2,9 +2,13 @@ package HTask.companyAvto;
 
 import sun.util.resources.LocaleData;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 /**
  * Created by Евгений on 03.05.15.
@@ -18,27 +22,45 @@ public class Avto {
     private String factoryName;
     private String performence;
     private String descAvto;
-    //private Date date_of_day;
-    private LocaleData date_of_day;
+    private LocalDate date_of_day;
 
-    public void scanOrder(){
+    public void regOrder(){
         System.out.println("Введите своё имя: ");
-        Scanner clnName = new Scanner(System.in);
-        holder = clnName.nextLine();
+        Scanner ordName = new Scanner(System.in);
+        holder = ordName.nextLine();
 
         System.out.println("Введите цвет будущей машины: ");
-        Scanner color = new Scanner(System.in);
-        colorAvto = color.nextLine();
+        Scanner ordColor = new Scanner(System.in);
+        colorAvto = ordColor.nextLine();
 
         System.out.println("Введите тип будущей машины: ");
-        Scanner type = new Scanner(System.in);
-        typeAvto = type.nextLine();
+        Scanner ordType = new Scanner(System.in);
+        typeAvto = ordType.nextLine();
 
 
-        //Scanner date = new Scanner(System.in);
-        date_of_day = LocalData.now();
-        //LocaleData date_of_day = LocaleData.out();
-        LocalDate date = LocalDate.now();
-        System.out.print(date);
+        Scanner ordDate = new Scanner(System.in);
+        date_of_day = LocalDate.now();
+
+        System.out.println();
+        System.out.println("Ваш заказ принят.");
+        System.out.println("Заказанный автомобиль, клиентов " + holder +  ", спроектирован. Автомобиль следующие параметры:");
+        System.out.println("Цвет:" + colorAvto);
+        System.out.println("Тип автомобиля:" + typeAvto);
+        System.out.println("Заказ выполнен" + date_of_day);
     }
+
+    /*public void Order(File file) throws IOException {
+        FileWriter writer = new FileWriter(file, true);
+        writer.write("Владелец: " + holder + '\n');
+        writer.write("Название автомобиля: " + nameAvto + '\n');
+        writer.write("Тип автомобиля: " + typeAvto + '\n');
+        writer.write("Номер автомобиля: " + numberAvto + '\n');
+        writer.write("Цвет автомобиля: " + colorAvto + '\n');
+        writer.write("Завод производитель автомобиля: " + factoryName + '\n');
+        writer.write("Выполнение заказа: " + performence + '\n');
+        writer.write("Описание автомобиля: " + descAvto + '\n');
+        writer.write("Дата создания автомобиля: " + date_of_day + '\n' + '\n');
+        writer.flush();
+        writer.close();
+    } */
 }
