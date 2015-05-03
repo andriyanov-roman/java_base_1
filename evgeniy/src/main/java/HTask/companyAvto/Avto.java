@@ -2,9 +2,7 @@ package HTask.companyAvto;
 
 import sun.util.resources.LocaleData;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -24,7 +22,7 @@ public class Avto {
     private String descAvto;
     private LocalDate date_of_day;
 
-    public void regOrder(){
+    public void regOrder() {
         System.out.println("Введите своё имя: ");
         Scanner ordName = new Scanner(System.in);
         holder = ordName.nextLine();
@@ -43,13 +41,13 @@ public class Avto {
 
         System.out.println();
         System.out.println("Ваш заказ принят.");
-        System.out.println("Заказанный автомобиль, клиентов " + holder +  ", спроектирован. Автомобиль следующие параметры:");
+        System.out.println("Заказанный автомобиль, клиентов " + holder + ", спроектирован. Автомобиль следующие параметры:");
         System.out.println("Цвет:" + colorAvto);
         System.out.println("Тип автомобиля:" + typeAvto);
         System.out.println("Заказ выполнен" + date_of_day);
     }
 
-    /*public void Order(File file) throws IOException {
+    public void saveOrder(File file) throws IOException {
         FileWriter writer = new FileWriter(file, true);
         writer.write("Владелец: " + holder + '\n');
         writer.write("Название автомобиля: " + nameAvto + '\n');
@@ -62,5 +60,15 @@ public class Avto {
         writer.write("Дата создания автомобиля: " + date_of_day + '\n' + '\n');
         writer.flush();
         writer.close();
-    } */
+    }
+
+    public void scanOrder(File file) throws IOException {
+        System.out.println("------------------------------------");
+        System.out.print("Заказы: ");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String sCurrentLine;
+        while ((sCurrentLine = br.readLine()) != null) {
+            System.out.println(sCurrentLine);
+        }
+    }
 }
