@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class Avto {
     private String nameAvto;
     private String typeAvto;
-    private String holder; //owner
+    private String holder;
     private String numberAvto;
     private String colorAvto;
     private String factoryName;
