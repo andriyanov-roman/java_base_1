@@ -25,8 +25,8 @@ public class Company {
         FileWritter w = new FileWritter();
         r.Scan();
         String path = "./newFile";
-        String text = r.name + r.surName;
-        w.write(path, text);
+        String text = r.getName() + r.getSurName();
+        w.write(text);
 
         System.out.println("Информация записана в " + path);
 
