@@ -27,14 +27,21 @@ public class Avto {
         Scanner ordName = new Scanner(System.in);
         holder = ordName.nextLine();
 
-        System.out.println("¬ведите цвет будущей машины: ");
+        System.out.println("¬ведите цвет будущего авто: ");
         Scanner ordColor = new Scanner(System.in);
         colorAvto = ordColor.nextLine();
 
-        System.out.println("¬ведите тип будущей машины: ");
+        System.out.println("¬ведите тип будущего авто: ");
         Scanner ordType = new Scanner(System.in);
         typeAvto = ordType.nextLine();
 
+        System.out.println("¬ведите номерной знак будущего авто:");
+        Scanner ordNum = new Scanner(System.in);
+        typeAvto = ordNum.nextLine();
+
+        System.out.println("”кажите ваши предпочтени€ дл€ будушего авто:");
+        Scanner ordDesc = new Scanner(System.in);
+        typeAvto = ordDesc.nextLine();
 
         Scanner ordDate = new Scanner(System.in);
         date_of_day = LocalDate.now();
