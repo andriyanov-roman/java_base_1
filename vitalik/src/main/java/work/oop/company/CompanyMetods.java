@@ -108,8 +108,54 @@ public class CompanyMetods extends Empleey {
         company.getMaxSalaryA();
         company.getMaxSalaryM();
         company.getMaxSalaryP();
+        maxSalaryCompany(empleeys);
 
 
+//++++++++++++++++++++++++++++++++ File ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        File file = new File("vitalik\\resources\\InformationCompany.txt");
+        FileWriter writer = new FileWriter(file, true);
+        writer.write("\nВ компании " + company.getName() + " работают сотрудники: " + '\n');
+        writer.write("\nОтдел администраторов:" + '\n');
+        for (int i = 0; i < company.getAdmin().size(); i++) {
+            writer.write(company.getAdmin().get(i).getName() + " " + company.getAdmin().get(i).getSecondName() + " " + company.getAdmin().get(i).getAge()
+                    + " " + company.getAdmin().get(i).getSalary() + " " + company.getAdmin().get(i).getOsName() + '\n');
+        }
+        writer.write("\nОтдел менеджеров:" + '\n');
+        for (int i = 0; i < company.getManager().size(); i++) {
+            writer.write(company.getManager().get(i).getName() + " " + company.getManager().get(i).getSecondName() + " " + company.getManager().get(i).getAge()
+                    + " " + company.getManager().get(i).getSalary() + " " + company.getManager().get(i).getProjectName() + '\n');
+        }
+        writer.write("\nОтдел программистов:" + '\n');
+        for (int i = 0; i < company.getProgrammer().size(); i++) {
+            writer.write(company.getProgrammer().get(i).getName() + " " + company.getProgrammer().get(i).getSecondName() + " " + company.getProgrammer().get(i).getAge()
+                    + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine() + '\n');
+        }
+
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        System.out.println("Введите текст: \nдля записи текста в файл введите - save");
+        for (; ; ) {
+            str = br.readLine();
+            if (str.equals("save"))
+                break;
+            writer.write(str + '\n');
+        }
+        writer.flush();
+        writer.close();
+
+        System.out.println("\n++++++++ Вывод содержания файла ++++++++");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String fileLine;
+        while ((fileLine = bufferedReader.readLine()) != null) {
+            System.out.println(fileLine);
+        }
+
+
+    }
+
+    public static void maxSalaryCompany(ArrayList<Empleey> empleeys) {
         int maxA = 0, maxM = 0, maxP = 0;
         int a = 0, b = 0, c = 0, max = 0;
         for (int i = 0; i < empleeys.size(); i++) {
@@ -135,53 +181,11 @@ public class CompanyMetods extends Empleey {
         if (maxP > maxM && maxA < maxP) {
             max = c;
         }
-        System.out.println("\nСотрудник компании " + company.getName() + " с наивысшей зарплатой: " + empleeys.get(max).getName() + " " + empleeys.get(max).getSecondName()
+        System.out.println("\nСотрудник компании с наивысшей зарплатой: " + empleeys.get(max).getName() + " " + empleeys.get(max).getSecondName()
                 + " зарплата: " + empleeys.get(max).getSalary());
-
-//++++++++++++++++++++++++++++++++ File ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        File file = new File("D:\\InformationCompany.txt");
-        FileWriter writer = new FileWriter(file, true);
-        writer.write("\nВ компании " + company.getName() + " работают сотрудники: " + '\n');
-        writer.write("\nОтдел администраторов:" + '\n');
-        for (int i = 0; i < company.getAdmin().size(); i++) {
-            writer.write(company.getAdmin().get(i).getName() + " " + company.getAdmin().get(i).getSecondName() + " " + company.getAdmin().get(i).getAge()
-                    + " " + company.getAdmin().get(i).getSalary() + " " + company.getAdmin().get(i).getOsName() + '\n');
-        }
-        writer.write("\nОтдел менеджеров:" + '\n');
-        for (int i = 0; i < company.getManager().size(); i++) {
-            writer.write(company.getManager().get(i).getName() + " " + company.getManager().get(i).getSecondName() + " " + company.getManager().get(i).getAge()
-                    + " " + company.getManager().get(i).getSalary() + " " + company.getManager().get(i).getProjectName() + '\n');
-        }
-        writer.write("\nОтдел программистов:" + '\n');
-        for (int i = 0; i < company.getProgrammer().size(); i++) {
-            writer.write(company.getProgrammer().get(i).getName() + " " + company.getProgrammer().get(i).getSecondName() + " " + company.getProgrammer().get(i).getAge()
-                    + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine() + '\n');
-        }
-
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str;
-        System.out.println("Введите текст: \nдля записи текста в файл введите - 1");
-        for (; ; ) {
-            str = br.readLine();
-            if (str.equals("1"))
-                break;
-            writer.write(str + '\n');
-        }
-        writer.flush();
-        writer.close();
-
-        System.out.println("\n++++++++ Вывод содержания файла ++++++++");
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String fileLine;
-        while ((fileLine = bufferedReader.readLine()) != null) {
-            System.out.println(fileLine);
-        }
 
 
     }
-
 
     public static void printCompany(Company company) {
         System.out.println("\nОтдел администраторов:");
@@ -200,6 +204,8 @@ public class CompanyMetods extends Empleey {
                     + " " + company.getProgrammer().get(i).getSalary() + " " + company.getProgrammer().get(i).getLangMachine());
         }
     }
+
+
 
 }
 

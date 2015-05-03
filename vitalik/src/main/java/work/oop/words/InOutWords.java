@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class InOutWords {
     public static void main(String[] args) throws IOException{
 
-        File file = new File("D:\\InOutWords.txt");
+        File file = new File("vitalik\\resources\\InOutWords.txt");
         FileWriter writer = new FileWriter(file, true);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
