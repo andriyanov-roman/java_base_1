@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.time.LocalDate;
 
 /**
- * Created by Евгений on 03.05.15.
+ * Created by Р•РІРіРµРЅРёР№ on 03.05.15.
  */
 public class Avto {
     private String nameAvto;
@@ -23,23 +23,23 @@ public class Avto {
     private LocalDate date_of_day;
 
     public void regOrder() {
-        System.out.println("Введите своё имя: ");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЃРІРѕС‘ РёРјСЏ: ");
         Scanner ordName = new Scanner(System.in);
         holder = ordName.nextLine();
 
-        System.out.println("Введите цвет будущего авто: ");
+        System.out.println("Р’РІРµРґРёС‚Рµ С†РІРµС‚ Р±СѓРґСѓС‰РµРіРѕ Р°РІС‚Рѕ: ");
         Scanner ordColor = new Scanner(System.in);
         colorAvto = ordColor.nextLine();
 
-        System.out.println("Введите тип будущего авто: ");
+        System.out.println("Р’РІРµРґРёС‚Рµ С‚РёРї Р±СѓРґСѓС‰РµРіРѕ Р°РІС‚Рѕ: ");
         Scanner ordType = new Scanner(System.in);
         typeAvto = ordType.nextLine();
 
-        System.out.println("Введите номерной знак будущего авто:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂРЅРѕР№ Р·РЅР°Рє Р±СѓРґСѓС‰РµРіРѕ Р°РІС‚Рѕ:");
         Scanner ordNum = new Scanner(System.in);
         typeAvto = ordNum.nextLine();
 
-        System.out.println("Укажите ваши предпочтения для будушего авто:");
+        System.out.println("РЈРєР°Р¶РёС‚Рµ РІР°С€Рё РїСЂРµРґРїРѕС‡С‚РµРЅРёСЏ РґР»СЏ Р±СѓРґСѓС€РµРіРѕ Р°РІС‚Рѕ:");
         Scanner ordDesc = new Scanner(System.in);
         typeAvto = ordDesc.nextLine();
 
@@ -47,31 +47,31 @@ public class Avto {
         date_of_day = LocalDate.now();
 
         System.out.println();
-        System.out.println("Ваш заказ принят.");
-        System.out.println("Заказанный автомобиль, клиентов " + holder + ", спроектирован. Автомобиль следующие параметры:");
-        System.out.println("Цвет:" + colorAvto);
-        System.out.println("Тип автомобиля:" + typeAvto);
-        System.out.println("Заказ выполнен" + date_of_day);
+        System.out.println("Р’Р°С€ Р·Р°РєР°Р· РїСЂРёРЅСЏС‚.");
+        System.out.println("Р—Р°РєР°Р·Р°РЅРЅС‹Р№ Р°РІС‚РѕРјРѕР±РёР»СЊ, РєР»РёРµРЅС‚РѕРІ " + holder + ", СЃРїСЂРѕРµРєС‚РёСЂРѕРІР°РЅ. РђРІС‚РѕРјРѕР±РёР»СЊ СЃР»РµРґСѓСЋС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹:");
+        System.out.println("Р¦РІРµС‚:" + colorAvto);
+        System.out.println("РўРёРї Р°РІС‚РѕРјРѕР±РёР»СЏ:" + typeAvto);
+        System.out.println("Р—Р°РєР°Р· РІС‹РїРѕР»РЅРµРЅ" + date_of_day);
     }
 
     public void saveOrder(File file) throws IOException {
         FileWriter writer = new FileWriter(file, true);
-        writer.write("Владелец: " + holder + '\n');
-        writer.write("Название автомобиля: " + nameAvto + '\n');
-        writer.write("Тип автомобиля: " + typeAvto + '\n');
-        writer.write("Номер автомобиля: " + numberAvto + '\n');
-        writer.write("Цвет автомобиля: " + colorAvto + '\n');
-        writer.write("Завод производитель автомобиля: " + factoryName + '\n');
-        writer.write("Выполнение заказа: " + performence + '\n');
-        writer.write("Описание автомобиля: " + descAvto + '\n');
-        writer.write("Дата создания автомобиля: " + date_of_day + '\n' + '\n');
+        writer.write("Р’Р»Р°РґРµР»РµС†: " + holder + '\n');
+        writer.write("РќР°Р·РІР°РЅРёРµ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + nameAvto + '\n');
+        writer.write("РўРёРї Р°РІС‚РѕРјРѕР±РёР»СЏ: " + typeAvto + '\n');
+        writer.write("РќРѕРјРµСЂ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + numberAvto + '\n');
+        writer.write("Р¦РІРµС‚ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + colorAvto + '\n');
+        writer.write("Р—Р°РІРѕРґ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + factoryName + '\n');
+        writer.write("Р’С‹РїРѕР»РЅРµРЅРёРµ Р·Р°РєР°Р·Р°: " + performence + '\n');
+        writer.write("РћРїРёСЃР°РЅРёРµ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + descAvto + '\n');
+        writer.write("Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ Р°РІС‚РѕРјРѕР±РёР»СЏ: " + date_of_day + '\n' + '\n');
         writer.flush();
         writer.close();
     }
 
     public void scanOrder(File file) throws IOException {
         System.out.println("------------------------------------");
-        System.out.print("Заказы: ");
+        System.out.print("Р—Р°РєР°Р·С‹: ");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String sCurrentLine;
         while ((sCurrentLine = br.readLine()) != null) {
