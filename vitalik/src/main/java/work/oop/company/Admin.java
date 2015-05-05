@@ -1,7 +1,7 @@
 package work.oop.company;
 
 /**
- * Класс для админа
+ * пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
  */
 public class Admin extends Empleey{
 
@@ -16,5 +16,10 @@ public class Admin extends Empleey{
         this.osName = osName;
     }
 
-
+    @Override
+    public String toString() {
+        return getName() +
+                "osName='" + osName + '\'' +
+                '}';
+    }
 }

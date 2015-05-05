@@ -1,7 +1,7 @@
 package work.oop.company;
 
 /**
- * Created by Виталий on 30.04.15.
+ * Created by пїЅпїЅпїЅпїЅпїЅпїЅпїЅ on 30.04.15.
  */
 public class Empleey {
     private String name;
@@ -18,6 +18,14 @@ public class Empleey {
 
     public String getSecondName() {
         return secondName;
+    }
+
+    @Override
+    public String toString() {
+        return  name + ":" + secondName + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
     }
 
     public void setSecondName(String secondName) {
