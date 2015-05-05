@@ -1,9 +1,7 @@
 package hwOOP.hw5p2;
 
-
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.io.*;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -22,6 +20,8 @@ public class Machine {
     private String description;
     private int price;
     private LocalDate date;
+    private String month;
+
 
     public void scanOrder() {
 
@@ -63,18 +63,6 @@ public class Machine {
         writer.close();
     }
 
-    /*public void readOrder(File file) throws IOException {
-        System.out.println("------------------------------------");
-        System.out.println("Предыдущие заказы: ");
-        System.out.println();
-        FileReader reader = new FileReader(file);
-        int r;
-        while ((r = reader.read()) != -1) {
-            char c = (char)r;
-            System.out.print(c);
-        }
-    }*/
-
     public void readOrder(File file) throws IOException {
         System.out.println("------------------------------------");
         System.out.print("Предыдущие заказы: ");
@@ -85,5 +73,21 @@ public class Machine {
         }
     }
 
-
+    public void getMonthOrderList() throws ParseException, IOException {
+        Scanner scanner = new Scanner(new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt"));
+        System.out.println("Введите дату для поиска(в формате гггг-мм-чч): ");
+        Scanner scnType = new Scanner(System.in);
+        month = scnType.nextLine();
+        int count = 0;
+        while (scanner.hasNextLine()) {
+            Scanner scanner2 = new Scanner(scanner.nextLine());
+            while (scanner2.hasNext()) {
+                String s = scanner2.next();
+                if (s.equalsIgnoreCase(month)) {
+                    count = count + 1;
+                }
+            }
+        }
+        System.out.println("В этот день было произведено " + count + " машин(а, ы)!");
+    }
 }

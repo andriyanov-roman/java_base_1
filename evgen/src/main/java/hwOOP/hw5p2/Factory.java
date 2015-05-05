@@ -2,13 +2,13 @@
 package hwOOP.hw5p2;
 
 import java.io.*;
-import java.time.LocalDate;
+import java.text.ParseException;
 
 public class Factory {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, ParseException {
 
-        LocalDate date = LocalDate.of(1992, 2, 23);
-        System.out.println(date);
+        /*LocalDate date = LocalDate.of(1992, 2, 23);
+        System.out.println(date);*/
 
         File dataBase = new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt");
 
@@ -19,6 +19,9 @@ public class Factory {
         m1.writeOrder(dataBase);
 
         m1.readOrder(dataBase);
+
+        m1.getMonthOrderList();
+
     }
 }
 
