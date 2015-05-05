@@ -3,10 +3,8 @@ package hwOOP.hw5p2;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -23,7 +21,7 @@ public class Machine {
     private String status;
     private String description;
     private int price;
-    private int date;
+    private LocalDate date;
 
     public void scanOrder() {
 
@@ -43,6 +41,11 @@ public class Machine {
         Scanner scnNumber = new Scanner(System.in);
         number = scnNumber.nextLine();
 
+        //System.out.println("Введите дату построения машины: ");
+        Scanner scnDate = new Scanner(System.in);
+        //date = LocalDate.parse(scnDate.nextLine());
+        date = LocalDate.now();
+
         System.out.println();
         System.out.println("Спасибо за Ваш заказ! Осуществляем построение машины...");
         System.out.println("Машина построена! Поздравляем счастливого обладателя новой машины!");
@@ -54,13 +57,13 @@ public class Machine {
         writer.write("Имя заказчика: " + customerName + '\n');
         writer.write("Желаемый цвет машины: " + color + '\n');
         writer.write("Желаемый тип машины: " + type + '\n');
-        writer.write("Желаемый номер машины: " + number + '\n' + '\n');
+        writer.write("Желаемый номер машины: " + number + '\n');
+        writer.write("Дата построения машины: " + date + '\n' + '\n');
         writer.flush();
-
         writer.close();
     }
 
-    public void readOrder(File file) throws IOException {
+    /*public void readOrder(File file) throws IOException {
         System.out.println("------------------------------------");
         System.out.println("Предыдущие заказы: ");
         System.out.println();
@@ -70,5 +73,17 @@ public class Machine {
             char c = (char)r;
             System.out.print(c);
         }
+    }*/
+
+    public void readOrder(File file) throws IOException {
+        System.out.println("------------------------------------");
+        System.out.print("Предыдущие заказы: ");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String sCurrentLine;
+        while ((sCurrentLine = br.readLine()) != null) {
+            System.out.println(sCurrentLine);
+        }
     }
+
+
 }
