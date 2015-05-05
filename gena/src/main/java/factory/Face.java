@@ -1,4 +1,4 @@
-package fabric;
+package factory;
 
 
 import java.io.*;
@@ -36,7 +36,7 @@ public class Face {
         String type = in.nextLine();
         System.out.print("Enter car colour: ");
         String colour = in.nextLine();
-        System.out.print("Enter car fabric: ");
+        System.out.print("Enter car factory: ");
         String fabricName = in.nextLine();
         System.out.print("Enter car number: ");
         String number = in.nextLine();

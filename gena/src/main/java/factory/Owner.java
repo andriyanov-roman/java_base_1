@@ -1,4 +1,4 @@
-package fabric;
+package factory;
 
 /**
  * Created by sigen on 5/5/2015.
