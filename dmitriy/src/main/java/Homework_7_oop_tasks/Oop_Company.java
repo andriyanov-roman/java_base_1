@@ -6,6 +6,7 @@ import figures.Treangle;
 
 import javax.xml.parsers.SAXParser;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Дима on 30.04.2015.
@@ -15,6 +16,7 @@ public class Oop_Company {
         Company company = new Company();
         company.setName("Valve");
         company.setEmployees(new ArrayList<Employee>());
+
         Manager Fmanager = new Manager();
         Fmanager.setName("Vlad");
         Fmanager.setSurname("Bachinskiy");
@@ -57,7 +59,12 @@ public class Oop_Company {
         Sprogrammer.setLanguage("C++");
         Sprogrammer.setScale(300);
 
-
+        company.getEmployees().addAll(Arrays.asList(Fadmin, Sadmin, Fmanager, Smanager, Fprogrammer, Sprogrammer));
+        company.getMaxSalary();
+        //самая высокая зарплата каждого из типа сотрудников
+        company.getMaxASalary();
+        company.getMaxMSalary();
+        company.getMaxPSalary();
     }
 
 

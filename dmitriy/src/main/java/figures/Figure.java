@@ -17,4 +17,6 @@ public class Figure {
     public double getPerimeter(){
         return 0.0;
     }
+
+    public double getSquare() {return 0.0;}
 }

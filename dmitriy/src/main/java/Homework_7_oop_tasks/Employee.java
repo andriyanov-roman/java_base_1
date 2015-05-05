@@ -40,4 +40,6 @@ public class Employee {
     public void setScale(int scale) {
         Scale = scale;
     }
+
+
 }

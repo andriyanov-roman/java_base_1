@@ -26,6 +26,7 @@ public class Treangle extends Figure {
     public double getSquare(){
         return side*height/2;
     }
+
     public double getPerimeter(){
         return side*3;
     }

@@ -32,5 +32,36 @@ public class Company {
                 max = employees.get(i);
             }
         }
+        System.out.println(max.getName() +  " " + max.getSurname());
+    }
+
+    public void getMaxASalary(){
+        Employee max = employees.get(0);
+        for (int i = 0; i < employees.size(); i++) {
+            if(employees.get(i).getScale() > max.getScale() && employees.get(i) instanceof Admin) {
+                max = employees.get(i);
+            }
+        }
+        System.out.println(max.getName() +  " " + max.getSurname());
+    }
+
+    public void getMaxMSalary(){
+        Employee max = employees.get(0);
+        for (int i = 0; i < employees.size(); i++) {
+            if(employees.get(i).getScale() > max.getScale() && employees.get(i) instanceof Manager) {
+                max = employees.get(i);
+            }
+        }
+        System.out.println(max.getName() +  " " + max.getSurname());
+    }
+
+    public void getMaxPSalary(){
+        Employee max = employees.get(0);
+        for (int i = 0; i < employees.size(); i++) {
+            if(employees.get(i).getScale() > max.getScale() && employees.get(i) instanceof Programmer) {
+                max = employees.get(i);
+            }
+        }
+        System.out.println(max.getName() +  " " + max.getSurname());
     }
 }
