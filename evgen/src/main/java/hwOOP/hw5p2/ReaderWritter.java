@@ -1,29 +1,43 @@
 package hwOOP.hw5p2;
 
 import java.io.*;
+import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
- * Created by ≈‚„ÂÌËÈ on 02.05.2015.
+ * Created by –ï–≤–≥–µ–Ω–∏–π on 02.05.2015.
  */
 public class ReaderWritter {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        File f = new File("./evgen/src/main/java/hwOOP/hw5p2/test2.txt");
-        FileWriter writer = new FileWriter(f, true);
-        writer.write("Privet");
-        writer.write("Jena!" + '\n');
-        writer.flush();
-        writer.close();
-
-        //PrintWriter prWriter = new PrintWriter(f);
-        BufferedReader br = new BufferedReader(new FileReader(f));
-        String sCurrentLine;
-        while ((sCurrentLine = br.readLine()) != null) {
-            System.out.println(sCurrentLine);
+    /*public static void main(String[] args) throws FileNotFoundException
+    {
+        int k = 50, i = 0;
+        String[] s = new String[k];
+        Scanner in = new Scanner(new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt"));
+        while(in.hasNext())
+        {
+            s[i] = in.nextLine() + "\r\n";
+            System.out.println(s[i]);
+            i++;
         }
-        /*FileReader reader = new FileReader(f);
-        int r;
-        while ((r = reader.read()) != -1) {
-            char c = (char)r;
-            System.out.print(c);
-        }*/
-    }
+        in.close();
+    }*/
+        public static void main(String[] args) throws ParseException {
+            Calendar cal = Calendar.getInstance();
+            Date d = cal.getTime();
+            print(d);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+            print(d.compareTo(sdf.parse("11111111")));
+            print(sdf.parse("11111111"));
+            print(d.compareTo(sdf.parse("22211222")));
+            print(sdf.parse("22211222"));
+            print(d.compareTo(cal.getTime()));
+        }
+
+        static void print(Object o) {
+            System.out.println(o.toString());
+        }
+
 }
