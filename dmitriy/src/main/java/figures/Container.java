@@ -36,7 +36,7 @@ public class Container {
                 max = figures.get(i);
             }
         }
-        System.out.println("Максимальный периметр у фигуры " + max.getName() + " " + max.getPerimeter());
+        System.out.println("Max Perimeter has " + max.getName() + " " + max.getPerimeter());
     }
 
     public void getMaxSquare() {
@@ -46,7 +46,7 @@ public class Container {
                 max = figures.get(i);
             }
         }
-        System.out.println("Максимальная площадь у фигуры " + max.getName() + " " + max.getSquare());
+        System.out.println("Max Square has " + max.getName() + " " + max.getSquare());
     }
 
     public void WriteToFile() throws IOException {
