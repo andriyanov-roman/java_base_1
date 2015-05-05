@@ -35,28 +35,29 @@ public class Production {
 
                 System.out.println("Введите имя заказщика:");
                 if ((str = br.readLine()) != null) {
-                    writer.write("Владелец автомобиля: " + str + " марка: " + avto.getName());
+                    writer.write('\n'+"Новое авто:"+ '\n');
+                    writer.write("владелец: " + str + '\n' + "марка: " + avto.getName()+ '\n');
 
 
-                    writer.write("    стоимость: " + avto.getPrice() + " $");
-                    writer.write("    готовность: " + avto.getReady());
-                    writer.write("    произведен на заводе: " + nameFactory.getNameFactory());
+                    writer.write("стоимость: " + avto.getPrice() + " $"+ '\n');
+                    writer.write("готовность: " + avto.getReady()+ '\n');
+                    writer.write("произведен на заводе: " + nameFactory.getNameFactory()+ '\n');
 
 
                     System.out.println("Введите цвет авто:");
                     if ((str = br.readLine()) != null) {
-                        writer.write("    цвет: " + str);
+                        writer.write("цвет: " + str+ '\n');
 
 
                         System.out.println("Введите тип авто:");
                         if ((str = br.readLine()) != null) {
-                            writer.write("    тип: " + str);
+                            writer.write("тип: " + str+ '\n');
 
 
                             System.out.println("Введите номер авто:");
                             if ((str = br.readLine()) != null) {
-                                writer.write("    номер авто: " + str);
-                                writer.write("    дата производства: " + date + '\n');
+                                writer.write("номер авто: " + str+ '\n');
+                                writer.write("дата производства: " + date + '\n');
 
 
                             }
@@ -65,7 +66,7 @@ public class Production {
                             break;
                         }
                     }
-                }else System.out.println("++++++++++++++");
+                }
             }
             if (temp.equals("2")) {
                 System.out.println("\nАвтомобили построенные на заводе:");
@@ -76,7 +77,6 @@ public class Production {
                 }
                 break;
             }
-            writer.close();
         }
     }
 }
