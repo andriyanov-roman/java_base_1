@@ -7,9 +7,6 @@ import java.text.ParseException;
 public class Factory {
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
 
-        /*LocalDate date = LocalDate.of(1992, 2, 23);
-        System.out.println(date);*/
-
         File dataBase = new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt");
 
         Machine m1 = new Machine();
