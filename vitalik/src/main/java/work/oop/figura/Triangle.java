@@ -26,6 +26,6 @@ public class Triangle extends Figura {
 
     @Override
     public String toString() {
-        return getName() + ":" + side + ":" + getPerimeter() + ":" + getSquare();
+        return "triangle" + ":" + getName() + ":" + side + ":" + getPerimeter() + ":" + getSquare();
     }
 }

@@ -2,9 +2,7 @@ package work.oop.figura;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.AbstractList;
 import java.util.ArrayList;
 
@@ -18,14 +16,12 @@ public class Conteyner {
 
         circle1.setName("Круг");
         circle1.setRadius(1.2);
-        circle1.writeToFile();
         figures.add(circle1);
 
         Figura square = new Square();
         square.setName("Квадрат");
         Square square1 = new Square();
         square1.setSide(3.1);
-        square1.writeToFile();
         figures.add(square1);
 
         Triangle triangle1 = new Triangle();
@@ -54,7 +50,7 @@ public class Conteyner {
         }
         System.out.println(figuraMaxPer.getPerimeter());
         writeFigures(figures);
-
+        getFiguresFromFile();
     }
 
     public static void writeFigures(ArrayList<Figura> figuras) throws IOException {
@@ -65,6 +61,29 @@ public class Conteyner {
         }
         writer.flush();
         writer.close();
+    }
 
+    public static ArrayList<Figura> getFiguresFromFile() throws IOException {
+        File f = new File("test.txt");
+        FileReader reader = new FileReader(f);
+        BufferedReader buffer = new BufferedReader(reader);
+        ArrayList<Figura> figures = new ArrayList<Figura>();
+        String line;
+        while (buffer.readLine() != null) {
+            String[] pool = buffer.readLine().split(":");
+            if("triangle".equals(pool[0])) {
+                Triangle tr = new Triangle();
+                tr.setSide(Double.parseDouble(pool[1]));
+                tr.setName(pool[2]);
+                figures.add(tr);
+            } else if("circle".equals(pool[0])) {
+                Circle tr = new Circle();
+                //tr.setSide(Integer.parseInt(pool[1]));
+                tr.setName(pool[2]);
+                figures.add(tr);
+            }
+        }
+        System.out.println(figures.toString());
+        return figures;
     }
 }

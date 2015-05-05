@@ -26,13 +26,4 @@ public abstract class Figura {
 
     public abstract double getPerimeter();
 
-    public void writeToFile() throws IOException {
-        if(getPerimeter() > 10 ) {
-            File f = new File("test.txt");
-            FileWriter writer = new FileWriter(f, true);
-            writer.write(String.valueOf(getPerimeter()));
-            writer.flush();
-            writer.close();
-        }
-    }
 }
