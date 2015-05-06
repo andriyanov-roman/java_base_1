@@ -1,5 +1,6 @@
 package figures;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -7,7 +8,7 @@ import java.util.Arrays;
  * Created by Дима on 04.05.2015.
  */
 public class Project {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Container project = new Container();
         project.setFigures(new ArrayList<Figure>());
         project.setSize(6);
@@ -41,5 +42,7 @@ public class Project {
         project.getFigures().addAll(Arrays.asList(Big, Small, True, Straight, Huge, Tiny));
         project.getMaxPerimeter();
         project.getMaxSquare();
+        project.WriteToFile();
+        project.getFiguresFromFile();
     }
 }
