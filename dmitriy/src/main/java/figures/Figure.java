@@ -17,4 +17,8 @@ public abstract class Figure {
     public abstract double getPerimeter();
 
     public abstract double getSquare();
+
+    public String toString(){
+        return name;
+    }
 }
