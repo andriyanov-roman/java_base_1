@@ -1,0 +1,4 @@
+Xtrail, AI 5106 IP, Grey, 12.06.2015, Nissan, True, 30000, Aleksandr, Sipakov, 5, Jeep, ok
+Carera, AA 1212 AI, Black, 22.09.2015, Porche, True, 90000, Gennadiy, Sipakov, 1, Cupe, nice
+Xmax, BB 1345 BI, Grey, 12.09.2015, Ford, True, 28000, Dmitriy, Shevchuk, 1, Hatchback, super
+Accord, AC 4567 AP, Yellow, 05.09.2015, Honda, True, 32000, Dmitriy, Koval, 1, Sedan, trash
