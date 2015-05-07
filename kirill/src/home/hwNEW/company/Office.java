@@ -1,3 +1,5 @@
+package company;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -10,14 +12,14 @@ public class Office {
 
     public static void main(String[] args) throws IOException {
 
-        zp(getPlankton()); //Найти сотрудника у которого самая высокая зарплата.
+     /*   zp(getPlankton()); //Найти сотрудника у которого самая высокая зарплата.
         zp(getProgrammers());zp(getAdmins());zp(getManagers()); //Найти из каждого типа сотрудников самого высокооплачиваемого.
         Sort(getPlankton());	//Написать методы по сортировке
         write(getPlankton());   //Все данные по компания и сотрудникам перенести в файлы
         Uvolit(getPlankton()); //Уволить всех мужчин и женщинам поднять з.п
         AddEmployeeAndShow();	//Введенные данные с консоли записываются в файл+Пользователь может получить все данные из файла
         print();                //Пользователь может получить все данные из файла
-    }
+  */}
 
     public static void print() throws IOException {
 

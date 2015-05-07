@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Hw7file {
+public class WriteAndRead {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         Start();
