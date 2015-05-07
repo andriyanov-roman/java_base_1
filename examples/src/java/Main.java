@@ -1,16 +1,17 @@
 import oop.Human;
+import oop.stat.A;
+import oop.stat.B;
 
- /**
+/**
  * Created by user on 3/31/2015.
  */
 public class Main {
-    public static void main(String[] args) {
-        Human[] h = getHumans();
-        System.out.println(h[0].walk(2.00, 60));
+    public static void main(String... args) {
+        System.out.println(args[0]);
         //showHumans(h);
     }
 
-    public static void showHumans(Human[] humans) {
+    public static void showHumans(Human... humans) {
         for (int i = 0; i < humans.length; i++) {
             System.out.println(humans[i].name + " " + humans[i].secondName
                     + " " + humans[i].age + " " + humans[i].weight);

@@ -6,7 +6,7 @@ package oop;
 public class Human {
     public String name;
     public String secondName;
-    public int age;
+    public int age = 100;
     public double weight;
     public double height;
 

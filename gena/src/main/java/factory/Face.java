@@ -10,16 +10,12 @@ import java.text.*;
  * Created by sigen on 5/5/2015.
  */
 public class Face {
+    public static int CAR_COLOR = 0;
     public static void main(String[] args) throws Exception {
-
         File f = new File("gena\\cars.txt");
         Scanner in = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>(readFromFile(f));
-
-        ask(f,in,cars);
-
-
-
+        ask(f, in, cars);
     }
 
     public static void fillFile(File f) throws Exception {
@@ -90,7 +86,8 @@ public class Face {
                         ask(f, in, list);
 
                 }
-            case 3: System.exit(0);
+            case 3:
+                System.exit(0);
         }
 
     }
@@ -101,18 +98,15 @@ public class Face {
         String current;
         while ((current = br.readLine()) != null) {
             String[] strings = current.split(", ");
-
             double cost = Double.parseDouble(strings[6]);
-
             int id = Integer.parseInt(strings[9]);
-
-            DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+            DateFormat format = getDateFormat();
             Date date = format.parse(strings[3]);
             boolean ready = true;
             if (strings[5].equals("False")) {
                 ready = false;
             }
-            list.add(new Car(strings[0], strings[1], strings[2], date, strings[4], ready, cost, strings[7], strings[8], id, strings[10], strings[11]));
+            list.add(new Car(strings[CAR_COLOR], strings[1], strings[2], date, strings[4], ready, cost, strings[7], strings[8], id, strings[10], strings[11]));
         }
         list.trimToSize();
         return list;
@@ -150,5 +144,7 @@ public class Face {
         }
     }
 
-
+    public static DateFormat getDateFormat() {
+        return new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+    }
 }
