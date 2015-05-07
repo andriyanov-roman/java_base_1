@@ -1,8 +1,10 @@
 package hwOOP.hw5p2;
 
+import javax.crypto.Mac;
 import java.io.*;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -22,6 +24,22 @@ public class Machine {
     private LocalDate date;
     private String month;
 
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 
     public void scanOrder() {
 
@@ -54,18 +72,14 @@ public class Machine {
 
     public void writeOrder(File file) throws IOException {
         FileWriter writer = new FileWriter(file, true);
-        writer.write("Имя заказчика: " + customerName + '\n');
-        writer.write("Желаемый цвет машины: " + color + '\n');
-        writer.write("Желаемый тип машины: " + type + '\n');
-        writer.write("Желаемый номер машины: " + number + '\n');
-        writer.write("Дата построения машины: " + date + '\n' + '\n');
+        writer.write(customerName + ':' + color + ':' + type + ':' + number + ':' + date + ':' + (int)(Math.random()*10000) + '\n');
         writer.flush();
         writer.close();
     }
 
     public void readOrder(File file) throws IOException {
         System.out.println("------------------------------------");
-        System.out.print("Предыдущие заказы: ");
+        System.out.print("Предыдущие заказы: " + '\n');
         BufferedReader br = new BufferedReader(new FileReader(file));
         String sCurrentLine;
         while ((sCurrentLine = br.readLine()) != null) {
@@ -90,4 +104,26 @@ public class Machine {
         }
         System.out.println("В этот день было произведено " + count + " машин(а, ы)!");
     }
+
+    public static ArrayList<Machine> getFiguresFromFile() throws IOException {
+        //File f = new File("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt");
+        FileReader reader = new FileReader("./evgen/src/main/java/hwOOP/hw5p2/FactoryDataBase.txt");
+        BufferedReader buffer = new BufferedReader(reader);
+        ArrayList<Machine> machines = new ArrayList<Machine>();
+        String line;
+        while (buffer.readLine() != null) {
+            String[] pool = buffer.readLine().split(":");
+            if("Евгений".equals(pool[0])) {
+                Machine m = new Machine();
+                m.setCarName(pool[1]);
+                m.setPrice(Integer.parseInt(pool[5]));
+                machines.add(m);
+            }
+        }
+        System.out.println(machines.toString());
+        //System.out.println(machines);
+        return machines;
+    }
+
+
 }

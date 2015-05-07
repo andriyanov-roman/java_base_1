@@ -19,6 +19,7 @@ public class Factory {
 
         m1.getMonthOrderList();
 
+        m1.getFiguresFromFile();
     }
 }
 
