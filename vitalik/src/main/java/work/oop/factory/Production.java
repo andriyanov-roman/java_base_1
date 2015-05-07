@@ -13,32 +13,28 @@ public class Production {
         writeCars(newCars());
     }
 
-    public static ArrayList<Avto> getMaxPriceCar() throws IOException {
-        System.out.println("\nСамая дорогая машина построенные на заводе:");
-        File f = new File("vitalik\\resources\\NewCars.txt");
-        FileReader reader = new FileReader(f);
-        BufferedReader buffer = new BufferedReader(reader);
-        ArrayList<Avto> cars = new ArrayList<Avto>();
-        // String line;
-        int max = 0;
-
-        for (int i = 0; buffer.readLine() != null; i++) {
-            String[] pool = buffer.readLine().split(":");
-            Avto car = new Avto();
-            car.setName(pool[1]);
-            car.setPrice(Integer.parseInt(pool[4]));
-            cars.add(car);
-
-//                    if (max < car.getPrice()){
-//                        max = car.getPrice();
+//    public static ArrayList<Avto> getMaxPriceCar() throws IOException {
+//        System.out.println("\nСамая дорогая машина построенные на заводе:");
+//        File f = new File("vitalik\\resources\\NewCars.txt");
+//        FileReader reader = new FileReader(f);
+//        BufferedReader buffer = new BufferedReader(reader);
+//        ArrayList<Avto> cars = new ArrayList<Avto>();
+//        while (buffer.readLine() != null) {
+//            String[] arr = buffer.readLine().split(":");
 //
-//                    }
-
-        }
-        System.out.println(cars);
-        return cars;
-
-    }
+//            Avto avto = new Avto();
+//            avto.setProprietor(arr[4]);
+//            avto.setColor(arr[5]);
+//            avto.setStyle(arr[6]);
+//            avto.setNumber(Integer.parseInt(arr[7]));
+//            avto.setPrice(Integer.parseInt(arr[8]));
+//            cars.add(avto);
+//
+//        }
+//        System.out.println(cars);
+//        return cars;
+//
+//    }
 
     public static void printCar() throws IOException {
 
@@ -63,6 +59,35 @@ public class Production {
         newCar.add(avto);
         return newCar;
     }
+
+    public static ArrayList<Avto> getSameColorCar() throws IOException {
+        System.out.println("\nАвтомобили с одинаковым цветом:");
+        File f = new File("vitalik\\resources\\NewCars.txt");
+        FileReader reader = new FileReader(f);
+        BufferedReader buffer = new BufferedReader(reader);
+        ArrayList<Avto> cars = new ArrayList<Avto>();
+        while (buffer.readLine() != null) {
+            String[] arr = buffer.readLine().split(":");
+
+            Avto avto = new Avto();
+            avto.setProprietor(arr[4]);
+            avto.setColor(arr[5]);
+            avto.setStyle(arr[6]);
+            avto.setNumber(Integer.parseInt(arr[7]));
+            avto.setPrice(Integer.parseInt(arr[8]));
+            cars.add(avto);
+
+        }
+        for (int i = 0; i < cars.size(); i++) {
+            for (int j = 1; j < cars.size(); j++) {
+                if (cars.get(i).getColor().equals(cars.get(j).getColor())) {
+                    System.out.println(cars.toString());
+                }
+            }
+        }
+        return cars;
+    }
+
 
     public static void writeCars(ArrayList<Avto> cars) throws IOException {
         File file = new File("vitalik\\resources\\NewCars.txt");
@@ -129,7 +154,11 @@ public class Production {
                 break;
             }
             if (temp.equals("3")) {
-                getMaxPriceCar();
+                // getMaxPriceCar();
+                break;
+            }
+            if (temp.equals("5")) {
+                getSameColorCar();
                 break;
             }
         }
