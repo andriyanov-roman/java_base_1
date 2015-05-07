@@ -187,6 +187,13 @@ public class CompanyMetods extends Empleey {
 
     }
 
+    private static <T> void writeToFile(Company company, File file) throws IOException {
+        FileWriter writer = new FileWriter(file, true);
+        writer.write("\nВ компании " + company.getName() + " работают сотрудники: " + '\n');
+        writer.write("\nОтдел администраторов:" + '\n');
+        writer.write(company.getAdmin().toString());
+    }
+
     public static void printCompany(Company company) {
         System.out.println("\nОтдел администраторов:");
         for (int i = 0; i < company.getAdmin().size(); i++) {

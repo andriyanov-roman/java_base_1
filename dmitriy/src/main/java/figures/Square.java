@@ -21,4 +21,8 @@ public class Square extends Figure {
     public double getPerimeter() {
         return side * 4;
     }
+
+    public String toString(){
+        return "Square" + ":" + getName() + ":" + side + ":" + getPerimeter() + ":" + getSquare();
+    }
 }

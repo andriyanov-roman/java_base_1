@@ -5,8 +5,9 @@ import java.time.LocalDate;
 /**
  * Класс Авто
  */
-public class Avto {
+public class Avto extends FactoryCars {
     private String name; //название
+    private String proprietor;//владелец
     private String style; // тип
     private int number; //номер
     private String color; //цвет
@@ -14,7 +15,13 @@ public class Avto {
     private String description; //описание
     private int price; //стоимость
 
+    public String getProprietor() {
+        return proprietor;
+    }
 
+    public void setProprietor(String proprietor) {
+        this.proprietor = proprietor;
+    }
 
     public String getColor() {
         return color;
@@ -23,9 +30,6 @@ public class Avto {
     public void setColor(String color) {
         this.color = color;
     }
-
-
-
 
 
     public String getDescription() {
@@ -74,6 +78,12 @@ public class Avto {
 
     public void setStyle(String style) {
         this.style = style;
+    }
+
+
+    @Override
+    public String toString() {
+        return getName() + ":" + getNameFactory() + ":" + getReady() + ":" + getDescription();
     }
 
 

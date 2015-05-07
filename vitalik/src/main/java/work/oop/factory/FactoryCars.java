@@ -3,7 +3,7 @@ package work.oop.factory;
 /**
  * класс фабрика
  */
-public class FactoryCars extends Avto {
+public class FactoryCars  {
     private String nameFactory;
 
     public String getNameFactory() {

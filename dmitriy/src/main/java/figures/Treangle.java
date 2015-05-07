@@ -30,4 +30,8 @@ public class Treangle extends Figure {
     public double getPerimeter(){
         return side*3;
     }
+
+    public String toString(){
+        return "Treangle" + ":" + getName() + ":" + side + ":" + height + ":" + getPerimeter() + ":" + getSquare();
+    }
 }

@@ -20,6 +20,12 @@ public class Triangle extends Figura {
     }
 
     public double getPerimeter() {
+
         return side + side +side;
+    }
+
+    @Override
+    public String toString() {
+        return "triangle" + ":" + getName() + ":" + side + ":" + getPerimeter() + ":" + getSquare();
     }
 }

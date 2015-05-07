@@ -1,8 +1,6 @@
 package figures;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +34,7 @@ public class Container {
                 max = figures.get(i);
             }
         }
-        System.out.println("Максимальный периметр у фигуры " + max.getName() + " " + max.getPerimeter());
+        System.out.println("Max Perimeter has " + max.getName() + " " + max.getPerimeter());
     }
 
     public void getMaxSquare() {
@@ -46,15 +44,47 @@ public class Container {
                 max = figures.get(i);
             }
         }
-        System.out.println("Максимальная площадь у фигуры " + max.getName() + " " + max.getSquare());
+        System.out.println("Max Square has " + max.getName() + " " + max.getSquare());
     }
 
     public void WriteToFile() throws IOException {
         File f = new File("dmitriy\\test.txt");
-        FileWriter writer = new FileWriter(f, true);
-        for (int i = 0; i < figures.size() ; i++) {
-            writer.write((int) figures.get(i).getPerimeter());
+        FileWriter writer = new FileWriter(f);
+        for (int i = 0; i < figures.size(); i++) {
+            writer.write(figures.get(i).toString() + '\n');
         }
+        writer.flush();
+        writer.close();
+    }
 
+    public ArrayList<Figure> getFiguresFromFile() throws IOException {
+        File f = new File("dmitriy\\test.txt");
+        FileReader reader = new FileReader(f);
+        BufferedReader buffer = new BufferedReader(reader);
+        ArrayList<Figure> example = new ArrayList<Figure>();
+        String line;
+        while (buffer.readLine() != null){
+            String[] pool = buffer.readLine().split(":");
+            if ("Treangle".equals(pool[0])){
+                Treangle tr = new Treangle();
+                tr.setName(pool[1]);
+                tr.setSide(Integer.parseInt(pool[2]));
+                tr.setHeight(Integer.parseInt(pool[3]));
+                example.add(tr);
+            }
+            else if ("Circle".equals(pool[0])){
+                Circle c = new Circle();
+                c.setName(pool[1]);
+                c.setRadius(Integer.parseInt(pool[2]));
+                example.add(c);
+            }
+            else if ("Square".equals(pool[0])){
+                Square sq = new Square();
+                sq.setName(pool[1]);
+                sq.setSide(Integer.parseInt(pool[2]));
+                example.add(sq);
+            }
+        }
+        return example;
     }
 }

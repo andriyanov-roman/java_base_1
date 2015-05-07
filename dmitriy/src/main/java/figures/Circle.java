@@ -21,4 +21,8 @@ public class Circle extends Figure {
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
+
+    public String toString(){
+        return "Circle" + ":" + getName() + ":" + radius + ":" + getPerimeter() + ":" + getSquare();
+    }
 }
