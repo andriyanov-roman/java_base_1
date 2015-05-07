@@ -1,3 +1,4 @@
+package factoryCars;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -40,17 +41,16 @@ public class Fabrika {
 
         File f = new File("F:\\a.txt");
 
-        FileWriter writer = new FileWriter(f, true);
+        FileWriter writer = new FileWriter(f);
         for (int i = 0; i < v.size(); i++) {
-            writer.write(v.get(i).getName() + ", ");
-            writer.write(v.get(i).getColor() + ", ");
-            writer.write(v.get(i).getDesc() + ", ");
-            writer.write(v.get(i).getFactoryname() + ", ");
-            writer.write(v.get(i).getOwner() + ", ");
-            writer.write(v.get(i).getNomber() + ", ");
-            writer.write(v.get(i).getStatus() + ", ");
-            writer.write(v.get(i).getType() + ", ");
-            writer.write(v.get(i).getProdDate() +" "+ '\n');
+            writer.write(v.get(i).getName() + ";");
+            writer.write(v.get(i).getColor() + ";");
+            writer.write(v.get(i).getDesc() + ";");
+            writer.write(v.get(i).getFactoryname() + ";");
+            writer.write(v.get(i).getOwner() + ";");
+            writer.write(v.get(i).getNomber() + ";");
+            writer.write(v.get(i).getStatus() + ";");
+            writer.write(v.get(i).getType() + ";"+ '\n');
         }
         writer.flush();
         writer.close();
@@ -58,10 +58,52 @@ public class Fabrika {
 
     public static void show() throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("F:\\a.txt"));
+        ArrayList<Machine> Machines = new ArrayList<Machine>();
         String sCurrentLine;
-        while ((sCurrentLine = br.readLine()) != null) {
-            System.out.println(sCurrentLine);
+        while ((sCurrentLine=br.readLine()) != null) {
+            String[] pool = sCurrentLine.split(";");
+            if("AudiTT".equals(pool[0])) {
+                Machine car = new Machine();
+                car.setName(pool[0]);
+                car.setColor(pool[1]);
+                car.setDesc(pool[2]);
+                car.setFactoryname(pool[3]);
+                car.setOwner(pool[4]);
+                car.setNomber(Integer.parseInt(pool[5]));
+                car.setStatus(pool[6]);
+                car.setType(pool[7]);
+                Machines.add(car);
+            }
+            if("Ford".equals(pool[0])) {
+                Machine car1 = new Machine();
+                car1.setName(pool[0]);
+                car1.setColor(pool[1]);
+                car1.setDesc(pool[2]);
+                car1.setFactoryname(pool[3]);
+                car1.setOwner(pool[4]);
+                car1.setNomber(Integer.parseInt(pool[5]));
+                car1.setStatus(pool[6]);
+                car1.setType(pool[7]);
+                Machines.add(car1);
+            }
+            if("Porshe".equals(pool[0])) {
+                Machine car2 = new Machine();
+                car2.setName(pool[0]);
+                car2.setColor(pool[1]);
+                car2.setDesc(pool[2]);
+                car2.setFactoryname(pool[3]);
+                car2.setOwner(pool[4]);
+                car2.setNomber(Integer.parseInt(pool[5]));
+                car2.setStatus(pool[6]);
+                car2.setType(pool[7]);
+                Machines.add(car2);
+            }
         }
+        for (int i=0; i<Machines.size(); i++){
+            System.out.println(Machines.get(i).getName()+" "+Machines.get(i).getColor()+" "
+                    +Machines.get(i).getDesc()+" "+Machines.get(i).getFactoryname()+" "+Machines.get(i).getNomber()+" ");
+        }
+
     }
 
     public static void MaxPrice(ArrayList <Machine> t){           // Найти самую дорогую машину

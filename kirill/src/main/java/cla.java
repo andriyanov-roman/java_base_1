@@ -1,15 +1,20 @@
-import javax.xml.bind.SchemaOutputResolver;
-import java.io.File;
-import java.io.FileWriter;
+import company.Office;
+
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 
 public class cla {
     public static void main(String[] args) throws IOException {
-        ArrayList<String> strings =new ArrayList <String>();
+
+       ArrayList gogo = new ArrayList();
+        gogo.add(Office.getAdmins());
+
+        //.inctaneOf(Manager);
+
+
+
+       /* ArrayList<String> strings =new ArrayList <String>();
         strings.add("blala");
 
         File f = new File("examples\\test.txt");
@@ -24,7 +29,7 @@ public class cla {
         LocalDate date = LocalDate.of(1985,10,14);  //.now();
         date.getDayOfMonth(); //plusdays
 
-       /* int a=4;
+        int a=4;
         int b=2;
 
         System.out.println(a*b);
