@@ -1,4 +1,4 @@
-package work.Cycle;
+package work.procedures.Cycle;
 
 /**
  * Циклы сложные

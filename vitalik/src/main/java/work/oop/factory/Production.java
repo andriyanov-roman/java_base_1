@@ -10,31 +10,50 @@ import java.util.ArrayList;
 public class Production {
     public static void main(String[] args) throws IOException {
 
-        writeCars(newCars());
+        functionSelection();
+
     }
 
-//    public static ArrayList<Avto> getMaxPriceCar() throws IOException {
-//        System.out.println("\nСамая дорогая машина построенные на заводе:");
-//        File f = new File("vitalik\\resources\\NewCars.txt");
-//        FileReader reader = new FileReader(f);
-//        BufferedReader buffer = new BufferedReader(reader);
-//        ArrayList<Avto> cars = new ArrayList<Avto>();
-//        while (buffer.readLine() != null) {
-//            String[] arr = buffer.readLine().split(":");
-//
-//            Avto avto = new Avto();
-//            avto.setProprietor(arr[4]);
-//            avto.setColor(arr[5]);
-//            avto.setStyle(arr[6]);
-//            avto.setNumber(Integer.parseInt(arr[7]));
-//            avto.setPrice(Integer.parseInt(arr[8]));
-//            cars.add(avto);
-//
-//        }
-//        System.out.println(cars);
-//        return cars;
-//
-//    }
+    public static void functionSelection() throws IOException {
+        System.out.println("Выберите операцию: \nдля производство авто введите - 1\nдля вывода ранее созданых авто введите - 2 ");
+        System.out.println("вернуть количество произведенных машин за интервал времени - 3\nнайти самую дорогую машину - 4 ");
+        System.out.println("найти машины одного цвета - 5");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String temp;
+        temp = br.readLine();
+        for (; ; ) {
+            if (temp.equals("1")) {
+                writeCars(newCar());
+                break;
+            }
+            if (temp.equals("2")) {
+                printCar();
+                break;
+            }
+            if (temp.equals("3")) {
+                break;
+            }
+            if (temp.equals("4")) {
+                getMaxPriseCar(getArrayCar());
+                break;
+            }
+            if (temp.equals("5")) {
+                getSameColorCar(getArrayCar());
+                break;
+            }
+        }
+    }
+    public static ArrayList<Avto> newCar () throws IOException{
+
+      ArrayList<Avto> newAvto = new ArrayList<Avto>();
+        Avto avto = new Avto();
+        avto.setNameFactory("Avto-ZAZ");
+        avto.setName("Ford");
+        avto.setDescription("good car");
+        avto.setReady("yes");
+        newAvto.add(avto);
+        return newAvto;
+    }
 
     public static void printCar() throws IOException {
 
@@ -45,30 +64,15 @@ public class Production {
         while ((fileLine = bufferedReader.readLine()) != null) {
             System.out.println(fileLine);
         }
-
     }
 
-
-    public static ArrayList<Avto> newCars() throws IOException {
-        ArrayList<Avto> newCar = new ArrayList<Avto>();
-        Avto avto = new Avto();
-        avto.setNameFactory("Avto-ZAZ");
-        avto.setName("Ford");
-        avto.setDescription("good car");
-        avto.setReady("yes");
-        newCar.add(avto);
-        return newCar;
-    }
-
-    public static ArrayList<Avto> getSameColorCar() throws IOException {
-        System.out.println("\nАвтомобили с одинаковым цветом:");
+    public static ArrayList<Avto> getArrayCar() throws IOException {
         File f = new File("vitalik\\resources\\NewCars.txt");
         FileReader reader = new FileReader(f);
         BufferedReader buffer = new BufferedReader(reader);
         ArrayList<Avto> cars = new ArrayList<Avto>();
         while (buffer.readLine() != null) {
-            String[] arr = buffer.readLine().split(":");
-
+            String arr [] = buffer.readLine().split(":");
             Avto avto = new Avto();
             avto.setProprietor(arr[4]);
             avto.setColor(arr[5]);
@@ -76,16 +80,34 @@ public class Production {
             avto.setNumber(Integer.parseInt(arr[7]));
             avto.setPrice(Integer.parseInt(arr[8]));
             cars.add(avto);
-
         }
+        return cars;
+    }
+
+    public static void getSameColorCar(ArrayList<Avto> cars) {
+        System.out.println("\nАвтомобили с одинаковым цветом:");
         for (int i = 0; i < cars.size(); i++) {
-            for (int j = 1; j < cars.size(); j++) {
+            for (int j = i + 1; j < cars.size(); j++) {
                 if (cars.get(i).getColor().equals(cars.get(j).getColor())) {
-                    System.out.println(cars.toString());
+                    System.out.println(cars.get(i).toString());
+
                 }
             }
         }
-        return cars;
+    }
+
+    public static void getMaxPriseCar(ArrayList<Avto> cars) {
+        System.out.println("\nСамое дорогое авто:");
+        int max = 0;
+        int temp = 0;
+        for (int i = 0; i < cars.size(); i++) {
+
+            if (cars.get(i).getPrice() > max) {
+                max = cars.get(i).getPrice();
+                temp = i;
+            }
+        }
+        System.out.println(cars.get(temp).toString());
     }
 
 
@@ -94,74 +116,51 @@ public class Production {
         FileWriter writer = new FileWriter(file, true);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
-        String temp;
         LocalDate date = LocalDate.now();
-        System.out.println("Выберите операцию: \nдля производство авто введите - 1\nдля вывода ранее созданых авто введите - 2 ");
-        System.out.println("вернуть количество произведенных машин за интервал времени - 3\nнайти самую дорогую машину - 4 ");
-        System.out.println("найти машины одного цвета - 5");
-        for (; ; ) {
-            temp = br.readLine();
-            if (temp.equals("1")) {
-                writer.write(cars.toString());
-                System.out.println("Введите имя заказщика:");
+        //writer.write(cars.toString());
+        System.out.println("Введите имя заказщика:");
+        if ((str = br.readLine()) != null) {
+            writer.write(":" + str);
+            System.out.println("Выберите цвет авто: \nкрасный   - 1 \nзеленый  - 2 \nчерный  - 3");
+            if ((str = br.readLine()) != null) {
+                if (str.equals("1")) {
+                    str = "red";
+                }
+                if (str.equals("2")) {
+                    str = "green";
+                }
+                if (str.equals("3")) {
+                    str = "black";
+                }
+                writer.write(":" + str);
+                System.out.println("Выберите тип авто:  \n" +
+                        "пикап   - 1 \n" +
+                        "седан  - 2 \n" +
+                        "кабриолет  - 3");
                 if ((str = br.readLine()) != null) {
+                    if (str.equals("1")) {
+                        str = "pickup";
+                    }
+                    if (str.equals("2")) {
+                        str = "sedan";
+                    }
+                    if (str.equals("3")) {
+                        str = "convertible";
+                    }
                     writer.write(":" + str);
-                    System.out.println("Выберите цвет авто: \nкрасный   - 1 \nзеленый  - 2 \nчерный  - 3");
+                    System.out.println("Введите номер авто:");
                     if ((str = br.readLine()) != null) {
-                        if (str.equals("1")) {
-                            str = "red";
-                        }
-                        if (str.equals("2")) {
-                            str = "green";
-                        }
-                        if (str.equals("3")) {
-                            str = "black";
-                        }
                         writer.write(":" + str);
-                        System.out.println("Выберите тип авто:  \n" +
-                                "пикап   - 1 \n" +
-                                "седан  - 2 \n" +
-                                "кабриолет  - 3");
+                        System.out.println("Введите цену авто:");
                         if ((str = br.readLine()) != null) {
-                            if (str.equals("1")) {
-                                str = "pickup";
-                            }
-                            if (str.equals("2")) {
-                                str = "sedan";
-                            }
-                            if (str.equals("3")) {
-                                str = "convertible";
-                            }
                             writer.write(":" + str);
-                            System.out.println("Введите номер авто:");
-                            if ((str = br.readLine()) != null) {
-                                writer.write(":" + str);
-                                System.out.println("Введите цену авто:");
-                                if ((str = br.readLine()) != null) {
-                                    writer.write(":" + str);
-                                    writer.write(":" + date + '\n');
-                                }
-                                writer.flush();
-                                writer.close();
-                                break;
-                            }
+                            writer.write(":" + date + '\n');
                         }
+                        writer.flush();
+                        writer.close();
                     }
                 }
             }
-            if (temp.equals("2")) {
-                printCar();
-                break;
-            }
-            if (temp.equals("3")) {
-                // getMaxPriceCar();
-                break;
-            }
-            if (temp.equals("5")) {
-                getSameColorCar();
-                break;
-            }
         }
     }
-
 }

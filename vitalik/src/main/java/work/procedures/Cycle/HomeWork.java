@@ -1,4 +1,4 @@
-package work.Cycle;
+package work.procedures.Cycle;
 
 public class HomeWork {
     public static void main(String[] args) {

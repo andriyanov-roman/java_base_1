@@ -1,4 +1,4 @@
-package work.string;
+package work.procedures.string;
 
 /**
  * String домашняя работа

@@ -1,4 +1,4 @@
-package work.Arrays;
+package work.procedures.Arrays;
 
 /**
  * Массивы очень сложные
