@@ -83,8 +83,7 @@ public class Avto extends FactoryCars {
 
     @Override
     public String toString() {
-        return getNameFactory() + ":" + getName() + ":" + getDescription() + ":" + getReady() +  ":" + getProprietor()+ ":"
-        + getColor()+ ":" + getStyle()+ ":" + getNumber()+ ":" + getPrice();
+        return super.toString() + name + ":" + description + ":" + ready;
     }
 
 

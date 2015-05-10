@@ -43,9 +43,10 @@ public class Production {
             }
         }
     }
-    public static ArrayList<Avto> newCar () throws IOException{
 
-      ArrayList<Avto> newAvto = new ArrayList<Avto>();
+    public static ArrayList<Avto> newCar() throws IOException {
+
+        ArrayList<Avto> newAvto = new ArrayList<Avto>();
         Avto avto = new Avto();
         avto.setNameFactory("Avto-ZAZ");
         avto.setName("Ford");
@@ -72,8 +73,12 @@ public class Production {
         BufferedReader buffer = new BufferedReader(reader);
         ArrayList<Avto> cars = new ArrayList<Avto>();
         while (buffer.readLine() != null) {
-            String arr [] = buffer.readLine().split(":");
+            String arr[] = buffer.readLine().split(":");
             Avto avto = new Avto();
+            avto.setNameFactory(arr[0]);
+            avto.setName(arr[1]);
+            avto.setDescription(arr[2]);
+            avto.setReady(arr[3]);
             avto.setProprietor(arr[4]);
             avto.setColor(arr[5]);
             avto.setStyle(arr[6]);
@@ -86,18 +91,19 @@ public class Production {
 
     public static void getSameColorCar(ArrayList<Avto> cars) {
         System.out.println("\nАвтомобили с одинаковым цветом:");
+        Avto a;
         for (int i = 0; i < cars.size(); i++) {
             for (int j = i + 1; j < cars.size(); j++) {
                 if (cars.get(i).getColor().equals(cars.get(j).getColor())) {
-                    System.out.println(cars.get(i).toString());
 
                 }
-            }
+            } a = cars.get(i);
+            System.out.println("Автомобиль "+a.getName()+"-"+a.getStyle()+" с гос. номером: "+a.getNumber()+" "+a.getColor()+" цвета");
         }
     }
 
     public static void getMaxPriseCar(ArrayList<Avto> cars) {
-        System.out.println("\nСамое дорогое авто:");
+        System.out.print("\nСамое дорогое авто: ");
         int max = 0;
         int temp = 0;
         for (int i = 0; i < cars.size(); i++) {
@@ -107,7 +113,8 @@ public class Production {
                 temp = i;
             }
         }
-        System.out.println(cars.get(temp).toString());
+        Avto a = cars.get(temp);
+        System.out.println(a.getName() + "-" + a.getStyle() + " " + a.getColor() + " цвета, с гос. номером: " + a.getNumber() + " цена: " + a.getPrice());
     }
 
 
@@ -117,7 +124,7 @@ public class Production {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
         LocalDate date = LocalDate.now();
-        //writer.write(cars.toString());
+        writer.write(cars.toString());
         System.out.println("Введите имя заказщика:");
         if ((str = br.readLine()) != null) {
             writer.write(":" + str);

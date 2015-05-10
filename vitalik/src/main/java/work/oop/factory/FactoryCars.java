@@ -14,5 +14,8 @@ public class FactoryCars  {
         this.nameFactory = nameFactory;
     }
 
-
+    @Override
+    public String toString() {
+        return nameFactory + ":";
+    }
 }
