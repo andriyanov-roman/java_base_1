@@ -16,8 +16,8 @@ public class Production {
 
     public static void functionSelection() throws IOException {
         System.out.println("Выберите операцию: \nдля производство авто введите - 1\nдля вывода ранее созданых авто введите - 2 ");
-        System.out.println("вернуть количество произведенных машин за интервал времени - 3\nнайти самую дорогую машину - 4 ");
-        System.out.println("найти машины одного цвета - 5");
+       // System.out.println("вернуть количество произведенных машин за интервал времени - 3");
+        System.out.println("найти самую дорогую машину - 4\nнайти машины одного цвета - 5");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String temp;
         temp = br.readLine();
@@ -94,11 +94,10 @@ public class Production {
         for (int i = 0; i < cars.size(); i++) {
             for (int j = i + 1; j < cars.size(); j++) {
                 if (cars.get(i).getColor().equals(cars.get(j).getColor())) {
-                    Avto b = cars.get(j);
-                    System.out.println("Автомобиль " + b.getName() + "-" + b.getStyle() + " с гос. номером: " + b.getNumber() + " " + b.getColor() + " цвета");
-                        Avto a = cars.get(i);
-                        System.out.println("Автомобиль " + a.getName() + "-" + a.getStyle() + " с гос. номером: " + a.getNumber() + " " + a.getColor() + " цвета");
-
+                    Avto a = cars.get(i);
+                    System.out.println("Автомобиль " + a.getName() + "-" + a.getStyle() + " с гос. номером: " + a.getNumber() + " " + a.getColor() + " цвета");
+//                    Avto b = cars.get(j);
+//                    System.out.println("Автомобиль " + b.getName() + "-" + b.getStyle() + " с гос. номером: " + b.getNumber() + " " + b.getColor() + " цвета");
                 }
             }
         }
