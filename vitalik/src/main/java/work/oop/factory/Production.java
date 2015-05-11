@@ -91,14 +91,16 @@ public class Production {
 
     public static void getSameColorCar(ArrayList<Avto> cars) {
         System.out.println("\nАвтомобили с одинаковым цветом:");
-        Avto a;
         for (int i = 0; i < cars.size(); i++) {
             for (int j = i + 1; j < cars.size(); j++) {
                 if (cars.get(i).getColor().equals(cars.get(j).getColor())) {
+                    Avto b = cars.get(j);
+                    System.out.println("Автомобиль " + b.getName() + "-" + b.getStyle() + " с гос. номером: " + b.getNumber() + " " + b.getColor() + " цвета");
+                        Avto a = cars.get(i);
+                        System.out.println("Автомобиль " + a.getName() + "-" + a.getStyle() + " с гос. номером: " + a.getNumber() + " " + a.getColor() + " цвета");
 
                 }
-            } a = cars.get(i);
-            System.out.println("Автомобиль "+a.getName()+"-"+a.getStyle()+" с гос. номером: "+a.getNumber()+" "+a.getColor()+" цвета");
+            }
         }
     }
 
@@ -157,7 +159,7 @@ public class Production {
                     writer.write(":" + str);
                     System.out.println("Введите номер авто:");
                     if ((str = br.readLine()) != null) {
-                        writer.write(":" + str);
+                        writer.write(": " + str);
                         System.out.println("Введите цену авто:");
                         if ((str = br.readLine()) != null) {
                             writer.write(":" + str);
