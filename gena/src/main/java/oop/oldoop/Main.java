@@ -1,4 +1,4 @@
-package oop;
+package oop.oldoop;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -112,10 +112,7 @@ public class Main extends  Application {
         for (int i = 0; i <endInd-beginInd+1 ; i++) {
             Human tmp = it.next();
             it.remove();
-
-
         }
-
     }
 
     public static Human [] getHumans(){

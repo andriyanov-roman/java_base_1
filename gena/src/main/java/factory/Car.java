@@ -12,19 +12,16 @@ public class Car {
     private Date date;
     private String fabricName;
     private boolean ready;
-    private String customerName;
-    private String customerSecondName;
+
     private int customerId;
     private double cost;
-    //private Owner owner;
+    private Owner owner;
     private String type;
     private String description;
 
     Car(String name, String number, String colour, Date date, String fabricName, boolean ready, double cost, String customerName, String customerSecondName, int customerId, String type, String description ){
         //super(customerName, customerSecondName, customerId);
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.customerSecondName = customerSecondName;
+        this.owner = new Owner(customerName, customerSecondName, customerId);
         this.number = number;
         this.name = name;
         this.colour = colour;
@@ -92,7 +89,7 @@ public class Car {
         this.cost = cost;
     }
 
-    /*
+
     public Owner getOwner() {
         return owner;
     }
@@ -100,7 +97,7 @@ public class Car {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-    */
+
 
     public String getType() {
         return type;
@@ -118,21 +115,7 @@ public class Car {
         this.description = description;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public String getCustomerSecondName() {
-        return customerSecondName;
-    }
-
-    public void setCustomerSecondName(String customerSecondName) {
-        this.customerSecondName = customerSecondName;
-    }
 
     public int getCustomerId() {
         return customerId;
