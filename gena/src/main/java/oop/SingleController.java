@@ -8,9 +8,9 @@ public class SingleController {
         Single single = Single.getInstance();
         single.setName("Moto");
         single.setPrint("Hello");
-        System.out.println(single.getPrint() + " " + single.getName());
+        System.out.println(single.toString());
         Single single1 = Single.getInstance();
-        System.out.println(single1.getPrint() + " " + single1.getName());
+        System.out.println(single1.toString());
     }
 
 }
