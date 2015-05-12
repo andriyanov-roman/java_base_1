@@ -3,11 +3,18 @@ package work.oop.factory;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * класс производство
  */
 public class Production {
+    public static final int FACTORY_NAME = 0;
+    public static ArrayList<String> COLORS = new ArrayList<String>();
+    static {
+        COLORS.add("red");
+    }
     public static void main(String[] args) throws IOException {
 
         functionSelection();
@@ -72,10 +79,11 @@ public class Production {
         FileReader reader = new FileReader(f);
         BufferedReader buffer = new BufferedReader(reader);
         ArrayList<Avto> cars = new ArrayList<Avto>();
-        while (buffer.readLine() != null) {
-            String arr[] = buffer.readLine().split(":");
+        String line;
+        while ((line = buffer.readLine()) != null) {
+            String arr[] = line.split(":");
             Avto avto = new Avto();
-            avto.setNameFactory(arr[0]);
+            avto.setNameFactory(arr[FACTORY_NAME]);
             avto.setName(arr[1]);
             avto.setDescription(arr[2]);
             avto.setReady(arr[3]);
@@ -118,6 +126,15 @@ public class Production {
         System.out.println(a.getName() + "-" + a.getStyle() + " " + a.getColor() + " цвета, с гос. номером: " + a.getNumber() + " цена: " + a.getPrice());
     }
 
+    public static void showCarsWithSameColor(ArrayList<Avto> cars) {
+        Map<String, ArrayList<Avto>> carMap = new HashMap<String, ArrayList<Avto>>();
+        for (int i = 0; i < COLORS.size(); i++) {
+            for (int j = 0; j < cars.size(); j++) {
+                if(COLORS.get(i).equals(cars.get(j).getColor())) {
+                }
+            }
+        }
+    }
 
     public static void writeCars(ArrayList<Avto> cars) throws IOException {
         File file = new File("vitalik\\resources\\NewCars.txt");
