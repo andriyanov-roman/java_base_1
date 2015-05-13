@@ -1,0 +1,8 @@
+[Avto-ZAZ:Ford:good car:yes]:ted:red:pickup:1:7800909:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:devid:green:sedan:2:353467:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:victor:black:convertible:3:35345:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:duk:green:pickup:4:56578:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:ted:red:pickup:5:78009:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:devid:green:sedan:6:353467:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:victor:black:convertible:7:35345:2015-05-10
+[Avto-ZAZ:Ford:good car:yes]:duk:green:pickup:8:56578:2015-05-10
