@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Created by Дима on 30.04.2015.
+ * Created by пїЅпїЅпїЅпїЅ on 30.04.2015.
  */
 public class Container {
     private ArrayList<Figure> figures;
@@ -63,8 +63,8 @@ public class Container {
         BufferedReader buffer = new BufferedReader(reader);
         ArrayList<Figure> example = new ArrayList<Figure>();
         String line;
-        while (buffer.readLine() != null){
-            String[] pool = buffer.readLine().split(":");
+        while ((line=buffer.readLine()) != null){
+            String[] pool = line.split(":");
             if ("Treangle".equals(pool[0])){
                 Treangle tr = new Treangle();
                 tr.setName(pool[1]);
