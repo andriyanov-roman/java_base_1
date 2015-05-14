@@ -6,17 +6,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Father {
-    public static void main(String[] args) throws IOException {
-        Show(words());
+   private ReadToConsole reader;
+
+    public ReadToConsole getReader() {
+        return reader;
     }
-    public static void Show(ArrayList<String> x) throws IOException{
-        ReadToConsole s = new ClassOne();
-        s.read(x);
-        s = new ClassTwo();
-        s.read(x);
-        s = new ClassThree();
-        s.read(x);
+
+    public void setReader(ReadToConsole reader) {
+        this.reader = reader;
     }
+
+    public void Show() throws IOException{
+        reader.read(words());
+    }
+
     public static ArrayList<String> words() throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("C:\\java_base_1\\kirill\\src\\home\\hwNEW\\dynamic\\Data"));
         ArrayList<String> words = new ArrayList<>();
