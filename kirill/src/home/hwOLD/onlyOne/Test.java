@@ -1,6 +1,4 @@
-package OnlyOne;
-
-import javax.xml.bind.SchemaOutputResolver;
+package onlyOne;
 
 /**
  * Created by Pipin on 09.05.2015.

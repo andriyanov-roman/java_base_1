@@ -1,4 +1,4 @@
-package OnlyOne;
+package onlyOne;
 
 /**
  * Created by Pipin on 09.05.2015.
