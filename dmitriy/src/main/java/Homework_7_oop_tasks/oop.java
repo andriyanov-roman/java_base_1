@@ -93,10 +93,10 @@ public class oop {
         for (int i = 0; i < person.length; i++) {
             for (int j = 0; j < person.length - 1 - i; j++) {
                 if (person[j].getScale() < person[j + 1].getScale()) {
-                    Human clone = new Human();
+                    Human clone;
                     clone = person[j + 1];
                     person[j + 1] = person[j];
-                    person[j] = person[j + 1];
+                    person[j] = clone;
                 }
             }
         }
