@@ -12,14 +12,14 @@ public class Office {
 
     public static void main(String[] args) throws IOException {
 
-     /*   zp(getPlankton()); //Найти сотрудника у которого самая высокая зарплата.
+        zp(getPlankton()); //Найти сотрудника у которого самая высокая зарплата.
         zp(getProgrammers());zp(getAdmins());zp(getManagers()); //Найти из каждого типа сотрудников самого высокооплачиваемого.
         Sort(getPlankton());	//Написать методы по сортировке
         write(getPlankton());   //Все данные по компания и сотрудникам перенести в файлы
         Uvolit(getPlankton()); //Уволить всех мужчин и женщинам поднять з.п
         AddEmployeeAndShow();	//Введенные данные с консоли записываются в файл+Пользователь может получить все данные из файла
         print();                //Пользователь может получить все данные из файла
-  */}
+  }
 
     public static void print() throws IOException {
 
@@ -32,7 +32,7 @@ public class Office {
 
     public static void write(ArrayList<Plankton> v) throws IOException {
 
-        File f = new File("F:\\a.txt");
+        File f = new File("C:\\a.txt");
 
         FileWriter writer = new FileWriter(f);
         for (int i = 0; i < v.size(); i++) {
@@ -44,6 +44,7 @@ public class Office {
         writer.flush();
         writer.close();
     }
+
     public static void AddEmployeeAndShow(){
         Scanner input= new Scanner(System.in);
 

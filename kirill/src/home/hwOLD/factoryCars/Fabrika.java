@@ -14,8 +14,8 @@ public class Fabrika {
 
         ArrayList <Machine> NewCar = new ArrayList<Machine>();
 
-        NewCar.add(Stroy());   //строит машины по требованию заказчика
-        NewCar.addAll(getPark());  //gotoviy avtopark
+        //NewCar.add(Stroy());   //строит машины по требованию заказчика
+        NewCar.addAll(getPark());  //готовый автопарк
         write(NewCar);         //параметры автоматически сохраняются в файл.
         show();               //Загрузить из файла(в который машини сохранялись)
         MaxPrice(NewCar);     //Найти самую дорогую машину
@@ -39,7 +39,7 @@ public class Fabrika {
 
     public static void write(ArrayList<Machine> v) throws IOException {
 
-        File f = new File("F:\\a.txt");
+        File f = new File("C:\\a.txt");
 
         FileWriter writer = new FileWriter(f);
         for (int i = 0; i < v.size(); i++) {
@@ -57,7 +57,7 @@ public class Fabrika {
     }
 
     public static void show() throws IOException{
-        BufferedReader br = new BufferedReader(new FileReader("F:\\a.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("C:\\a.txt"));
         ArrayList<Machine> Machines = new ArrayList<Machine>();
         String sCurrentLine;
         while ((sCurrentLine=br.readLine()) != null) {

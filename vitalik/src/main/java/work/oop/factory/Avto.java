@@ -15,9 +15,6 @@ public class Avto extends FactoryCars {
     private String description; //описание
     private int price; //стоимость
 
-    public String getProprietor() {
-        return proprietor;
-    }
 
     public void setProprietor(String proprietor) {
         this.proprietor = proprietor;
@@ -29,11 +26,6 @@ public class Avto extends FactoryCars {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
@@ -63,11 +55,6 @@ public class Avto extends FactoryCars {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    public String getReady() {
-        return ready;
-    }
-
     public void setReady(String ready) {
         this.ready = ready;
     }
@@ -83,8 +70,7 @@ public class Avto extends FactoryCars {
 
     @Override
     public String toString() {
-        return getNameFactory() + ":" + getName() + ":" + getDescription() + ":" + getReady() +  ":" + getProprietor()+ ":"
-        + getColor()+ ":" + getStyle()+ ":" + getNumber()+ ":" + getPrice();
+        return super.toString() + name + ":" + description + ":" + ready;
     }
 
 

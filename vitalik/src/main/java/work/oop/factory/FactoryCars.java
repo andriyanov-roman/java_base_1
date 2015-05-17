@@ -6,13 +6,12 @@ package work.oop.factory;
 public class FactoryCars  {
     private String nameFactory;
 
-    public String getNameFactory() {
-        return nameFactory;
-    }
-
     public void setNameFactory(String nameFactory) {
         this.nameFactory = nameFactory;
     }
 
-
+    @Override
+    public String toString() {
+        return nameFactory + ":";
+    }
 }

@@ -1,17 +1,17 @@
-import company.Office;
+import jfx.Jfx;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class cla {
     public static void main(String[] args) throws IOException {
 
-       ArrayList gogo = new ArrayList();
+new Jfx().startProgram(args);
+       /*ArrayList gogo = new ArrayList();
         gogo.add(Office.getAdmins());
 
         //.inctaneOf(Manager);
-
+String ... args // skolko hozhesh znacheniy
 
 
        /* ArrayList<String> strings =new ArrayList <String>();
