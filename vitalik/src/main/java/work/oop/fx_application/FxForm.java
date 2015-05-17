@@ -17,9 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -65,7 +63,7 @@ public class FxForm extends Application {
 
         Label ageLabel = new Label("Age:");
         grid.add(ageLabel, 0, 4);
-        TextField age = new TextField();
+        final TextField age = new TextField();
         grid.add(age, 1, 4);
 
 
@@ -93,30 +91,61 @@ public class FxForm extends Application {
         final Label info = new Label();
         info.setFont(Font.font("Tahoma", FontWeight.BLACK, 10));
         grid.add(info, 1, 5);
-//        button.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent e) {
-//                try {
-//                    if(!name.getText().isEmpty()
-//                            && !salary.getText().isEmpty()
-//                            && !secondName.getText().isEmpty()) {
-//                        Employee employee = new Employee();
-//                        employee.setName(name.getText());
-//                        employee.setSalary(Double.parseDouble(salary.getText()));
-//                        employee.setSecondName(secondName.getText());
-//                        employees.add(employee);
-//                        info.setText("Employee Added");
-//                    } else {
-//                        info.setText("Employee not Added");
-//                    }
-//                    writerToFile(writer, name.getText(), secondName.getText(), salary.getText());
-//                } catch (Exception e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
-//        });
+        final Label info2 = new Label();
+        info2.setFont(Font.font("Tahoma", FontWeight.BLACK, 10));
+        grid.add(info2, 1, 11);
 
 
+
+
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String str;
+
+            public void handle(ActionEvent e) {
+                try {
+                    if (!name.getText().isEmpty()
+                            && !salary.getText().isEmpty()
+                            && !age.getText().isEmpty()
+                            && !secondName.getText().isEmpty()) {
+                        Employes employee = new Employes();
+                        employee.setName(name.getText());
+                        employee.setSalary(Double.parseDouble(salary.getText()));
+                        employee.setAge(Integer.parseInt(age.getText()));
+                        employee.setSecondName(secondName.getText());
+                        employes.add(employee);
+
+                        info.setText("Employee Added");
+                    } else {
+                        info.setText("Employee not Added");
+                    }
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+
+
+
+
+
+button1.setOnAction(new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent event) {
+        if (!name.getText().isEmpty()
+                && !salary.getText().isEmpty()
+                && !age.getText().isEmpty()
+                && !secondName.getText().isEmpty()) {
+            try {
+                writerToFile(writer, name.getText(), secondName.getText(), salary.getText(), age.getText());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            info2.setText("Employee save");
+    }
+        else {
+            info2.setText("Employee not save");
+        }}
+});
 
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.CENTER_LEFT);
