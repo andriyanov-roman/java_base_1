@@ -99,9 +99,6 @@ public class FxForm extends Application {
 
 
         button.setOnAction(new EventHandler<ActionEvent>() {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String str;
-
             public void handle(ActionEvent e) {
                 try {
                     if (!name.getText().isEmpty()
@@ -114,7 +111,6 @@ public class FxForm extends Application {
                         employee.setAge(Integer.parseInt(age.getText()));
                         employee.setSecondName(secondName.getText());
                         employes.add(employee);
-
                         info.setText("Employee Added");
                     } else {
                         info.setText("Employee not Added");
