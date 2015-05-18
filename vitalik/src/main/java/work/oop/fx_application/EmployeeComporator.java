@@ -3,7 +3,7 @@ package work.oop.fx_application;
 import java.util.Comparator;
 
 /**
- * Created by Александра on 17.05.2015.
+ * Cr.
  */
 class EmployeeComparator implements Comparator <Employes> {
 
