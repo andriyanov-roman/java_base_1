@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * Created by Дима on 17.05.2015.
  */
 public class SimpleFXMenu extends Application {
-    private File file = new File("fx.txt");
+    private File file = new File("dmitriy\\fx.txt");
     private ArrayList<Employee> employees = new ArrayList<>();
 
     @Override
