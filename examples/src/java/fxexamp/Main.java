@@ -5,7 +5,7 @@ package fxexamp;
  */
 public class Main {
     public static void main(String[] args) {
-        //new SimpleFXMenu().startProgram(args);
+        new SimpleFXMenu().startProgram(args);
         AbstractMyInterface myInterface = new AbstractMyInterface();
         myInterface.setMyInterface(new MyInterface() {
             @Override

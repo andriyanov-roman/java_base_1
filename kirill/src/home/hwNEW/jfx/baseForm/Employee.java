@@ -1,4 +1,4 @@
-package jfx;
+package jfx.baseForm;
 
 public class Employee implements Comparable<Employee> {
     private String name;

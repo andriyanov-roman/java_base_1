@@ -1,12 +1,10 @@
-import jfx.Jfx;
-
 import java.io.IOException;
 
 
 public class cla {
     public static void main(String[] args) throws IOException {
 
-new Jfx().start(args);
+//new Jfx().start(args);
        /*ArrayList gogo = new ArrayList();
         gogo.add(Office.getAdmins());
 
