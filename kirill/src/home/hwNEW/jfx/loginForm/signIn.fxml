@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="383.0" style="-fx-border-color: #C64F00;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfx.loginForm.Login">
+   <children>
+      <ImageView fitHeight="263.0" fitWidth="383.0">
+         <image>
+            <Image url="@1.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="35.0" layoutY="107.0" opacity="0.86" prefHeight="25.0" prefWidth="80.0" text="Welcome" textFill="#801010">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="35.0" layoutY="185.0" opacity="0.83" prefHeight="14.0" prefWidth="35.0" text="Login" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label layoutX="35.0" layoutY="212.0" opacity="0.83" text="Password" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Button fx:id="log" layoutX="236.0" layoutY="209.0" mnemonicParsing="false" onAction="#log" opacity="0.75" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: transparent, derive(#C64F00,20%); -fx-background-radius: 20;" text="LogIn" textAlignment="CENTER" textFill="#fcfafa">
+         <font>
+            <Font size="12.0" />
+         </font></Button>
+      <TextField fx:id="login" layoutX="114.0" layoutY="182.0" opacity="0.9" prefHeight="22.0" prefWidth="108.0" style="-fx-background-color: transparent,derive(#A05720,30%); -fx-background-radius: 10;">
+         <effect>
+            <InnerShadow color="#c63b3b" />
+         </effect>
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="info" layoutX="236.0" layoutY="185.0" opacity="0.85" prefHeight="17.0" prefWidth="115.0" textFill="#d00000" />
+      <PasswordField fx:id="password" layoutX="114.0" layoutY="209.0" opacity="0.9" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: transparent,derive(#A05720,30%); -fx-background-radius: 10;">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow color="#c63b3b" />
+         </effect>
+      </PasswordField>
+   </children>
+</AnchorPane>
