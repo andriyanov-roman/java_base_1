@@ -1,5 +1,7 @@
 package oop;
 
+import oop.oldoop.Human;
+
 import java.util.ArrayList;
 
 /**

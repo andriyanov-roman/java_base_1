@@ -1,4 +1,4 @@
-import oop.Human;
+import oop.oldoop.Human;
 import oop.stat.A;
 import oop.stat.B;
 
