@@ -1,4 +1,4 @@
-package javafx;
+package jballs;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
