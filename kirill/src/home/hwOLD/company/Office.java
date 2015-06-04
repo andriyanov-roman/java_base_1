@@ -145,7 +145,7 @@ public class Office {
     }
 
     public static ArrayList<Plankton> getProgrammers(){          //Создать три класса сотрудников Manager, Admin, Programmer.
-        ArrayList <Plankton> Programmers = new ArrayList<Plankton>();
+        ArrayList <Plankton> Programmers = new ArrayList<>();
         Plankton programmer = new Plankton();
         programmer.setName("Petya");
         programmer.setSecondname("Nabiray");

@@ -1,6 +1,8 @@
 package company;
 
-public class Plankton {
+import java.io.Serializable;
+
+public class Plankton implements Serializable {
 
     private String name;
     private String secondname;
