@@ -6,6 +6,8 @@ import company.Plankton;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 public class IoTest {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -38,6 +40,7 @@ public class IoTest {
 
     public static void read() throws IOException, ClassNotFoundException {
         File dir = new File("C:\\java_base_1\\kirill\\src\\home\\hwNEW\\IOfun");
+        ArrayList<Plankton> test = new ArrayList<>();
         for (String path : dir.list()) {
             if (path.contains(".txt")) {
 
@@ -47,22 +50,35 @@ public class IoTest {
 //                ArrayList<Plankton> test = (ArrayList<Plankton>) oin.readObject();
 //                System.out.println("Proba "+test.get(0).getName());
 
-                String s = path.split("\\.")[0];
-                LocalDate specific = LocalDate.now();
-                LocalDate x = LocalDate.parse(s);
-
-                ArrayList<Plankton> test = new ArrayList<>();
                 while (fis.available() > 0) {
                     Plankton t = (Plankton) oin.readObject();
                     test.add(t);
                 }
-                System.out.println("test " + test.get(1).getName());
+
+                String s = path.split("\\.")[0];
+                LocalDate specific = LocalDate.now();
+                LocalDate x = LocalDate.parse(s);
+                if (specific.compareTo(x) >= 3) {
+                    byte[] buffer = new byte[1024];
+                    FileOutputStream fos = new FileOutputStream("C:\\java_base_1\\kirill\\src\\home\\hwNEW\\IOfun\\MyFile.zip");
+                    ZipOutputStream zos = new ZipOutputStream(fos);
+                    ZipEntry ze = new ZipEntry(path);
+                    zos.putNextEntry(ze);
+
+                    int len;
+                    while ((len = oin.read(buffer)) > 0) {
+                        zos.write(buffer, 0, len);
+                    }
+
+                    oin.close();
+                    zos.closeEntry();
+                    zos.close();
+
+                    System.out.println("Done");
+                }
+                System.out.println(specific.compareTo(x));
             }
-
-
         }
-
-
     }
 }
 
